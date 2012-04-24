@@ -1,0 +1,194 @@
+<window type="dialog" id="131">
+	<defaultcontrol>5</defaultcontrol>
+	<zorder>1</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<include>common-fade</include>
+	<controls>
+
+
+
+	<control type="image">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanback2.png</texture>
+	</control>
+	
+	<control type="image">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanbackpolish.png</texture>
+	</control>
+
+		<control>
+		<description>Title Label</description>
+				<posx>500</posx>
+		<posy>170</posy>
+		<label>20068</label>
+		<include>Window-Title</include>
+		<font>fruity17s</font>
+		<textcolor>FFFFFFFF</textcolor>
+	</control>
+	
+	<control type="label">
+		<description>Lock Output</description>
+		<posx>320</posx>
+		<posy>200</posy>
+		<font>fruity20</font>
+		<label>Master Lock Settings</label>
+		<textcolor>FFFFFFFF</textcolor>
+	</control>
+	
+	<control type="label" id="3">
+		<description>No Settings Label</description>
+		<posx>0</posx>
+		<posy>170</posy>
+		<width>408</width>
+		<align>center</align>
+		<label>12016</label>
+		<font>fruity17s</font>
+	</control>
+
+	<control type="grouplist" id="5">
+		<description>control area</description>
+		<posx>325</posx>
+		<posy>230</posy>
+		<width>630</width>
+		<height>290</height>
+		<font>fruity17s</font>
+		<textcolor>FFFFFFFF</textcolor>
+		<texture>-</texture>
+		<onleft>28</onleft>
+		<onright>28</onright>
+		<onup>28</onup>
+		<ondown>28</ondown>
+	</control>
+
+	<control type="image" id="6">
+		<description>control gap</description>
+		<width>350</width>
+		<height>25</height>
+		<texture>-</texture>
+	</control>
+
+	<control type="button" id="7">
+		<description>Default Button</description>
+		<posx>530</posx>
+		<posy>150</posy>
+		<height>33</height>
+		<font>fruity17s</font>
+		<aligny>center</aligny>
+		<texturefocus>Button-List.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</control>
+
+	<control type="radiobutton" id="8">
+		<description>Default RadioButton</description>
+		<posx>530</posx>
+		<posy>150</posy>
+		<height>33</height>
+		<font>fruity17s</font>
+		<texturefocus>Button-List.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<aligny>center</aligny>
+		<textureradiofocus>contextbuttons2.png</textureradiofocus>
+		<textureradionofocus>contextbuttonns2.png</textureradionofocus>
+	</control>
+
+	<control type="spincontrolex" id="9">
+		<description>Default SpinControlex</description>
+		<posx>830</posx>
+		<posy>190</posy>
+		<height>31</height>
+		<width>300</width>
+		<texturefocus>Button-List.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textureup>scroll-up.png</textureup>
+		<texturedown>scroll-down.png</texturedown>
+		<textureupfocus>scroll-up-focus.png</textureupfocus>
+		<texturedownfocus>scroll-down-focus.png</texturedownfocus>
+		<font>fruity17s</font>
+		<include>textcolorwhite</include>
+		<disabledcolor>60d0d0d0</disabledcolor>
+		<textoffsetx>12</textoffsetx>
+		<aligny>center</aligny>
+		<reverse>yes</reverse>
+	</control>
+
+	<control type="sliderex" id="10">
+		<description>Default Slider</description>
+		<posx>1530</posx>
+		<posy>150</posy>
+		<height>31</height>
+		<width>300</width>
+		<texturefocus>Button-List.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<sliderwidth>100</sliderwidth>
+		<sliderheight>20</sliderheight>
+		<texturesliderbar>osd_slider_bg.png</texturesliderbar>
+		<textureslidernib>osd_slider_nibNF.png</textureslidernib>
+		<textureslidernibfocus>osd_slider_nibFO.png</textureslidernibfocus>
+		<font>fruity17s</font>
+		<include>textcolorwhite</include>
+		<disabledcolor>60d0d0d0</disabledcolor>
+		<textoffsetx>12</textoffsetx>
+	</control>
+
+	<control type="image" id="11">
+		<description>separator image</description>
+		<width>350</width>
+		<height>2</height>
+		<texture>Separator.png</texture>
+	</control>
+
+
+	<control type="button" id="28">
+		<description>OK button</description>
+		<posx>500</posx>
+		<posy>510</posy>
+		<width>140</width>
+		<height>40</height>
+		<label>186</label>
+				<font>fruity17s</font>
+		<texturenofocus>contextbutton2.png</texturenofocus>
+		<texturefocus>contextbuttonpressed2.png</texturefocus>
+		<align>center</align>
+		<onleft>29</onleft>
+		<onright>29</onright>
+		<onup>5</onup>
+		<ondown>5</ondown>
+		<visible>!Window.IsActive(PlayerControls)</visible>
+		<include>common-effect</include>
+	</control>
+
+	<control type="button" id="29">
+		<description>Cancel button</description>
+		<posx>642</posx>
+		<posy>510</posy>
+		<width>140</width>
+		<label>222</label>
+				<font>fruity17s</font>
+					<height>40</height>
+		<texturenofocus>contextbutton2.png</texturenofocus>
+		<texturefocus>contextbuttonpressed2.png</texturefocus>
+		<align>center</align>
+		<onleft>28</onleft>
+		<onright>28</onright>
+		<onup>5</onup>
+		<ondown>5</ondown>
+		<visible>!Window.IsActive(PlayerControls)</visible>
+		<include>common-effect</include>
+	</control>
+	<include>Black-Overlay</include>
+
+	</controls>
+</window>

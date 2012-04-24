@@ -1,0 +1,2756 @@
+<includes>
+
+<include name="Viewtype_List">
+	<control type="list" id="50">
+		<viewtype label="List">list</viewtype>
+		<posx>-37</posx>
+		<posy>194</posy>
+		<width>1280</width>
+		<height>333</height>
+		<pagecontrol>-</pagecontrol>
+		<onleft>2</onleft>
+		<onright>2</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<scrolltime>0</scrolltime>
+		<include>common-fade</include>
+		<visible>Window.IsActive(35) | Window.IsActive(28) | [Window.IsActive(24) + [Skin.HasSetting(videomovies) | Skin.HasSetting(movietrailers) | Skin.HasSetting(gametrailers)] + !Skin.HasSetting(listmovies)] | [Window.IsActive(24) + Skin.HasSetting(videotv) + !Skin.HasSetting(listtv)] | [Window.IsActive(24) + Skin.HasSetting(videoclips) + !Skin.HasSetting(listclips)] | [Window.IsActive(1) + Skin.HasSetting(programapps) + !Skin.HasSetting(listapps)] | [Window.IsActive(1) + Skin.HasSetting(programgames) + !Skin.HasSetting(listgames)] | [Window.IsActive(2) + !Skin.HasSetting(listpictures)] | [Window.IsActive(20) + !Skin.HasSetting(listscripts)] | [Window.IsActive(1) + Skin.HasSetting(programarcade) + !Skin.HasSetting(listarcade)] | [Window.IsActive(24) + Skin.HasSetting(videoadult) + !Skin.HasSetting(listadult)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(listmovieslib)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(listtvlib)] | [Container.Content(episodes) + !Skin.HasSetting(listeplib)]</visible>
+
+		<itemlayout height="36">
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>690</width>
+				<height>39</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<info>ListItem.Label</info>
+				<visible>!Control.IsVisible(84)</visible>
+			</control>
+			<control type="image">
+				<posx>100</posx>
+				<posy>36</posy>
+				<width>845</width>
+				<height>3</height>
+				<texture>listdivider.png</texture>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+				<visible>!Container.Content(movies) + !Container.Content(tvshows)</visible>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+						<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2] (W: $INFO[ListItem.Property(watchedepisodes)], U: $INFO[ListItem.Property(unwatchedepisodes)])[/UPPERCASE]</label>
+				<visible>Container.Content(tvshows)</visible>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+			
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<info>ListItem.Year</info>
+				<visible>Container.Content(movies)</visible>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout height="36">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>900</width>
+				<height>40</height>
+				<texture>listhighlightstub.png</texture>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
+				<animation effect="fade" start="0" end="100">VisibleChange</animation>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>670</width>
+				<height>39</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<scroll>true</scroll>
+				<scrolltime>300</scrolltime>
+				<info>ListItem.Label</info>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+				<visible>!Container.Content(movies) + !Container.Content(tvshows)</visible>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+						<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>200</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2] (W: $INFO[ListItem.Property(watchedepisodes)], U: $INFO[ListItem.Property(unwatchedepisodes)])[/UPPERCASE]</label>
+				<visible>Container.Content(tvshows)</visible>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<info>ListItem.Year</info>
+				<visible>Container.Content(movies)</visible>
+				                        <visible>!Control.IsVisible(84)</visible>
+			</control>
+ 		</focusedlayout>
+
+	</control>
+
+	<include>mediafocuslabel</include>
+	
+	<control type="group">
+		<posx>0</posx>
+		<posy>0</posy>
+		<visible>Control.IsVisible(50)</visible>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" start="356,0" end="0,0" acceleration="-1" time="150" />
+			<effect type="fade" start="0" end="100" time="150" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="slide" start="0,0" end="356,0" acceleration="-1" time="150" />
+			<effect type="fade" start="100" end="0" time="150" />
+		</animation>
+		<control type="image">
+			<include>List_Thumbnail2</include>
+			<texture>defaulticonwidepictures.png</texture>
+			<visible>Window.IsVisible(2)</visible>
+			<aspectratio aligny="center">scale</aspectratio>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonpostermovies.png</texture>
+			<visible>[Window.IsVisible(25) + Container.Content(movies)] | Window.IsVisible(28)</visible>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonpostertv.png</texture>
+			<visible>Window.IsVisible(25) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+		</control>
+				<control type="image">
+			<include>List_Thumbnail5</include>
+			<texture>defaulticonpostertv.png</texture>
+			<visible>Window.IsVisible(25) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+		</control>
+
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonposterfolder.png</texture>
+			<visible>Window.IsVisible(25) + !Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<visible>Window.IsVisible(24) | Container.Content(files)</visible>
+			<texture>defaulticonposterfolder.png</texture>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail3</include>
+			<visible>Window.IsVisible(25) + Container.Content(episodes)</visible>
+			<texture>defaulticonwidetv.png</texture>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<visible>Window.IsVisible(20)</visible>
+			<texture>defaulticonposterscripts.png</texture>
+		</control>
+		
+		<control type="image">
+			<posx>926</posx>
+			<posy>118</posy>
+			<width>320</width>
+			<height>424</height>
+			<visible>!Container.Content(episodes) + !Window.IsVisible(2) + !Container.Content(tvshows)</visible>
+			<texture>Videos_BigFrame2.png</texture>
+		</control>
+		
+				<control type="image">
+			<posx>926</posx>
+			<posy>118</posy>
+			<width>320</width>
+			<height>424</height>
+			<visible>!Container.Content(episodes) + !Window.IsVisible(2) + [Container.Content(tvshows) + !Skin.HasSetting(wideicon)]</visible>
+			<texture>Videos_BigFrame2.png</texture>
+		</control>
+		
+          <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>930</posx>
+            <posy>503</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + !Container.Content(tvshows) + !Container.Content(episodes)</visible>
+          </control>
+		  
+		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>930</posx>
+            <posy>503</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+          </control>
+		
+		
+				<control type="image">
+			<posx>880</posx>
+			<posy>105</posy>
+			<width>320</width>
+			<height>424</height>
+			<visible>!Container.Content(episodes) + !Window.IsVisible(2) + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+			<texture>Videos_BigFrame3.png</texture>
+		</control>
+		
+				            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>1040</posx>
+            <posy>133</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+          </control>
+		
+		
+		<control type="image">
+			<posx>885</posx>
+			<posy>180</posy>
+			<width>400</width>
+			<height>315</height>
+			<visible>Window.IsVisible(2)</visible>
+			<texture>iconframe2.png</texture>
+
+		</control>
+				<control type="image">
+			<posx>905</posx>
+			<posy>160</posy>
+			<width>345</width>
+			<height>280</height>
+			<visible>Window.IsVisible(25) + Container.Content(episodes)</visible>
+			<texture>fsepisodeframe2.png</texture>
+		</control>
+		
+						            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>915</posx>
+            <posy>405</posy>
+            <width>26</width>
+            <height>26</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(episodes)</visible>
+          </control>
+		
+	</control>
+</include>
+
+<include name="Viewtype_List2">
+	<control type="list" id="50">
+		<viewtype label="Roller">list</viewtype>
+		<posx>-37</posx>
+		<posy>194</posy>
+		<width>1280</width>
+		<height>333</height>
+		<pagecontrol>-</pagecontrol>
+		<onleft>2</onleft>
+		<onright>2</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<scrolltime>0</scrolltime>
+		<include>common-fade</include>
+		<visible>Window.IsActive(28) | [Window.IsActive(24) + [Skin.HasSetting(videomovies) | Skin.HasSetting(movietrailers) | Skin.HasSetting(gametrailers)] + !Skin.HasSetting(listmovies)] | [Window.IsActive(24) + Skin.HasSetting(videotv) + !Skin.HasSetting(listtv)] | [Window.IsActive(24) + Skin.HasSetting(videoclips) + !Skin.HasSetting(listclips)] | [Window.IsActive(1) + Skin.HasSetting(programapps) + !Skin.HasSetting(listapps)] | [Window.IsActive(1) + Skin.HasSetting(programgames) + !Skin.HasSetting(listgames)] | [Window.IsActive(2) + !Skin.HasSetting(listpictures)] | [Window.IsActive(20) + !Skin.HasSetting(listscripts)] | [Window.IsActive(1) + Skin.HasSetting(programarcade) + !Skin.HasSetting(listarcade)] | [Window.IsActive(24) + Skin.HasSetting(videoadult) + !Skin.HasSetting(listadult)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(listmovieslib)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(listtvlib)]</visible>
+
+		<itemlayout height="36">
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>690</width>
+				<height>39</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="image">
+				<posx>100</posx>
+				<posy>36</posy>
+				<width>705</width>
+				<height>3</height>
+				<texture>listdivider.png</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout height="36">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>760</width>
+				<height>40</height>
+				<texture>listhighlightstub.png</texture>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
+				<animation effect="fade" start="0" end="100">VisibleChange</animation>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>670</width>
+				<height>39</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<scroll>true</scroll>
+				<scrolltime>300</scrolltime>
+				<info>ListItem.Label</info>
+			</control>
+ 		</focusedlayout>
+
+	</control>
+
+	<include>mediafocuslabel</include>
+	
+	<control type="group">
+		<posx>0</posx>
+		<posy>0</posy>
+		<visible>Control.IsVisible(50)</visible>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" start="356,0" end="0,0" acceleration="-1" time="150" />
+			<effect type="fade" start="0" end="100" time="150" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="slide" start="0,0" end="356,0" acceleration="-1" time="150" />
+			<effect type="fade" start="100" end="0" time="150" />
+		</animation>
+		
+	</control>
+</include>
+
+<include name="Viewtype_Icon">
+		<control type="panel" id="52">
+			<viewtype label="Icon">icon</viewtype>
+			<posx>-10</posx>
+			<posy>150</posy>
+			<width>1340</width>
+			<height>400</height>
+			<pagecontrol>-</pagecontrol>
+			<onleft>2</onleft>
+			<onright>2</onright>
+			<onup>52</onup>
+			<ondown>52</ondown>
+			<orientation>vertical</orientation>
+			<include>common-fade</include>
+			<visible>!Window.IsVisible(129) + [[Window.IsVisible(501) + !Skin.HasSetting(iconmusic)] | [Window.IsVisible(502) + !Skin.HasSetting(iconmusiclib)] | [Window.IsVisible(1) + !Skin.HasSetting(icongames)] | [Window.IsVisible(2) + !Skin.HasSetting(iconpics)] | [Window.IsVisible(20) + !Skin.HasSetting(iconscripts)]]</visible>
+			<itemlayout width="160" height="130">
+
+	      <control type="image">
+       		<posx>33</posx>
+       		<posy>19</posy>
+       		<width>126</width>
+       		<height>112</height>
+       		<info>ListItem.Thumb</info>
+                  <texture>defaulticonmusic.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+			<colordiffuse>e0FFFFFF</colordiffuse>
+                  <visible>[Window.IsVisible(500) | Window.IsVisible(502)] + !Container.Content(artists)</visible>
+	      </control>
+            <control type="image">
+       		<posx>33</posx>
+       		<posy>19</posy>
+       		<width>126</width>
+       		<height>112</height>
+       		<info>ListItem.Thumb</info>
+                  <texture>defaulticonfolder.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+			<colordiffuse>e0FFFFFF</colordiffuse>
+                  <visible>Window.IsVisible(501) | Container.Content(files)</visible>
+	      </control>
+            <control type="image">
+       		<posx>33</posx>
+       		<posy>19</posy>
+       		<width>126</width>
+       		<height>112</height>
+       		<info>ListItem.Thumb</info>
+                  <texture>defaulticongames.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+			<colordiffuse>e0FFFFFF</colordiffuse>
+                  <visible>Window.IsVisible(1)</visible>
+	      </control>
+            <control type="image">
+       		<posx>33</posx>
+       		<posy>22</posy>
+       		<width>126</width>
+       		<height>106</height>
+       		<info>ListItem.Thumb</info>
+                  <texture>defaulticonpictures.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+			<colordiffuse>e0FFFFFF</colordiffuse>
+                  <visible>Window.IsVisible(2) | Container.Content(artists)</visible>
+	      </control>
+            <control type="image">
+       		<posx>33</posx>
+       		<posy>19</posy>
+       		<width>126</width>
+       		<height>112</height>
+       		<info>ListItem.Thumb</info>
+                  <texture>defaulticonscripts.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+			<colordiffuse>e0FFFFFF</colordiffuse>
+                  <visible>Window.IsVisible(20)</visible>
+	      </control>
+			<control type="image">
+					<posx>9</posx>
+					<posy>11</posy>
+					<width>160</width>
+					<height>130</height>
+					<texture>case2.png</texture>
+					<visible>Window.IsVisible(501) | Container.Content(files) | [Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs) | !Container.Content(artists)]]</visible>
+			</control>
+			<control type="image">
+					<posx>9</posx>
+					<posy>11</posy>
+					<width>160</width>
+					<height>130</height>
+					<texture>casegame.png</texture>
+					<visible>Window.IsVisible(1)</visible>
+			</control>
+			<control type="image">
+					<posx>9</posx>
+					<posy>11</posy>
+					<width>160</width>
+					<height>130</height>
+					<texture>casepic.png</texture>
+					<visible>Window.IsVisible(2) | [Window.IsVisible(502) + Container.Content(artists)]</visible>
+			</control>
+						<control type="image">
+					<posx>9</posx>
+					<posy>11</posy>
+					<width>160</width>
+					<height>130</height>
+					<texture>iconframe3.png</texture>
+					<visible>Window.IsVisible(20)</visible>
+			</control>
+			</itemlayout>
+			<focusedlayout width="230" height="180">
+	      <control type="image">
+		      <posx>19</posx>
+		      <posy>16</posy>
+		      <width>79</width>
+		      <height>108</height>
+		      <info>ListItem.Thumb</info>
+                  <texture>defaulticonmusic.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+		      <animation effect="zoom" start="0,0,124,112" end="-14,-17,183,158" reversible="false" time="100">Focus</animation>
+             <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+              <visible>[Window.IsVisible(500) | Window.IsVisible(502)] + !Container.Content(artists)</visible>
+	      </control>
+              <control type="image">
+		      <posx>19</posx>
+		      <posy>16</posy>
+		      <width>79</width>
+		      <height>108</height>
+		      <info>ListItem.Thumb</info>
+                  <texture>defaulticonfolder.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+		      <animation effect="zoom" start="0,0,124,112" end="-14,-17,183,158" reversible="false" time="100">Focus</animation>
+             <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+              <visible>Window.IsVisible(501) | Container.Content(files)</visible>
+	      </control>
+		                <control type="image">
+		      <posx>19</posx>
+		      <posy>16</posy>
+		      <width>79</width>
+		      <height>108</height>
+		      <info>ListItem.Thumb</info>
+                  <texture>defaulticongames.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+		      <animation effect="zoom" start="0,0,124,112" end="-14,-17,183,158" reversible="false" time="100">Focus</animation>
+             <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+              <visible>Window.IsVisible(1)</visible>
+	      </control>
+		                <control type="image">
+		      <posx>19</posx>
+		      <posy>16</posy>
+		      <width>79</width>
+		      <height>108</height>
+		      <info>ListItem.Thumb</info>
+                  <texture>defaulticonpictures.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+		      <animation effect="zoom" start="0,0,124,112" end="-14,-10,183,144" reversible="false" time="100">Focus</animation>
+             <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+              <visible>Window.IsVisible(2) | Container.Content(artists)</visible>
+	      </control>
+		                <control type="image">
+		      <posx>19</posx>
+		      <posy>16</posy>
+		      <width>79</width>
+		      <height>108</height>
+		      <info>ListItem.Thumb</info>
+                  <texture>defaulticonscripts.png</texture>
+       		<aspectratio aligny="center">stretch</aspectratio>
+		      <animation effect="zoom" start="0,0,124,112" end="-14,-17,183,158" reversible="false" time="100">Focus</animation>
+             <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+              <visible>Window.IsVisible(20)</visible>
+	      </control>
+				<control type="image">
+					<posx>6</posx>
+					<posy>9</posy>
+					<width>100</width>
+					<height>124</height>
+					<texture>case2.png</texture>
+					<visible>Window.IsVisible(501) | Container.Content(files) | [Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs) | !Container.Content(artists)]]</visible>
+		      <animation effect="zoom" start="0,0,160,130" end="-14,-17,230,180" reversible="false" time="100">Focus</animation>
+                   <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+				</control>
+								<control type="image">
+					<posx>6</posx>
+					<posy>9</posy>
+					<width>100</width>
+					<height>124</height>
+					<texture>casegame.png</texture>
+										<visible>Window.IsVisible(1)</visible>
+		      <animation effect="zoom" start="0,0,160,130" end="-14,-17,230,180" reversible="false" time="100">Focus</animation>
+                   <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+				</control>
+								<control type="image">
+					<posx>6</posx>
+					<posy>9</posy>
+					<width>100</width>
+					<height>124</height>
+					<texture>casepic.png</texture>
+					<visible>Window.IsVisible(2) | [Window.IsVisible(502) + Container.Content(artists)]</visible>
+		      <animation effect="zoom" start="0,0,160,130" end="-14,-17,230,180" reversible="false" time="100">Focus</animation>
+                   <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+				</control>
+												<control type="image">
+					<posx>6</posx>
+					<posy>9</posy>
+					<width>100</width>
+					<height>124</height>
+					<texture>iconframe3.png</texture>
+					<visible>Window.IsVisible(20)</visible>
+		      <animation effect="zoom" start="0,0,160,130" end="-14,-17,230,180" reversible="false" time="100">Focus</animation>
+                   <animation effect="slide" end="10,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,7" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-10,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-13" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+				</control>
+				
+	 		</focusedlayout>
+		</control>
+
+                  <include>mediafocuslabel</include>
+	</include>
+
+
+
+<include name="Viewtype_Poster">
+	<control type="wraplist" id="56">
+	    <viewtype label="Poster">wrap</viewtype>
+	    <posx>-107</posx>
+	    <posy>117</posy>
+	    <width>1458</width>
+	    <height>440</height>
+	    <onleft>56</onleft>
+	    <onright>56</onright>
+	    <onup>2</onup>
+	    <ondown>2</ondown>
+	    <focusposition>6</focusposition>
+	    <orientation>horizontal</orientation>
+		<visible>!Container.Content(episodes) + [[Window.IsActive(25) + !Skin.HasSetting(postermovieslib) + Container.Content(movies)] | [Window.IsActive(24) + Skin.HasSetting(videomovies) + !Skin.HasSetting(postermovies)] | [Window.IsActive(24) + Skin.HasSetting(videotv) + !Skin.HasSetting(postertv)] | [Window.IsActive(25) + !Skin.HasSetting(postertvlib) + [Container.Content(tvshows) | Container.Content(seasons)]] | [Window.IsActive(20) + !Skin.HasSetting(posterscripts)] | [Window.IsActive(1) + !Skin.HasSetting(postergames)]]</visible>
+	     <include>common-fade</include>
+	     <itemlayout height="782" width="165">
+			      <control type="image">
+			      <include>Poster_Unfocused</include>
+			      <texture>defaulticonpostermovies.png</texture>
+				  <visible>Window.IsVisible(25) + Container.Content(movies)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+		      <control type="image">
+			      <include>Poster_Unfocused</include>
+			      <texture>defaulticonpostertv.png</texture>
+				  <visible>Window.IsVisible(25) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+			  		      <control type="image">
+			      <include>Poster_Unfocused5</include>
+			      <texture>defaulticonpostertv.png</texture>
+				  <visible>Window.IsVisible(25) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+			  
+			  <control type="image">
+			      <include>Poster_Unfocused</include>
+			      <texture>defaulticonposterfolder.png</texture>
+				  <visible>Window.IsVisible(25) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+		      <control type="image">
+			      <include>Poster_Unfocused</include>
+			      <texture>defaulticonposterfolder.png</texture>
+				  <visible>Window.IsVisible(24) | Container.Content(files)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+		      <control type="image">
+			      <include>Poster_Unfocused</include>
+			      <texture>defaulticonposterscripts.png</texture>
+				  <visible>Window.IsVisible(20)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+			  
+			  <control type="image">
+			      <include>Poster_Unfocused</include>
+			      <texture>defaulticongames.png</texture>
+				  <visible>Window.IsVisible(1)</visible>
+				                          <visible>!Control.IsVisible(84)</visible>
+		      </control>
+			  
+			  
+		      <control type="image">
+			      <posx>64</posx>
+			      <posy>113</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>Videos_BigFrame2.png</texture>
+				   <visible>!Control.IsVisible(84) + !Container.Content(tvshows)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>113</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>Videos_BigFrame2.png</texture>
+				   <visible>!Control.IsVisible(84) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>66</posx>
+            <posy>312</posy>
+            <width>16</width>
+            <height>16</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Control.IsVisible(84) + !Skin.HasSetting(hidewatched) + !Container.Content(tvshows)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>
+		  
+		  			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>66</posx>
+            <posy>312</posy>
+            <width>16</width>
+            <height>16</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Control.IsVisible(84) + !Skin.HasSetting(hidewatched) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>
+			  
+
+			  
+			  			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>110</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>Videos_BigFrame3.png</texture>
+				   <visible>!Control.IsVisible(84) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  					  			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>146</posx>
+            <posy>125</posy>
+            <width>20</width>
+            <height>20</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Control.IsVisible(84) + !Skin.HasSetting(hidewatched) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>  
+
+			  
+			      <control type="image">
+			      <posx>84</posx>
+			      <posy>346</posy>
+			      <width>124</width>
+			      <height>186</height>
+			      <info>ListItem.Thumb</info>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticonposter.png</texture>
+				   <visible>!Control.IsVisible(84) + !Container.Content(tvshows)</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  			      <control type="image">
+			      <posx>84</posx>
+			      <posy>346</posy>
+			      <width>124</width>
+			      <height>186</height>
+			      <info>ListItem.Thumb</info>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticonposter.png</texture>
+				   <visible>!Control.IsVisible(84) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+				  			  			      <control type="image">
+				<posx>69</posx>
+				<posy>390</posy>
+				<width>150</width>
+				<height>47</height>
+			      <info>ListItem.Thumb</info>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				  				   <animation effect="rotate" center="auto" end="-240" time="0" condition="true">Conditional</animation>
+			      <texture flipx="true"diffuse="Thumb_Mask6.png">defaulticonposter.png</texture>
+				   <visible>!Control.IsVisible(84) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+		      <control type="image">
+			      <posx>64</posx>
+			      <posy>327</posy>
+			      <width>165</width>
+			      <height>225</height>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">Videos_BigFrame2.png</texture>
+				   <visible>!Control.IsVisible(84) + !Container.Content(tvshows)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>327</posy>
+			      <width>165</width>
+			      <height>225</height>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">Videos_BigFrame2.png</texture>
+				   <visible>!Control.IsVisible(84) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>323</posy>
+			      <width>165</width>
+			      <height>225</height>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">Videos_BigFrame3.png</texture>
+				   <visible>!Control.IsVisible(84) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+
+	     </itemlayout>
+	     <focusedlayout height="782" width="160">
+			      <control type="image">
+				  <include>Poster_Focused</include>
+			      <texture>defaulticonpostermovies.png</texture>
+				  <visible>Window.IsVisible(25) + Container.Content(movies)</visible> 
+		      </control>
+		      <control type="image">
+				  <include>Poster_Focused</include>
+			      <texture>defaulticonpostertv.png</texture>
+				  <visible>Window.IsVisible(25) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible> 
+		      </control>
+			  		      <control type="image">
+				  <include>Poster_Focused5</include>
+			      <texture>defaulticonpostertv.png</texture>
+				  <visible>Window.IsVisible(25) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible> 
+		      </control>
+			  <control type="image">
+				  <include>Poster_Focused</include>
+			      <texture>defaulticonposterfolder.png</texture>
+				  <visible>Window.IsVisible(25) + !Container.Content(tvshows) + !Container.Content(movies)</visible> 
+		      </control>
+		      <control type="image">
+				  <include>Poster_Focused</include>
+			      <texture>defaulticonposterfolder.png</texture>
+				  <visible>Window.IsVisible(24) + Container.Content(files)</visible> 
+		      </control>
+		      <control type="image">
+				  <include>Poster_Focused</include>
+			      <texture>defaulticonposterscripts.png</texture>
+				  <visible>Window.IsVisible(20)</visible> 
+		      </control>
+			        <control type="image">
+				  <include>Poster_Focused</include>
+			      <texture>defaulticongames.png</texture>
+				  <visible>Window.IsVisible(1)</visible> 
+		      </control>
+
+		      <control type="image">
+			      <posx>0</posx>
+			      <posy>0</posy>
+			      <width>298</width>
+			      <height>405</height>
+			      <texture>Videos_BigFrame2.png</texture>
+				  <visible>!Container.Content(tvshows)</visible> 
+			      <animation effect="zoom" start="64,113,165,220" end="0,0,298,405" reversible="false" time="250">Focus</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>0</posx>
+			      <posy>0</posy>
+			      <width>298</width>
+			      <height>405</height>
+			      <texture>Videos_BigFrame2.png</texture>
+				  <visible>Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible> 
+			      <animation effect="zoom" start="64,113,165,220" end="0,0,298,405" reversible="false" time="250">Focus</animation>
+		      </control>
+			  
+			  			          <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>3</posx>
+            <posy>366</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + !Container.Content(tvshows)</visible>
+			<animation effect="zoom" start="66,312,16,16" end="3,366,32,32" reversible="false" time="250">Focus</animation>
+          </control>
+		  
+
+		  
+		  			  			          <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>3</posx>
+            <posy>366</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+			<animation effect="zoom" start="66,312,16,16" end="3,366,32,32" reversible="false" time="250">Focus</animation>
+          </control>
+		  
+
+			  
+			  			  		      <control type="image">
+			      <posx>0</posx>
+			      <posy>0</posy>
+			      <width>298</width>
+			      <height>405</height>
+			      <texture>Videos_BigFrame3.png</texture>
+				  <visible>Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible> 
+			      <animation effect="zoom" start="64,113,165,220" end="0,0,298,405" reversible="false" time="250">Focus</animation>
+		      </control>
+
+			  		  			  			          <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>148</posx>
+            <posy>25</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+			<animation effect="zoom" start="146,125,20,20" end="146,25,32,32" reversible="false" time="250">Focus</animation>
+          </control>
+
+			<control type="image">
+				<posx>25</posx>
+				<posy>22</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + !Container.Content(tvshows)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="198,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="100" delay="700" time="400" />
+					<effect type="fade" start="100" end="0" delay="1100" time="350" />
+				</animation>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<posy>358</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + !Container.Content(tvshows)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="198,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="100" delay="700" time="400" />
+					<effect type="fade" start="100" end="0" delay="1100" time="350" />
+				</animation>
+			</control>
+			
+						<control type="image">
+				<posx>25</posx>
+				<posy>22</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="198,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="100" delay="700" time="400" />
+					<effect type="fade" start="100" end="0" delay="1100" time="350" />
+				</animation>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<posy>358</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="198,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="100" delay="700" time="400" />
+					<effect type="fade" start="100" end="0" delay="1100" time="350" />
+				</animation>
+			</control>
+			
+									<control type="image">
+				<posx>185</posx>
+				<posy>67</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<animation effect="rotate" center="auto" end="-30" time="0" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(nosfx) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+				<animation type="Focus" reversible="false">
+				
+					<effect type="slide" start="0,0" end="65,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="100" delay="700" time="400" />
+					<effect type="fade" start="100" end="0" delay="1100" time="350" />
+				</animation>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<posy>330</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<animation effect="rotate" center="auto" end="-30" time="0" condition="true">Conditional</animation>
+				<visible>!Skin.HasSetting(nosfx) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="65,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="100" delay="700" time="400" />
+					<effect type="fade" start="100" end="0" delay="1100" time="350" />
+				</animation>
+			</control>
+
+
+			
+			
+		      <control type="image">
+			      <posx>39</posx>
+			      <posy>434</posy>
+			      <width>219</width>
+			      <height>336</height>
+			      <info>ListItem.Thumb</info>
+				  <visible>!Container.Content(tvshows)</visible> 
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticonposter.png</texture>
+			      <animation effect="zoom" start="84,344,124,181" end="39,434,219,336" reversible="false" time="250">Focus</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>39</posx>
+			      <posy>434</posy>
+			      <width>219</width>
+			      <height>336</height>
+			      <info>ListItem.Thumb</info>
+				  <visible>Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible> 
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticonposter.png</texture>
+			      <animation effect="zoom" start="84,344,124,181" end="39,434,219,336" reversible="false" time="250">Focus</animation>
+		      </control>
+
+			  
+		      <control type="image">
+			      <posx>0</posx>
+			      <posy>400</posy>
+			      <width>298</width>
+			      <height>405</height>
+				  <visible>!Container.Content(tvshows)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">Videos_BigFrame2.png</texture>	
+			      <animation effect="zoom" start="64,324,165,220" end="0,386,298,405" reversible="false" time="250">Focus</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>0</posx>
+			      <posy>400</posy>
+			      <width>298</width>
+			      <height>405</height>
+				  <visible>Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">Videos_BigFrame2.png</texture>	
+			      <animation effect="zoom" start="64,324,165,220" end="0,386,298,405" reversible="false" time="250">Focus</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>0</posx>
+			      <posy>392</posy>
+			      <width>298</width>
+			      <height>405</height>
+				  <visible>Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">Videos_BigFrame3.png</texture>	
+				  <animation effect="zoom" start="64,323,165,225" end="0,392,298,405" reversible="false" time="250">Focus</animation>
+			       </control>
+
+	
+				   
+	     </focusedlayout>
+   	   </control>
+	   
+	   
+
+	<include>movieinfopanel</include>
+
+	<include>mediafocuslabel</include>
+
+	<include>contextselected</include>
+
+</include>
+
+
+<include name="Viewtype_Gameroller">
+	<control type="list" id="50">
+		<viewtype label="Roller">list</viewtype>
+		<posx>-37</posx>
+		<posy>194</posy>
+		<width>1280</width>
+		<height>333</height>
+		<pagecontrol>-</pagecontrol>
+		<scrolltime>0</scrolltime>
+		<onleft>2</onleft>
+		<onright>2</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+	<animation effect="fade" time="200">Hidden</animation>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+		<visible>Window.IsActive(35) | [[Window.IsActive(501) | Window.IsActive(500)] + !Skin.HasSetting(listmusic)] | [[Window.IsActive(502) | Window.IsActive(500)] + !Skin.HasSetting(listmusiclib)] + !Skin.HasSetting(rollergames)</visible>
+		<itemlayout height="36">
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>658</width>
+				<height>37</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<posx>736</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>37</height>
+				<font>fruity17</font>
+				<aligny>center</aligny>
+				<align>right</align>
+				<include>listcolornofocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+			</control>
+			<control type="image">
+				<posx>100</posx>
+				<posy>36</posy>
+				<width>705</width>
+				<height>3</height>
+				<texture>listdivider.png</texture>
+			</control>
+		</itemlayout>
+		<focusedlayout height="36">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>760</width>
+				<height>40</height>
+				<texture>listhighlightstub.png</texture>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2001)</visible>
+				<animation effect="fade" start="0" end="100">VisibleChange</animation>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>658</width>
+				<height>37</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<scroll>true</scroll>
+				<scrolltime>300</scrolltime>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<posx>736</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<height>37</height>
+				<font>fruity17</font>
+				<aligny>center</aligny>
+				<align>right</align>
+				<include>listcolorfocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+			</control>
+ 		</focusedlayout>
+	</control>
+
+#-------------------------------------------------------------------------------------------
+#ROLLING DOWN
+#-------------------------------------------------------------------------------------------
+
+<control type="group">
+	<posx>-44</posx>
+	<posy>-18</posy>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="fade" start="0" end="100" time="200" />
+		<effect type="slide" start="300,0" end="0,0" time="200" acceleration="-1" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="fade" start="100" end="0" time="200" />
+		<effect type="slide" start="0,0" end="300,0" time="200" acceleration="-1" />
+	</animation>
+	<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+	<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+<control type="image" id="3000">
+	<posx>1035</posx>
+	<posy>158</posy>
+	<width>183</width>
+	<height>175</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<info>Container.Listitem(-3).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>1001</posx>
+	<posy>148</posy>
+	<height>199</height>
+	<width>229</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="fade" start="0" end="100" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3000">
+	<posx>1035</posx>
+	<posy>158</posy>
+	<width>183</width>
+	<height>175</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="1019,175,219,199" time="200">Hidden</animation>
+	<info>Container.Listitem(-2).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>1001</posx>
+	<posy>148</posy>
+	<height>199</height>
+	<width>229</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="983,164,267,224" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3000">
+	<posx>1019</posx>
+	<posy>175</posy>
+	<width>219</width>
+	<height>199</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="1008,201,235,224" time="200">Hidden</animation>
+	<info>Container.Listitem(-1).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>983</posx>
+	<posy>164</posy>
+	<height>224</height>
+	<width>267</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" start="983,164,267,224" end="967,190,290,253" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3000">
+	<posx>1019</posx>
+	<posy>349</posy>
+	<width>219</width>
+	<height>199</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="1035,393,183,175" time="200">Hidden</animation>
+	<animation effect="fade" start="0" end="20" time="200" condition="true">Conditional</animation>
+	<info>Container.Listitem(3).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>983</posx>
+	<posy>338</posy>
+	<height>224</height>
+	<width>267</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="1003,383,226,199" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3000">
+	<posx>1008</posx>
+	<posy>298</posy>
+	<width>235</width>
+	<height>224</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="1019,349,219,199" time="200">Hidden</animation>
+	<info>Container.Listitem(2).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>967</posx>
+	<posy>285</posy>
+	<height>253</height>
+	<width>290</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="983,338,267,224" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3000">
+	<posx>997</posx>
+	<posy>235</posy>
+	<width>258</width>
+	<height>251</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="1008,298,235,224" time="200">Hidden</animation>
+	<animation effect="fade" start="50" end="80" time="200" condition="true">Conditional</animation>
+	<info>Container.Listitem(1).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>951</posx>
+	<posy>224</posy>
+	<height>280</height>
+	<width>322</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="967,285,290,253" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3000">
+	<posx>1008</posx>
+	<posy>201</posy>
+	<width>235</width>
+	<height>224</height>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="997,235,258,251" time="200">Hidden</animation>
+	<info>Container.Listitem(0).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3000">
+	<posx>967</posx>
+	<posy>190</posy>
+	<height>253</height>
+	<width>290</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnPrevious</visible>
+	<animation effect="zoom" end="951,224,322,280" time="200">Hidden</animation>
+</control>
+
+#-------------------------------------------------------------------------------------------
+#ROLLING UP
+#-------------------------------------------------------------------------------------------
+
+<control type="image" id="3001">
+	<posx>1019</posx>
+	<posy>175</posy>
+	<width>219</width>
+	<height>199</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="1035,158,183,175" time="200">Hidden</animation>
+	<info>Container.Listitem(-3).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>983</posx>
+	<posy>164</posy>
+	<height>224</height>
+	<width>267</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" start="983,164,267,224" end="1001,148,229,199" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3001">
+	<posx>1008</posx>
+	<posy>201</posy>
+	<width>235</width>
+	<height>224</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="1019,175,219,199" time="200">Hidden</animation>
+	<info>Container.Listitem(-2).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>967</posx>
+	<posy>190</posy>
+	<height>253</height>
+	<width>290</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="983,164,267,224" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3001">
+	<posx>997</posx>
+	<posy>235</posy>
+	<width>258</width>
+	<height>251</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="1008,201,235,224" time="200">Hidden</animation>
+	<info>Container.Listitem(-1).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>951</posx>
+	<posy>224</posy>
+	<height>280</height>
+	<width>322</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="967,190,290,253" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3001">
+	<posx>1035</posx>
+	<posy>393</posy>
+	<width>183</width>
+	<height>175</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="fade" start="0" end="20" time="200">Hidden</animation>
+	<info>Container.Listitem(3).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>1003</posx>
+	<posy>383</posy>
+	<height>199</height>
+	<width>226</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="fade" start="0" end="20" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3001">
+	<posx>1035</posx>
+	<posy>393</posy>
+	<width>183</width>
+	<height>175</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="1019,349,219,199" time="200">Hidden</animation>
+	<info>Container.Listitem(2).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>1003</posx>
+	<posy>383</posy>
+	<height>199</height>
+	<width>226</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="983,338,267,224" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3001">
+	<posx>1019</posx>
+	<posy>349</posy>
+	<width>219</width>
+	<height>199</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="1008,298,235,224" time="200">Hidden</animation>
+	<info>Container.Listitem(1).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>983</posx>
+	<posy>338</posy>
+	<height>224</height>
+	<width>267</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="967,285,290,253" time="200">Hidden</animation>
+</control>
+
+<control type="image" id="3001">
+	<posx>1008</posx>
+	<posy>298</posy>
+	<width>235</width>
+	<height>224</height>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="997,235,258,251" time="200">Hidden</animation>
+	<info>Container.Listitem(0).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image" id="3001">
+	<posx>967</posx>
+	<posy>285</posy>
+	<height>253</height>
+	<width>290</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + Container.OnNext</visible>
+	<animation effect="zoom" end="951,224,322,280" time="200">Hidden</animation>
+</control>
+
+#-------------------------------------------------------------------------------------------
+#STATIC ICONS
+#-------------------------------------------------------------------------------------------
+
+<control type="image" id="3002">
+	<posx>1035</posx>
+	<posy>393</posy>
+	<width>183</width>
+	<height>175</height>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+	<info>Container.Listitem(3).Thumb</info>
+	<texture>defaulticongames.png</texture>
+</control>
+
+<control type="image">
+	<posx>1003</posx>
+	<posy>383</posy>
+	<height>199</height>
+	<width>226</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image" id="3002">
+	<posx>1035</posx>
+	<posy>158</posy>
+	<width>183</width>
+	<height>175</height>
+	<info>Container.Listitem(-3).Thumb</info>
+	<texture>defaulticongames.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image">
+	<posx>1001</posx>
+	<posy>148</posy>
+	<height>199</height>
+	<width>229</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image" id="3002">
+	<posx>1019</posx>
+	<posy>349</posy>
+	<width>219</width>
+	<height>199</height>
+	<info>Container.Listitem(2).Thumb</info>
+	<texture>defaulticongames.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image">
+	<posx>983</posx>
+	<posy>338</posy>
+	<height>224</height>
+	<width>267</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image" id="3002">
+	<posx>1019</posx>
+	<posy>175</posy>
+	<width>219</width>
+	<height>199</height>
+	<info>Container.Listitem(-2).Thumb</info>
+	<texture>defaulticongames.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image">
+	<posx>983</posx>
+	<posy>164</posy>
+	<height>224</height>
+	<width>267</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image" id="3002">
+	<posx>1008</posx>
+	<posy>298</posy>
+	<width>235</width>
+	<height>224</height>
+	<info>Container.Listitem(1).Thumb</info>
+	<texture>defaulticongames.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image">
+	<posx>967</posx>
+	<posy>285</posy>
+	<height>253</height>
+	<width>290</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+	
+<control type="image" id="3002">
+	<posx>1008</posx>
+	<posy>201</posy>
+	<width>235</width>
+	<height>224</height>
+	<info>Container.Listitem(-1).Thumb</info>
+	<texture>defaulticongames.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image">
+	<posx>967</posx>
+	<posy>190</posy>
+	<height>253</height>
+	<width>290</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image" id="3002">
+	<posx>997</posx>
+	<posy>235</posy>
+	<width>258</width>
+	<height>251</height>
+	<info>Container.Listitem(0).Thumb</info>
+	<texture>defaulticongames.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+<control type="image">
+	<posx>951</posx>
+	<posy>224</posy>
+	<height>280</height>
+	<width>322</width>
+	<texture>casegame.png</texture>
+	<visible>Control.IsVisible(50) + !Control.IsVisible(3001) + !Control.IsVisible(3000)</visible>
+</control>
+
+</control>
+</include>
+
+
+
+<include name="Viewtype_Media">
+	<control type="wraplist" id="54">
+		<viewtype label="Showcase">wrap</viewtype>
+		<posx>-335</posx>
+		<posy>350</posy>
+		<width>1620</width>
+		<height>574</height>
+		<onleft>52</onleft>
+		<onright>52</onright>
+		<onup>2</onup>
+		<ondown>2</ondown>
+		<focusposition>4</focusposition>
+		<orientation>horizontal</orientation>
+		<include>common-fade</include>	
+		<visible>[Window.IsVisible(1) + !Skin.HasSetting(showcasegames)] | [Window.IsVisible(2) + !Skin.HasSetting(showcasepics)] | [Window.IsVisible(501) + !Skin.HasSetting(showcasemusic)] | [Window.IsVisible(502) + !Skin.HasSetting(showcasemusiclib)]</visible>
+	
+		
+		
+	     <itemlayout height="783" width="200">
+		      <control type="image">
+				<posx>93</posx>
+				<posy>129</posy>
+				<width>151</width>
+				<height>136</height>
+				<info>ListItem.Thumb</info>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="center">scale</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonmusic.png</texture>
+				 <visible>[Window.IsVisible(502) | Window.IsVisible(500)] + Container.Content(artists)</visible>
+		      </control>
+			  
+			  <control type="image">
+				<posx>91</posx>
+				<posy>123</posy>
+				<width>159</width>
+				<height>148</height>
+				<info>ListItem.Thumb</info>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonmusic.png</texture>
+				 <visible>[Window.IsVisible(502) | Window.IsVisible(500)] + [[Container.Content(albums) | Container.Content(songs)] | [!Container.Content(artists) + !Container.Content(songs) + !Container.Content(albums)]] </visible>
+		      </control>
+	
+			  
+			  		      <control type="image">
+				<posx>91</posx>
+				<posy>123</posy>
+				<width>159</width>
+				<height>148</height>
+				<info>ListItem.Thumb</info>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonfolder.png</texture>
+				 <visible>Window.IsVisible(501) | Container.Content(files)</visible>
+		      </control>
+			  
+			  <control type="image">
+				<posx>96</posx>
+				<posy>125</posy>
+				<width>154</width>
+				<height>146</height>
+				<info>ListItem.Thumb</info>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticongames.png</texture>
+				 <visible>Window.IsVisible(1)</visible>
+		      </control>
+			  
+			  <control type="image">
+				<posx>93</posx>
+				<posy>129</posy>
+				<width>151</width>
+				<height>136</height>
+				<info>ListItem.Thumb</info>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="center">scale</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonpictures.png</texture>
+				 <visible>Window.IsVisible(2)</visible>
+		      </control>
+
+		      <control type="image">
+			      <posx>64</posx>
+			      <posy>113</posy>
+			      <width>195</width>
+			      <height>169</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>case2.png</texture>
+				   <visible>Window.IsVisible(501) | [Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs)]] | [Window.IsVisible(502) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)]</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  <control type="image">
+			      <posx>64</posx>
+			      <posy>113</posy>
+			      <width>195</width>
+			      <height>169</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>casegame.png</texture>
+				   <visible>Window.IsVisible(1)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  			  <control type="image">
+			      <posx>64</posx>
+			      <posy>113</posy>
+			      <width>195</width>
+			      <height>169</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>casepic.png</texture>
+				   <visible>Window.IsVisible(2) | [[Window.IsVisible(501) | Window.IsVisible(502)] + Container.Content(artists)]</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+
+			  
+		      <control type="image">
+			  	<posx>93</posx>
+				<width>152</width>
+				<height>146</height>
+			      <posy>288</posy>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				  <visible>!Container.Content(artists) + !Window.IsVisible(2)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticon.png</texture>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			  	<posx>93</posx>
+				<width>150</width>
+				<height>146</height>
+			      <posy>282</posy>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				  <visible>Container.Content(artists) | Window.IsVisible(2)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticon.png</texture>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+		      <control type="image">
+			      <posx>64</posx>
+			      <posy>274</posy>
+			      <width>195</width>
+			      <height>169</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">case2.png</texture>
+				  <visible>Window.IsVisible(501) | [Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs)]] | [Window.IsVisible(502) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)]</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>274</posy>
+			      <width>195</width>
+			      <height>169</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">casegame.png</texture>
+				  <visible>Window.IsVisible(1)</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>264</posy>
+			      <width>195</width>
+			      <height>169</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">casepic.png</texture>
+				  <visible>Window.IsVisible(2) | [[Window.IsVisible(501) | Window.IsVisible(502)] + Container.Content(artists)]</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+	     </itemlayout>
+	     <focusedlayout height="783" width="200">
+		      <control type="image">
+				 <posx>88</posx>
+				<posy>109</posy>
+				<width>172</width>
+				<height>177</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="center">scale</aspectratio>
+				<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+				<effect type="zoom" start="96,122,156,149" end="72,102,211,180" time="100" />
+				</animation>
+			      <texture>defaulticonmusic.png</texture>
+				  <visible>Window.IsVisible(502) + Container.Content(artists)</visible>
+		      </control>
+			        <control type="image">
+				 <posx>88</posx>
+				<posy>109</posy>
+				<width>172</width>
+				<height>177</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="center">scale</aspectratio>
+				<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+				<effect type="zoom" start="96,122,156,149" end="72,102,211,180" time="100" />
+				</animation>
+			      <texture>defaulticonpictures.png</texture>
+				  <visible>Window.IsVisible(2)</visible>
+		      </control>
+			  
+			  		      <control type="image">
+				 <posx>72</posx>
+				<posy>98</posy>
+				<width>217</width>
+				<height>196</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+				<effect type="zoom" start="96,122,156,149" end="72,95,217,199" time="100" />
+				</animation>
+			      <texture>defaulticonmusic.png</texture>
+				  <visible>Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs)]</visible>
+		      </control>
+			  
+			  			  		      <control type="image">
+				 <posx>72</posx>
+				<posy>98</posy>
+				<width>217</width>
+				<height>196</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+				<effect type="zoom" start="96,122,156,149" end="72,95,217,199" time="100" />
+				</animation>
+			      <texture>defaulticonmusic.png</texture>
+				  <visible>Window.IsVisible(502) + [!Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)]</visible>
+		      </control>
+			  	  		      <control type="image">
+				 <posx>72</posx>
+				<posy>98</posy>
+				<width>217</width>
+				<height>196</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+				<effect type="zoom" start="96,122,156,149" end="72,95,217,199" time="100" />
+				</animation>
+			      <texture>defaulticonfolder.png</texture>
+				  <visible>Window.IsVisible(501) | Container.Content(files)</visible>
+		      </control>
+			  	  		      <control type="image">
+				 <posx>72</posx>
+				<posy>98</posy>
+				<width>217</width>
+				<height>196</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+				<effect type="zoom" start="96,122,156,149" end="72,95,217,199" time="100" />
+				</animation>
+			      <texture>defaulticongames.png</texture>
+				  <visible>Window.IsVisible(1)</visible>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>34</posx>
+			      <posy>85</posy>
+			      <width>267</width>
+			      <height>224</height>
+			      <texture>case2.png</texture> 
+				  <visible>Window.IsVisible(501) | [Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs)]] | [Window.IsVisible(502) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)]</visible>
+			       <animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+						<effect type="zoom" start="64,113,195,169" end="34,85,267,224" time="100" />
+				   </animation>
+		      </control>
+			  			  		      <control type="image">
+			      <posx>34</posx>
+			      <posy>85</posy>
+			      <width>267</width>
+			      <height>224</height>
+			      <texture>casegame.png</texture> 
+				  <visible>Window.IsVisible(1)</visible>
+			       <animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+						<effect type="zoom" start="64,113,195,169" end="34,85,267,224" time="100" />
+				   </animation>
+		      </control>
+			  			  		      <control type="image">
+			      <posx>34</posx>
+			      <posy>85</posy>
+			      <width>267</width>
+			      <height>224</height>
+			      <texture>casepic.png</texture> 
+				  <visible>Window.IsVisible(2) | [[Window.IsVisible(501) | Window.IsVisible(502)] + Container.Content(artists)]</visible>
+			       <animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+						<effect type="zoom" start="64,113,195,169" end="34,85,267,224" time="100" />
+				   </animation>
+		      </control>
+			  
+			<control type="image">
+				<posx>50</posx>
+				<posy>91</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + [Container.Content(artists) | Window.IsVisible(2)]</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="200,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="80" delay="700" time="500" />
+					<effect type="fade" start="80" end="0" delay="1200" time="250" />
+				</animation>
+			</control>
+			<control type="image">
+				<posx>50</posx>
+				<posy>277</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + [Container.Content(artists) | Window.IsVisible(2)]</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="200,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="80" delay="700" time="500" />
+					<effect type="fade" start="80" end="0" delay="1200" time="250" />
+				</animation>
+			</control>
+						<control type="image">
+				<posx>50</posx>
+				<posy>84</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + !Container.Content(artists) + !Window.IsVisible(2)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="200,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="80" delay="700" time="500" />
+					<effect type="fade" start="80" end="0" delay="1200" time="250" />
+				</animation>
+			</control>
+			<control type="image">
+				<posx>50</posx>
+				<posy>284</posy>
+				<width>53</width>
+				<height>24</height>
+				<texture>glint.png</texture>
+				<visible>!Skin.HasSetting(nosfx) + !Container.Content(artists) + !Window.IsVisible(2)</visible>
+				<animation type="Focus" reversible="false">
+					<effect type="slide" start="0,0" end="200,0" delay="700" tween="cubic" easing="inout" time="850" />
+					<effect type="fade" start="0" end="80" delay="700" time="500" />
+					<effect type="fade" start="80" end="0" delay="1200" time="250" />
+				</animation>
+			</control>
+		      <control type="image">
+			       <posx>72</posx>
+			      <posy>308</posy>
+			      <width>210</width>
+				<height>193</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				   <visible>!Container.Content(artists) + !Window.IsVisible(2)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticon.png</texture>
+			       <animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+						<effect type="zoom" start="84,344,124,181" end="61,380,212,199" time="100" />
+				   </animation>
+		      </control>
+			  		      <control type="image">
+			       <posx>75</posx>
+			      <posy>301</posy>
+			      <width>205</width>
+				<height>193</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="center">scale</aspectratio>
+				   <visible>Container.Content(artists) | Window.IsVisible(2)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticon.png</texture>
+			       <animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24)" reversible="false">
+						<effect type="zoom" start="84,344,124,181" end="59,380,201,199" time="100" />
+				   </animation>
+		      </control>
+		      <control type="image">
+			      <posx>34</posx>
+			      <posy>286</posy>
+			      <width>267</width>
+			      <height>224</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+				  <aspectratio aligny="center">scale</aspectratio>
+				  <visible>Window.IsVisible(2) | [[Window.IsVisible(501) | Window.IsVisible(502)] + Container.Content(artists)]</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">casepic.png</texture>
+				  <animation type="Focus" reversible="false" condition="!Container.Content(seasons) + !Window.IsActive(24)">
+						<effect type="zoom" start="64,324,165,220" end="34,350,267,224" time="100" />
+				   </animation>
+		      </control>
+			  		      <control type="image">
+			      <posx>34</posx>
+			      <posy>300</posy>
+			      <width>267</width>
+			      <height>224</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">case2.png</texture>
+				  <visible>[[Window.IsVisible(501) | Window.IsVisible(502)] + [!Container.Content(artists)]]</visible>
+				  <animation type="Focus" reversible="false" condition="!Container.Content(seasons) + !Window.IsActive(24)">
+						<effect type="zoom" start="64,324,165,220" end="34,350,267,224" time="100" />
+				   </animation>
+		      </control>
+			  		      <control type="image">
+			      <posx>34</posx>
+			      <posy>300</posy>
+			      <width>267</width>
+			      <height>224</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+				  <visible>Window.IsVisible(1)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">casegame.png</texture>
+				  <animation type="Focus" reversible="false" condition="!Container.Content(seasons) + !Window.IsActive(24)">
+						<effect type="zoom" start="64,324,165,220" end="34,350,267,224" time="100" />
+				   </animation>
+		      </control>
+	     </focusedlayout>
+	   </control>
+
+
+	   
+	   <control type="image">
+			<posx>364</posx>
+			<posy>610</posy>
+			<width>555</width>
+			<height>128</height>
+			<texture>episodehighlight.png</texture>
+			<include>common-fade</include>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>		
+		</control>
+		
+				<control type="image">
+			<posx>480</posx>
+			<posy>685</posy>
+			<width>400</width>
+			<height>3</height>
+			<texture>listdivider.png</texture>
+			<include>common-fade</include>
+			<visible>Control.HasFocus(54)</visible>
+		</control>
+	   
+	 					<control type="group">
+	<visible>[Window.IsVisible(502) + !Container.Content(artists) + !Container.Content(albums) + !Container.Content(songs)] | [Window.IsVisible(501) + Container.Content(files)]</visible>
+
+		<control type="label">
+			<posx>0</posx>
+			<posy>685</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodetitle</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		</control>  
+	   
+	
+	<control type="group">
+	<visible>Window.IsVisible(502) + Container.Content(albums)</visible>
+		<control type="label">
+			<posx>0</posx>
+			<posy>660</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodeinfo</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Album] ($INFO[ListItem.Year])[/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>685</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodetitle</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		</control>
+
+			<control type="group">
+	<visible>Window.IsVisible(502) + Container.Content(songs)</visible>
+		<control type="label">
+			<posx>0</posx>
+			<posy>660</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodeinfo</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.trackNumber] - $INFO[ListItem.Title][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>685</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodetitle</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		</control>
+
+					<control type="group">
+	<visible>Window.IsVisible(502) + Container.Content(artists)</visible>
+		<control type="label">
+			<posx>0</posx>
+			<posy>660</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodeinfo</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Property(Genre)][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>685</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodetitle</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Artist][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		</control>
+		
+							<control type="group">
+<visible>Window.IsVisible(1)</visible>
+		<control type="label">
+			<posx>0</posx>
+			<posy>685</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodetitle</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		</control>
+		
+		
+							<control type="group">
+	<visible>Window.IsVisible(2)</visible>
+		<control type="label">
+			<posx>0</posx>
+			<posy>660</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodeinfo</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.PictureResolution][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>685</posy>
+			<width>1280</width>
+			<align>center</align>
+			<font>episodetitle</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>Control.HasFocus(54)</visible>
+			<animation effect="fade" start="100" end="0" time="150" delay="3000">Visible</animation>
+		</control>
+		</control>
+		
+	</include>
+	
+	<include name="Viewtype_Media2">
+	<control type="wraplist" id="55">
+		<viewtype label="Info">wrap</viewtype>
+		<posx>-145</posx>
+		<posy>370</posy>
+		<width>1430</width>
+		<height>574</height>
+		<onleft>52</onleft>
+		<onright>52</onright>
+		<onup>2</onup>
+		<ondown>2</ondown>
+		<focusposition>3</focusposition>
+		<orientation>horizontal</orientation>
+		<include>common-fade</include>
+		<visible>Window.IsVisible(25) + [[!Skin.HasSetting(infomovieslib) + Container.Content(movies)] | [Container.Content(tvshows) + !Skin.HasSetting(infotvlib)] | [Container.Content(seasons) + !Skin.HasSetting(infotvlib)] | [Container.Content(episodes) + !Skin.HasSetting(infoeplib)]]</visible>
+	
+		
+		
+	     <itemlayout height="783" width="170">
+		      <control type="image">
+				<posx>84</posx>
+				<posy>88</posy>
+				<width>124</width>
+				<height>186</height>
+				<info>ListItem.Thumb</info>
+				 <visible>Window.IsVisible(25) + Container.Content(movies)</visible>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonpostermovies.png</texture>
+		      </control>
+			  
+			  <control type="image">
+				<posx>84</posx>
+				<posy>88</posy>
+				<width>124</width>
+				<height>186</height>
+				<info>ListItem.Thumb</info>
+				 <visible>Window.IsVisible(25) + [[Container.Content(tvshows) + !Skin.HasSetting(wideicon)] | Container.Content(seasons)]]</visible>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonpostertv.png</texture>
+		      </control>
+			  
+			  			  <control type="image">
+				<posx>63</posx>
+				<posy>171</posy>
+				<width>170</width>
+				<height>44</height>
+				<info>ListItem.Thumb</info>
+				 <visible>Window.IsVisible(25) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonpostertv.png</texture>
+		      </control>
+			  
+			  <control type="image">
+				<posx>84</posx>
+				<posy>88</posy>
+				<width>124</width>
+				<height>186</height>
+				<info>ListItem.Thumb</info>
+				 <visible>Window.IsVisible(24) + Container.Content(files)</visible>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonposterfolder.png</texture>
+		      </control>
+			  
+			  <control type="image">
+				<posx>81</posx>
+				<posy>185</posy>
+				<width>143</width>
+				<height>81</height>
+				<info>ListItem.Thumb</info>
+				 <visible>Window.IsVisible(25) + Container.Content(episodes)</visible>
+				<colordiffuse>baFFFFFF</colordiffuse>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+			     <texture>defaulticonwidetv.png</texture>
+		      </control>
+
+		      <control type="image">
+			      <posx>64</posx>
+			      <posy>71</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>Videos_BigFrame2.png</texture>
+				    <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | Container.Content(seasons) | [Container.Content(tvshows) + !Skin.HasSetting(wideicon)]]</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>71</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>Videos_BigFrame3.png</texture>
+				    <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>67</posx>
+            <posy>271</posy>
+            <width>16</width>
+            <height>16</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + !Container.Content(episodes) + !Container.Content(tvshows)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>
+		  
+		  			  			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>67</posx>
+            <posy>271</posy>
+            <width>16</width>
+            <height>16</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(tvshows) + !Skin.HasSetting(wideicon)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>
+		  
+		  			  			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>147</posx>
+            <posy>87</posy>
+            <width>20</width>
+            <height>20</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(tvshows) + Skin.HasSetting(wideicon)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>
+		  
+			  
+			 <control type="image">
+			      <posx>64</posx>
+			      <posy>170</posy>
+			      <width>175</width>
+			      <height>110</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <texture>fsepisodeframe2.png</texture>
+				    <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(episodes)</visible>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>				  
+		      </control>
+			  
+			  			  		            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>69</posx>
+            <posy>265</posy>
+            <width>11</width>
+            <height>11</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(episodes)</visible>
+			<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>	
+          </control>
+			  
+			  
+		      <control type="image">
+			  	<posx>84</posx>
+				<width>124</width>
+				<height>181</height>
+			      <posy>302</posy>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				    <visible>Window.IsVisible(25) + [Container.Content(movies) | [Container.Content(tvshows) + !Skin.HasSetting(wideicon)] | Container.Content(seasons)]</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask7.png">defaulticonposter.png</texture>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			  	<posx>67</posx>
+				<width>158</width>
+				<height>43</height>
+			      <posy>357</posy>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				  <animation effect="rotate" center="auto" end="-240" time="0" condition="true">Conditional</animation>
+				    <visible>Window.IsVisible(25) + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+			      <texture flipx="true" diffuse="Thumb_Mask6.png">defaulticonposter.png</texture>		  				
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			<control type="image">
+			  	<posx>84</posx>
+				<width>124</width>
+				<height>181</height>
+			      <posy>329</posy>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				    <visible>Window.IsVisible(24)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticonposter.png</texture>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			 <control type="image">
+			  	<posx>81</posx>
+				<width>143</width>
+				<height>72</height>
+			      <posy>292</posy>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+				    <visible>Window.IsVisible(25) + Container.Content(episodes)</visible>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">defaulticonwide.png</texture>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+		      <control type="image">
+			      <posx>64</posx>
+			      <posy>285</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask7.png">Videos_BigFrame2.png</texture>
+				  <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | [Container.Content(tvshows) + !Skin.HasSetting(wideicon)] | Container.Content(seasons)]</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>64</posx>
+			      <posy>283</posy>
+			      <width>165</width>
+			      <height>220</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask7.png">Videos_BigFrame3.png</texture>
+				  <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+			 <control type="image">
+			      <posx>64</posx>
+			      <posy>278</posy>
+			      <width>175</width>
+			      <height>110</height>
+			      <colordiffuse>baFFFFFF</colordiffuse>
+			      <aspectratio aligny="top">stretch</aspectratio>
+			      <texture flipy="true" diffuse="Thumb_Mask.png">fsepisodeframe2.png</texture>
+				  <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(episodes)</visible>
+			<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+ 		    <animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+		      </control>
+			  
+	     </itemlayout>
+	     <focusedlayout height="783" width="170">
+		      <control type="image">
+				 <posx>57</posx>
+				<posy>29</posy>
+				<width>196</width>
+				<height>293</height>
+				<info>ListItem.Thumb</info>
+				<visible>Window.IsVisible(25) + Container.Content(movies)</visible>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(movies)" reversible="false">
+				<effect type="zoom" start="84,88,124,186" end="57,29,196,293" time="100" />
+				</animation>
+			      <texture>defaulticonpostermovies.png</texture>
+		      </control>
+			  
+	
+	
+	
+			 <control type="image">
+				 <posx>57</posx>
+				<posy>29</posy>
+				<width>196</width>
+				<height>293</height>
+				<info>ListItem.Thumb</info>
+				<visible>Window.IsVisible(24) | Container.Content(files)</visible>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(files)" reversible="false">
+				<effect type="zoom" start="84,88,124,186" end="57,29,196,293" time="100" />
+				</animation>
+			      <texture>defaulticonposterfolder.png</texture>
+		      </control>
+	
+			  <control type="image">
+				 <posx>57</posx>
+				<posy>29</posy>
+				<width>196</width>
+				<height>293</height>
+				<info>ListItem.Thumb</info>
+				<visible>Window.IsVisible(25) + [[Container.Content(tvshows) + !Skin.HasSetting(wideicon)] | Container.Content(seasons)]</visible>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+				<effect type="zoom" start="84,88,124,186" end="57,29,196,293" time="100" />
+				</animation>
+			      <texture>defaulticonpostertv.png</texture>
+		      </control>
+			  
+	  <control type="image">
+				 <posx>20</posx>
+				<posy>160</posy>
+				<width>269</width>
+				<height>70</height>
+				<info>ListItem.Thumb</info>
+				<visible>Window.IsVisible(25) + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+				<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+				<effect type="zoom" start="63,171,170,44" end="12,169,269,70" time="100" />
+				</animation>
+			      <texture>defaulticonpostertv.png</texture>
+		      </control>
+			  
+			  <control type="image">
+				 <posx>15</posx>
+				<posy>142</posy>
+				<width>264</width>
+				<height>160</height>
+				<info>ListItem.Thumb</info>
+				<visible>Window.IsVisible(25) + Container.Content(episodes)</visible>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(episodes)" reversible="false">
+				<effect type="zoom" start="81,185,143,81" end="15,142,264,160" time="100" />
+				</animation>
+			      <texture>defaulticonwidetv.png</texture>
+		      </control>
+
+			  
+			  		      <control type="image">
+			      <posx>25</posx>
+			      <posy>0</posy>
+			      <width>260</width>
+			      <height>350</height>
+			      <texture>Videos_BigFrame2.png</texture> 
+				  <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | [Container.Content(tvshows) + !Skin.HasSetting(wideicon)] | Container.Content(seasons)]</visible>
+			       <animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+						<effect type="zoom" start="64,71,165,220" end="25,0,260,350" time="100" />
+				   </animation>
+		      </control>
+			  
+			  			  		      <control type="image">
+			      <posx>25</posx>
+			      <posy>0</posy>
+			      <width>260</width>
+			      <height>350</height>
+			      <texture>Videos_BigFrame3.png</texture> 
+				  <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+			       <animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+						<effect type="zoom" start="64,71,165,220" end="25,0,260,350" time="100" />
+				   </animation>
+		      </control>
+
+		  
+		  		<control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>28</posx>
+            <posy>316</posy>
+            <width>27</width>
+            <height>27</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + !Container.Content(episodes) + !Container.Content(tvshows)</visible>
+			<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+			<effect type="zoom" start="67,271,16,16" end="28,316,27,27" time="100" />
+			</animation>
+          </control>
+		  
+		  		  		<control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>28</posx>
+            <posy>316</posy>
+            <width>27</width>
+            <height>27</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + [Container.Content(tvshows) + !Skin.HasSetting(wideicon)]</visible>
+			<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+			<effect type="zoom" start="67,271,16,16" end="28,316,27,27" time="100" />
+			</animation>
+          </control>
+		  
+		  		  		  		<control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>155</posx>
+            <posy>25</posy>
+            <width>30</width>
+            <height>30</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + [Container.Content(tvshows) + Skin.HasSetting(wideicon)]</visible>
+			<animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]" reversible="false">
+			<effect type="zoom" start="147,87,20,20" end="155,25,30,30" time="100" />
+			</animation>
+          </control>
+
+			  			  		      <control type="image">
+			      <posx>-15</posx>
+			      <posy>112</posy>
+			      <width>320</width>
+			      <height>220</height>
+			      <texture>fsepisodeframe2.png</texture> 
+				  <visible>[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(episodes)</visible>
+			       <animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(episodes)" reversible="false">
+						<effect type="zoom" start="64,170,175,110" end="-15,112,320,220" time="100" />
+				   </animation>
+		      </control>
+			  
+			  		<control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>-6</posx>
+            <posy>303</posy>
+            <width>22</width>
+            <height>22</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + Container.Content(episodes)</visible>
+			       <animation type="Focus" condition="[Window.IsVisible(24) | Window.IsVisible(25)] + Container.Content(episodes)" reversible="false">
+			<effect type="zoom" start="69,265,11,11" end="-6,303,22,22" time="100" />
+			</animation>
+          </control>
+
+	     </focusedlayout>
+	   </control>
+	   
+	   <include>movieinfo3</include>
+	   
+	   			  		<control type="image">
+			<posx>620</posx>
+			<posy>624</posy>
+			<width>660</width>
+			<height>100</height>
+			<texture>episodehighlight.png</texture>	
+			<include>common-fade</include>
+			<animation effect="slide" start="0,0" end="-60,0" time="0" reversible="false" acceleration="-1" condition="Skin.HasSetting(wideicon) + Container.Content(tvshows)">Conditional</animation>
+			<visible>!Control.IsVisible(899) + !Window.IsActive(2003) + [Control.HasFocus(55) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Window.IsActive(24) + Control.IsVisible(55)]</visible>		
+		</control>
+					<animation effect="fade" start="100" end="0" time="150">Hidden</animation>
+		<control type="image">
+			<posx>820</posx>
+			<posy>688</posy>
+			<width>300</width>
+			<height>3</height>
+			<texture>listdivider.png</texture>
+			<include>common-fade</include>
+						<animation effect="slide" start="0,0" end="-60,0" time="0" reversible="false" acceleration="-1" condition="Skin.HasSetting(wideicon) + Container.Content(tvshows)">Conditional</animation>
+			<visible>!Control.IsVisible(899) + !Window.IsActive(2003) + !Control.IsVisible(53) + [Control.HasFocus(55) + [Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)]] | [Window.IsActive(24) + Control.IsVisible(55)]</visible>
+		
+		</control>
+			  
+		<control type="label">
+			<posx>620</posx>
+			<posy>664</posy>
+			<width>660</width>
+			<align>center</align>
+			<font>imdb</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>		
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<visible>!Control.IsVisible(899) + Control.HasFocus(55) + [Container.Content(movies) | Container.Content(seasons)]</visible>
+		</control>
+		
+				<control type="label">
+			<posx>620</posx>
+			<posy>664</posy>
+			<width>660</width>
+			<align>center</align>
+			<font>imdb</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>		
+						<animation effect="slide" start="0,0" end="-60,0" time="0" reversible="false" acceleration="-1" condition="Skin.HasSetting(wideicon) + Container.Content(tvshows)">Conditional</animation>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE] (W: $INFO[ListItem.Property(watchedepisodes)], U: $INFO[ListItem.Property(unwatchedepisodes)])</label>
+			<visible>!Control.IsVisible(899) + Control.HasFocus(55) + Container.Content(tvshows)</visible>
+		</control>
+		
+		
+		
+				<control type="label">
+			<posx>620</posx>
+			<posy>664</posy>
+			<width>660</width>
+			<align>center</align>
+			<font>imdb</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<include>common-fade</include>		
+			<label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+			<visible>!Control.IsVisible(899) + Control.HasFocus(55) + !Control.IsVisible(53) + [Container.Content(episodes)]</visible>
+		</control>
+		
+				<control type="label">
+			<posx>620</posx>
+			<posy>692</posy>
+			<width>660</width>
+			<align>center</align>
+			<font>imdb2</font>
+			<textcolor>ffe1e1e1</textcolor>	
+			<include>common-fade</include>
+			<label>$INFO[ListItem.Genre]</label>
+			<animation effect="slide" start="0,0" end="-60,0" time="0" reversible="false" acceleration="-1" condition="Skin.HasSetting(wideicon) + Container.Content(tvshows)">Conditional</animation>
+			<visible>!Control.IsVisible(899) + Control.HasFocus(55) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+		</control>
+		
+						<control type="label">
+			<posx>620</posx>
+			<posy>692</posy>
+			<width>660</width>
+			<align>center</align>
+			<font>imdb2</font>
+			<textcolor>ffe1e1e1</textcolor>	
+			<include>common-fade</include>
+			<label>Episodes: $INFO[ListItem.episode]</label>
+			<visible>!Control.IsVisible(899) + Control.HasFocus(55) + [Container.Content(seasons)]</visible>
+		</control>
+	   
+				<control type="label">
+			<posx>620</posx>
+			<posy>691</posy>
+			<width>660</width>
+			<align>center</align>
+			<font>imdb2</font>
+			<textcolor>ffe1e1e1</textcolor>	
+			<include>common-fade</include>
+			<label>Season $INFO[ListItem.Season], Episode $INFO[ListItem.Episode]</label>
+			<visible>!Control.IsVisible(899) + Control.HasFocus(55) + !Control.IsVisible(53) + [Container.Content(episodes)]</visible>
+		</control>
+
+		
+		
+	</include>
+
+</includes>

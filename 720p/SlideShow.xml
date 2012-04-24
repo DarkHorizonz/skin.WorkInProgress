@@ -1,0 +1,96 @@
+<window id="2007">
+	<defaultcontrol>2</defaultcontrol>
+			<coordinates>
+		<system>1</system>
+		<posx>545</posx>
+		<posy>110</posy>
+	</coordinates>
+	<controls>
+
+	<!-- Media Info controls -->
+
+	<control type="image" id="1">
+		<description>media info background image</description>
+		<posx>0</posx>
+		<posy>430</posy>
+		<width>740</width>
+		<height>175</height>
+		<texture>vispanel2.png</texture>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	<control type="image" id="1">
+		<description>cover image</description>
+		<posx>25</posx>
+		<posy>440</posy>
+		<width>150</width>
+		<height>150</height>
+		<info>MusicPlayer.Cover</info>
+		<aspectratio>keep</aspectratio>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	<control type="label" id="1">
+		<description>Artist label</description>
+		<width>445</width>
+		<posx>190</posx>
+		<posy>450</posy>
+		<info>MusicPlayer.Artist</info>
+		<align>left</align>
+<include>scraperimdbtitle</include>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	<control type="label" id="1">
+		<description>Title label</description>
+		<width>430</width>
+		<posx>200</posx>
+		<posy>475</posy>
+		<info>MusicPlayer.Title</info>
+		<align>left</align>
+<include>scraperimdb</include>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	<control type="label" id="1">
+		<description>Album label</description>
+		<width>430</width>
+		<posx>190</posx>
+		<posy>535</posy>
+		<info>MusicPlayer.Album</info>
+		<align>left</align>
+<include>scraperimdbtitle</include>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	<control type="label" id="1">
+		<description>time label</description>
+		<width>430</width>
+		<posx>200</posx>
+		<posy>560</posy>
+		<label>$INFO[musicplayer.Time]$INFO[musicplayer.Duration, / ]</label>
+		<align>left</align>
+<include>scraperimdb</include>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	<control type="label" id="1">
+		<description>Playlist</description>
+		<width>100</width>
+		<posx>700</posx>
+		<posy>560</posy>
+		<label>$INFO[musicplayer.Playlistposition,Track ]$INFO[musicplayer.Playlistlength, / ]</label>
+		<align>right</align>
+<include>scraperimdb</include>
+		<include>common-fade</include>
+		<visible>Player.HasMedia + Player.ShowInfo</visible>
+	</control>
+
+	</controls>
+</window>

@@ -1,0 +1,127 @@
+<window id="129">
+	<defaultcontrol>15</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>370</posx>
+		<posy>150</posy>
+	</coordinates>
+	<include>common-fade</include>
+	<controls>
+
+	
+		<control type="image" id="0">
+			<posx>-65</posx>
+			<posy>-70</posy>
+			<width>620</width>
+			<height>560</height>
+			<texture>selectback2.png</texture>
+		</control>
+	
+
+		<control type="label">
+			<description>heading label</description>
+			<posx>10</posx>
+			<posy>-15</posy>
+			<width>420</width>
+<include>scraperimdbheader</include>
+			<label>21421</label>
+		</control>
+		<control type="label" id="0">
+			<description>Rule match label</description>
+			<posx>10</posx>
+			<posy>30</posy>
+			<width>420</width>
+			<include>scraperimdbtitle</include>
+			<label>21422</label>
+		</control>
+		<control type="spincontrolex" id="15">
+			<description>Rule Field</description>
+			<posx>10</posx>
+			<posy>55</posy>
+			<width>155</width>
+			<include>scraperimdb</include>
+			<texturefocus border="3">input-focus.png</texturefocus>
+			<texturenofocus  border="3">input-nofocus.png</texturenofocus>
+			<onright>16</onright>
+			<onleft>17</onleft>
+			<onup>18</onup>
+			<ondown>18</ondown>
+		</control>
+		<control type="spincontrolex" id="16">
+			<description>Rule operator</description>
+			<posx>175</posx>
+			<posy>55</posy>
+			<width>175</width>
+			<include>scraperimdb</include>
+			<texturefocus border="3">input-focus.png</texturefocus>
+			<texturenofocus  border="3">input-nofocus.png</texturenofocus>
+			<onright>17</onright>
+			<onleft>15</onleft>
+			<onup>18</onup>
+			<ondown>18</ondown>
+		</control>
+		<control type="button" id="17">
+			<description>Value Button</description>
+			<posx>360</posx>
+			<posy>55</posy>
+			<width>160</width>
+			<height>32</height>
+			<include>scraperimdb</include>
+			<textoffsetx>12</textoffsetx>
+			<textwidth>380</textwidth>
+			<texturefocus>input-focus.png</texturefocus>
+			<texturenofocus>input-nofocus.png</texturenofocus>
+			<label>-</label>
+			<onup>18</onup>
+			<onleft>16</onleft>
+			<onright>15</onright>
+			<ondown>18</ondown>
+		</control>
+		<control type="button" id="18">
+			<description>Ok Button</description>
+			<posx>-36</posx>
+			<posy>410</posy>
+			<width>285</width>
+			<height>44</height>
+			<font>fruity17s</font>
+			<align>center</align>
+			<aligny>center</aligny>
+					<textcolor>FF8f8f8f</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+			<texturefocus>contextbuttonshortpressed.png</texturefocus>
+			<texturenofocus>contextbuttonshort.png</texturenofocus>
+			<label>186</label>
+			<onup>15</onup>
+			<onleft>19</onleft>
+			<onright>19</onright>
+			<ondown>15</ondown>
+		</control>
+		<control type="button" id="19">
+			<description>Cancel Button</description>
+			<posx>242</posx>
+			<posy>410</posy>
+			<width>285</width>
+			<height>44</height>
+				<font>fruity17s</font>
+			<align>center</align>
+			<aligny>center</aligny>
+					<textcolor>FF8f8f8f</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+			<texturefocus>contextbuttonshortpressed.png</texturefocus>
+			<texturenofocus>contextbuttonshort.png</texturenofocus>
+			<label>222</label>
+			<onup>15</onup>
+			<onleft>18</onleft>
+			<onright>18</onright>
+			<ondown>15</ondown>
+		</control>
+		
+						<control type="image" id="0">
+			<posx>-65</posx>
+			<posy>-70</posy>
+			<width>620</width>
+			<height>560</height>
+			<texture>selectbackpolish.png</texture>
+		</control>
+	</controls>
+</window>

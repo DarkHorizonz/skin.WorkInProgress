@@ -1,0 +1,191 @@
+<window id="10140">
+	<defaultcontrol>2</defaultcontrol>
+	<zorder>4</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<include>context-fade</include>
+	<controls>
+	<control type="image">
+		<description>background image</description>
+		<posx>335</posx>
+		<posy>144</posy>
+		<width>611</width>
+		<height>433</height>
+		<texture>sourceback2.png</texture>
+		<visible>!Skin.HasSetting(lowerres) + !Skin.HasSetting(eeemode)</visible>
+	</control>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>335</posx>
+		<posy>144</posy>
+		<width>611</width>
+		<height>433</height>
+		<texture>sourceback2.png</texture>
+		<visible>Skin.HasSetting(lowerres)</visible>
+	</control>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>335</posx>
+		<posy>144</posy>
+		<width>611</width>
+		<height>433</height>
+		<texture>sourceback2.png</texture>
+		<visible>Skin.HasSetting(eeemode)</visible>
+	</control>
+	
+		<control type="label" id="20">
+			<description>dialog Heading</description>
+		<posx>387</posx>
+		<posy>178</posy>
+		<width>440</width>
+		<height>28</height>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<aligny>center</aligny>
+		<font>fruity17s</font>
+		<textcolor>FF8f8f8f</textcolor>
+		</control>
+		
+		<control type="grouplist" id="2">
+			<description>control area</description>
+			<posx>387</posx>
+			<posy>230</posy>
+			<width>509</width>
+			<height>300</height>
+			<itemgap>1</itemgap>
+			<pagecontrol>-</pagecontrol>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+		</control>
+		<control type="button" id="3">
+			<description>Default Button</description>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<font>fruity17s</font>
+					<height>70</height>
+			<textcolor>FF8f8f8f</textcolor>
+			<textoffsetx>7</textoffsetx>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		</control>
+		
+		<control type="radiobutton" id="4">
+		<description>Default RadioButton</description>
+		<textcolor>FF8f8f8f</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<disabledcolor>FF584f4f</disabledcolor>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+		<textureradiofocus>contextbuttons2.png</textureradiofocus>
+		<textureradionofocus>contextbuttonns2.png</textureradionofocus>
+		<width>310</width>
+		<height>27</height>
+		<align>left</align>
+		<font>fruity17s</font>
+		<textoffsetx>7</textoffsetx>
+		</control>
+		
+		<control type="spincontrolex" id="5">
+			<description>Default SpinControlex</description>
+			<posx>530</posx>
+			<posy>150</posy>
+			<width>310</width>
+					<height>27</height>
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<textureup>scroll-up.png</textureup>
+			<texturedown>scroll-down.png</texturedown>
+			<textureupfocus>scroll-up-focus.png</textureupfocus>
+			<texturedownfocus>scroll-down-focus.png</texturedownfocus>
+			<font>fruity17s</font>
+		<textcolor>FF8f8f8f</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<disabledcolor>FF584f4f</disabledcolor>
+			<disabledcolor>disabled</disabledcolor>
+			<textoffsetx>7</textoffsetx>
+			<aligny>center</aligny>
+			<reverse>yes</reverse>
+		</control>
+		<control type="image" id="6">
+			<description>separator image</description>
+			<width>350</width>
+			<height>5</height>
+			<texture>-</texture>
+		</control>
+		<control type="label" id="7">
+			<description>separator label</description>
+			<label></label>
+			<width>350</width>
+			<height>22</height>
+			<font>special13</font>
+			<align>center</align>
+			<textcolor>green</textcolor>
+		</control>
+		<control type="group" id="9000">
+			<control type="button" id="10">
+				<description>ok</description>
+				<posx>549</posx>
+				<posy>500</posy>
+				<width>183</width>
+				<height>44</height>
+					<font>fruity17s</font>
+				<texturefocus>contextbuttonshortpressed.png</texturefocus>
+			<texturenofocus>contextbuttonshort.png</texturenofocus>
+				<align>center</align>
+				<label>186</label>
+				<onleft>12</onleft>
+				<onright>11</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+			<control type="button" id="11">
+				<description>cancel</description>
+				<posx>731</posx>
+				<posy>500</posy>
+				<width>183</width>
+				<height>44</height>
+					<font>fruity17s</font>
+							<texturefocus>contextbuttonshortpressed.png</texturefocus>
+			<texturenofocus>contextbuttonshort.png</texturenofocus>
+				<align>center</align>
+				<label>222</label>
+				<onleft>10</onleft>
+				<onright>12</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+			<control type="button" id="12">
+				<description>default</description>
+				<posx>367</posx>
+				<posy>500</posy>
+				<width>183</width>
+				<height>44</height>
+					<font>fruity17s</font>
+							<texturefocus>contextbuttonshortpressed.png</texturefocus>
+			<texturenofocus>contextbuttonshort.png</texturenofocus>
+				<align>center</align>
+				<label>409</label>
+				<onleft>11</onleft>
+				<onright>10</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+		</control>
+		
+				<control type="image">
+		<description>background image</description>
+		<posx>335</posx>
+		<posy>144</posy>
+		<width>611</width>
+		<height>433</height>
+		<texture>sourcebackpolish.png</texture>
+	</control>
+	</controls>
+</window>

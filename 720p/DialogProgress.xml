@@ -1,0 +1,143 @@
+<window id="101">
+	<zorder>1</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<controls>
+
+	<control type="group" id="901">
+		<posx>12</posx>
+		<posy>669</posy>
+		<width>1255</width>
+		<height>51</height>
+		<visible>!Window.IsVisible(136) + !Window.IsVisible(112) + !Window.IsVisible(113) + !Window.IsVisible(107) + !Window.IsVisible(133) + !Control.IsVisible(84) + !Window.IsVisible(114) + !Window.IsVisible(104)+ !Window.IsVisible(100)</visible>
+			<animation effect="slide" start="-410,0" end="0,0" time="300" condition="true">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="true">WindowClose</animation>
+					<animation effect="slide" start="-410,0" end="0,0" time="300" condition="true">Visible</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="true">Hidden</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="[Container(51).Column(0) + Container(51).Row(3)] | [Container(51).Column(1) + Container(51).Row(3)] | [Container(58).Column(0) + Container(58).Row(2)] | [Container(58).Column(1) + Container(58).Row(2)]">Conditional</animation>
+		
+				<control type="image">
+		<posx>-12</posx>
+		<posy>1</posy>
+		<width>410</width>
+		<height>52</height>
+		<texture>navpanel2.png</texture>
+		</control>	
+		
+	<control type="image">
+		<posx>-30</posx>
+		<posy>9</posy>
+		<width>326</width>
+		<height>42</height>
+		<texture>navpanel1.png</texture>
+	</control>
+
+
+
+	<control type="label" id="2">
+		<description>Line 2</description>
+		<posx>1202</posx>
+		<posy>13</posy>
+		<width>900</width>
+		<height>51</height>
+		<haspath>yes</haspath>
+		<label>-</label>
+		<font>font13s</font>
+		<textcolor>d0ffffff</textcolor>
+		<align>right</align>
+		<visible>false</visible>
+	</control>
+
+	<control type="label" id="3">
+		<description>Line 3</description>
+		<posx>338</posx>
+		<posy>325</posy>
+		<width>622</width>
+		<haspath>yes</haspath>
+		<label>-</label>
+		<font>font10</font>
+		<textcolor>FFffffff</textcolor>
+		<align>center</align>
+		<include>DialogInfo</include>
+		<visible>false</visible>
+	</control>
+
+	
+	<control type="label" id="4">
+		<description>Line 4</description>
+		<posx>13</posx>
+		<posy>26</posy>
+		<width>235</width>
+		<height>60</height>
+		<haspath>yes</haspath>
+		<label>-</label>
+		<font>fruity19</font>
+		<textcolor>FFcbcbcb</textcolor>
+		<aligny>centre</aligny>
+		<scroll>true</scroll>
+	</control>
+
+	<control type="progress" id="20">
+		<description>Progressbar</description>
+		<posx>13</posx>
+		<posy>13</posy>
+		<width>230</width>
+		<height>5</height>
+			<texturebg>progress-back2.png</texturebg>
+				<lefttexture>progress-left.png</lefttexture>
+				<midtexture>progress-mid.png</midtexture>
+				<righttexture>progress-right.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+	</control>
+
+	<control type="image">
+		<description>Progressbar overlay</description>
+		<posx>329</posx>
+		<posy>444</posy>
+		<width>631</width>
+		<height>23</height>
+		<texture>Progress-Overlay.png</texture>
+		<include>DialogInfo</include>
+		<visible>false</visible>
+	</control>
+
+	
+	<control type="button" id="10">
+		<description>Cancel Button</description>
+		<posx>255</posx>
+		<posy>6</posy>
+		<width>142</width>
+		<height>60</height>
+		<label>222</label>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<textcolor>FF101010</textcolor>
+			<font>fruity19</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<onup>10</onup>
+		<ondown>10</ondown>
+		<onleft>10</onleft>
+		<onright>10</onright>
+	</control>
+
+	<control type="label" id="1">
+		<description>Heading Label</description>
+		<posx>160</posx>
+		<posy>145</posy>
+		<width>400</width>
+		<height>16</height>
+		<align>center</align>
+		<label>-</label>
+		<font>special16</font>
+		<include>dialogheadingcolor</include>
+		<include>Zoom-ShutDownMenu</include>
+		<visible>false</visible>
+	</control>
+
+	</control>
+
+	</controls>
+</window>

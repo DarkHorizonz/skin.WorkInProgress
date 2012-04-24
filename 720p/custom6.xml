@@ -1,0 +1,86 @@
+<window type="dialog" id="605">
+	<defaultcontrol>3112</defaultcontrol>
+	<zorder>3</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>484</posx>
+	<posy>235</posy>
+	</coordinates>
+	<include>context-fade</include>
+	<visible>Window.IsActive(605) + !Window.IsActive(109)</visible>
+	<controls>
+
+		<control type="image">
+			<description>background top image</description>
+			<posx>0</posx>
+			<posy>-18</posy>
+			<width>313</width>
+			<height>18</height>
+			<texture>contexttop2.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>313</width>
+			<height>220</height>
+			<texture>contextmiddle2.png</texture>
+		</control>
+		<control type="image">
+			<description>background bottom image</description>
+			<posx>0</posx>
+			<posy>220</posy>
+			<width>313</width>
+			<height>18</height>
+			<texture>contextbottom2.png</texture>
+		</control>
+		
+				<control type="grouplist" id="3112">
+			<posx>19</posx>
+			<posy>0</posy>
+			<width>275</width>
+			<height>220</height>
+			<itemgap>0</itemgap>
+			<orientation>vertical</orientation>
+			<onup>50</onup>
+			<ondown>50</ondown>
+			<include>common-fade-quick</include>
+		<control type="button" id="4112">
+			<description>shutdown button</description>
+			<posy>0</posy>
+			<label>20150</label>
+			<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.ShutDown())</onclick>
+			<include>contextformatleft</include>
+		</control>
+		<control type="button" id="4114">
+			<description>reset button</description>
+			<posy>44</posy>
+			<label>20147</label>
+			<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.ShutDown(),30)</onclick>
+			<include>contextformatleft</include>
+		</control>
+		<control type="button" id="4115">
+			<description>reset button</description>
+			<posy>88</posy>
+			<label>20148</label>
+			<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.ShutDown(),60)</onclick>
+			<include>contextformatleft</include>
+		</control>
+		<control type="button" id="4999">
+			<description>set alarm</description>
+			<posy>132</posy>
+			<label>20149</label>
+			<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.ShutDown(),120)</onclick>
+			<include>contextformatleft</include>
+		</control>
+				<control type="button" id="5001">
+			<description>set alarm</description>
+			<posy>176</posy>
+			<label>Cancel Shutdown Timer</label>
+			<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+			<include>contextformatleft</include>
+		</control>
+</control>
+
+	</controls>
+</window>

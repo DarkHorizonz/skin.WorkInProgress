@@ -1,0 +1,100 @@
+<window id="120">
+	<defaultcontrol>213</defaultcontrol>
+	<animation effect="slide" start="-200,0" end="0,0" time="500">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="-200,0" time="500">WindowClose</animation>
+	<controls>
+	
+	<control type="image">
+			<posx>-580</posx>
+			<posy>170</posy>
+			<height>400</height>
+			<width>720</width>
+			<texture>vispanel.png</texture>
+	</control>
+	
+	<control type="grouplist" id="213">
+		<onclick>XBMC.PlayerControl(ShowVideoMenu)</onclick>
+		<include>vismenugroup3</include>
+		<onup>213</onup>
+		<ondown>213</ondown>
+
+					<control type="button" id="8">
+				<label>Stop</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.PlayerControl(Stop)</onclick>
+			</control>
+			<control type="button" id="9">
+				<label>Pause</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.PlayerControl(Play)</onclick>
+				<visible>!Player.Paused</visible>
+			</control>
+			<control type="button" id="10">
+				<label>Resume</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.PlayerControl(Play)</onclick>
+				<visible>Player.Paused</visible>
+				<onclick>XBMC.PlayerControl(ShowVideoMenu)</onclick>
+			</control>
+			<control type="button" id="11">
+				<label>Next</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.PlayerControl(Next)</onclick>
+			</control>
+			<control type="button" id="12">
+				<label>Previous</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.PlayerControl(Previous)</onclick>
+			</control>
+			<control type="button" id="13">
+				<label>Settings</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.ActivateWindow(121)</onclick>
+			</control>
+			<control type="button" id="14">
+				<label>Presets</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.ActivateWindow(122)</onclick>
+			</control>
+			<control type="button" id="500">
+			<description>Popup Vis Select Button</description>
+			<label>Visuals</label>
+			<include>contextformatbrowser3</include>
+		</control>
+			<control type="button" id="15">
+				<label>Playlist</label>
+				<include>contextformatbrowser3</include>
+				<onclick>XBMC.ActivateWindow(500)</onclick>
+			</control>
+
+
+	</control>
+	
+	<control type="label">
+	<posx>0</posx>
+	<posy>528</posy>
+		<textcolor>e1b1e021</textcolor>
+		<label>OSD</label>
+		<align>center</align>
+		<width>120</width>
+		<font>imdb</font>
+	</control>
+	
+
+					<control type="selectbutton" id="503">
+			<description>Visualisation Select Button</description>
+			<posx>-5</posx>
+			<posy>671</posy>
+			<width>300</width>
+			<height>50</height>
+			<label>-</label>
+			<font>imdb</font>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<texturebg>vispanel.png</texturebg>
+
+		</control>
+
+	
+</controls>
+</window>

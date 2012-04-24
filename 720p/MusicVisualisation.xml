@@ -1,0 +1,254 @@
+<window id="2006">
+	<allowoverlay>no</allowoverlay>
+		<animation effect="fade" start="0" end="100" time="500" acceleration="-1">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="500" acceleration="-1">WindowClose</animation>
+	<controls>
+
+		<control type="visualisation" id="2">
+		<description>visualisation</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</control>
+	
+		<control type="group" id="0">
+			<visible>Player.ShowCodec + !Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
+			<posx>80</posx>
+			<posy>-280</posy>
+			<animation effect="slide" start="0,-410" end="0,0" time="500">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,-410" time="250">Hidden</animation>
+
+			 		<control type="image" id="0">
+			<posx>0</posx>
+			<posy>20</posy>
+			<height>400</height>
+			<width>1120</width>
+			<texture>vispanel2.png</texture>
+		</control>	
+		
+						<control type="label" id="0">
+			<description>Settings Label</description>
+			<posx>40</posx>
+			<posy>300</posy>
+			<width>420</width>
+            <include>scraperimdbtitle</include>
+			<label>Vis Info</label>
+		</control>
+		
+				<control type="image">
+				<posx>40</posx>
+				<posy>325</posy>
+				<width>110</width>
+				<height>4</height>
+				<texture>infoline.png</texture>
+			</control>
+			
+			<control type="label" id="0">
+				<description>Codecinfo</description>
+			<posx>155</posx>
+  			<posy>300</posy>
+				<width>950</width>
+				<label>$LOCALIZE[445] | $INFO[musicplayer.Codec,Codec: ,]$INFO[musicplayer.Bitrate, - Bitrate: ,kbps]$INFO[musicplayer.bitspersample, - Bits:,bit]$INFO[musicplayer.Samplerate, - Freq.: ,kHz]$INFO[musicplayer.Channels, - Channels: ]</label>
+				<align>left</align>
+				<font>imdb</font>
+			</control>
+			<control type="label" id="0">
+				<description>Presets label</description>
+				<posx>155</posx>
+				<posy>325</posy>
+				<width>950</width>
+				<label>Visual | fps: $INFO[System.FPS] - $LOCALIZE[250] - $INFO[Visualisation.Name] - $LOCALIZE[20166]</label>
+				<font>imdb</font>
+				<align>left</align>
+				<visible>Visualisation.Locked</visible>
+			</control>
+			<control type="label" id="0">
+				<description>Presets label</description>
+				<posx>155</posx>
+				<posy>325</posy>
+				<width>950</width>
+				<label>Visual | fps: $INFO[System.FPS] - $LOCALIZE[250] - $INFO[Visualisation.Name]</label>
+				<font>imdb</font>
+				<align>left</align>
+				<visible>!Visualisation.Locked</visible>
+			</control>
+			<control type="label" id="0">
+				<description>Presets label</description>
+  			<posx>155</posx>
+  			<posy>350</posy>
+				<width>950</width>
+				<label>$LOCALIZE[13388] | $INFO[Visualisation.Preset]</label>
+				<font>imdb</font>
+				<align>left</align>
+			</control>
+		</control>
+	
+
+
+	<control type="group">
+		<posx>280</posx>
+		<posy>170</posy>
+		<visible>Player.ShowInfo</visible>
+		<include>common-fade</include>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<height>400</height>
+			<width>720</width>
+			<texture>vispanel.png</texture>
+		</control>		
+		
+		<control type="image">
+			<posx>84</posx>
+			<posy>50</posy>
+			<height>243</height>
+			<width>240</width>
+			<info>MusicPlayer.Cover</info>
+			<visible>Player.HasAudio</visible>
+		</control>
+
+		<control type="image">
+			<posx>43</posx>
+			<posy>35</posy>
+			<height>276</height>
+			<width>296</width>
+			<texture>case2.png</texture>
+			<visible>Player.HasAudio</visible>
+		</control>
+
+		<control type="group">
+
+		
+		
+		<control type="label">
+			<posx>380</posx>
+			<posy>50</posy>
+			<width>300</width>
+			<label>Artist:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[MusicPlayer.Artist]</label>
+			<scroll>true</scroll>
+		</control>
+		
+				<control type="label">
+			<posx>380</posx>
+			<posy>100</posy>
+			<width>300</width>
+			<label>Track:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>125</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[MusicPlayer.TrackNumber] - $INFO[MusicPlayer.Title]</label>
+			<scroll>true</scroll>
+		</control>
+		
+						<control type="label">
+			<posx>380</posx>
+			<posy>150</posy>
+			<width>300</width>
+			<label>Album:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>175</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[MusicPlayer.Album]</label>
+			<scroll>true</scroll>
+		</control>
+		
+		
+										<control type="label">
+			<posx>380</posx>
+			<posy>200</posy>
+			<width>300</width>
+			<label>Year:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>225</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[MusicPlayer.Year]</label>
+		</control>
+		
+												<control type="label">
+			<posx>380</posx>
+			<posy>250</posy>
+			<width>300</width>
+			<label>Genre:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>275</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[MusicPlayer.Genre]</label>
+		</control>
+		
+		<control type="label">
+					<posx>48</posx>
+			<posy>325</posy>
+			<width>300</width>
+			<label>Progress:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>680</posx>
+			<posy>325</posy>
+			<align>right</align>
+			<label>$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</label>
+			<include>scraperimdb</include>
+			<visible>!Player.Paused</visible>
+		</control>
+		
+		<control type="label">
+			<posx>680</posx>
+			<posy>325</posy>
+			<align>right</align>
+			<label>$INFO[MusicPlayer.Time] (Paused)</label>
+			<include>scraperimdb</include>
+			<visible>Player.Paused</visible>
+		</control>
+		
+		<control type="progress">
+				<description>Progressbar</description>
+				<posx>78</posx>
+				<posy>357</posy>
+				<width>575</width>
+				<height>8</height>
+				<info>Player.Progress</info>
+				<texturebg>progress-back.png</texturebg>
+				<lefttexture>progress-left.png</lefttexture>
+				<midtexture>progress-mid.png</midtexture>
+				<righttexture>progress-right.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+				<visible>true</visible>
+			</control>
+		
+		</control>
+	
+	</control>
+	</controls>
+</window>

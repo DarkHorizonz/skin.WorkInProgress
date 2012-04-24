@@ -1,0 +1,72 @@
+<window id="2005">
+	<allowoverlay>no</allowoverlay>		
+		<visible>[VideoPlayer.IsFullscreen] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+
+
+<controls>
+
+	<control type="group">
+			<posx>80</posx>
+		<posy>-280</posy>
+			<animation effect="slide" start="0,-410" end="0,0" time="500">Visible</animation>
+		<animation effect="slide" start="0,0" end="0,-410" time="250">Hidden</animation>
+			<visible>Player.ShowCodec</visible>
+
+ 		<control type="image">
+			<posx>0</posx>
+			<posy>20</posy>
+			<height>400</height>
+			<width>1120</width>
+			<texture>vispanel2.png</texture>
+		</control>	
+		
+						<control type="label">
+			<description>Settings Label</description>
+			<posx>40</posx>
+			<posy>300</posy>
+			<width>420</width>
+            <include>scraperimdbtitle</include>
+			<label>Debug Info</label>
+		</control>
+		
+
+			<control type="image">
+				<posx>40</posx>
+				<posy>325</posy>
+				<width>110</width>
+				<height>4</height>
+				<texture>infoline.png</texture>
+			</control>
+
+  		<control type="label" id="10">
+  			<description>row 1 label</description>
+  			<posx>155</posx>
+  			<posy>300</posy>
+  			<label>-</label>
+			<width>950</width>
+  			<align>left</align>
+  			<font>imdb</font>
+  		</control>
+  		<control type="label" id="11">
+  			<description>row 2 label</description>
+  			<posx>155</posx>
+  			<posy>325</posy>
+  			<label>-</label>
+			<width>950</width>
+  			<align>left</align>
+  			<font>imdb</font>
+  		</control>
+  		<control type="label" id="12">
+  			<description>row 3 label</description>
+  			<posx>155</posx>
+  			<posy>350</posy>
+			<width>950</width>
+  			<label>-</label>
+  			<align>left</align>
+  			<font>imdb</font>
+  		</control>
+    </control>
+
+
+	</controls>
+</window>

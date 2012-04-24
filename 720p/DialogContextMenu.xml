@@ -1,0 +1,49 @@
+<window id="106">
+	<defaultcontrol>1000</defaultcontrol>
+	<include>context-fade</include>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+
+		<control type="image" id="997">
+			<description>background top image</description>
+			<posx>37</posx>
+			<posy>-18</posy>
+			<width>313</width>
+			<height>18</height>
+			<texture>contexttop2.png</texture>
+		</control>
+		<control type="image" id="999">
+			<description>background image</description>
+			<posx>37</posx>
+			<posy>0</posy>
+			<width>313</width>
+			<texture>contextmiddle2.png</texture>
+		</control>
+		<control type="image" id="998">
+			<description>background bottom image</description>
+			<posx>37</posx>
+			<width>313</width>
+			<height>18</height>
+			<texture>contextbottom2.png</texture>
+		</control>
+		<control type="button" id="1000">
+			<description>button template</description>
+			<posx>56</posx>
+			<posy>0</posy>
+			<width>275</width>
+			<height>44</height>
+			<font>fruity17s</font>
+			<align>center</align>
+			<textcolor>FF8f8f8f</textcolor>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+			<texturenofocus>contextbutton4.png</texturenofocus>
+			<texturefocus>contextbuttonpressed4.png</texturefocus>
+		</control>
+		
+		
+	</controls>
+</window>

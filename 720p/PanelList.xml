@@ -1,0 +1,169 @@
+<includes>
+
+<include name="Viewtype_Panel">
+	<control type="wraplist" id="888">
+		<viewtype label="List">list</viewtype>
+		<posx>-37</posx>
+		<posy>194</posy>
+		<width>1280</width>
+		<height>333</height>
+		<pagecontrol>-</pagecontrol>
+		<onleft>2</onleft>
+		<onright>2</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<scrolltime>0</scrolltime>
+		<include>common-fade</include>
+		<visible>Window.IsActive(28) | [Window.IsActive(24) + [Skin.HasSetting(videomovies) | Skin.HasSetting(movietrailers) | Skin.HasSetting(gametrailers)] + !Skin.HasSetting(listmovies)] | [Window.IsActive(24) + Skin.HasSetting(videotv) + !Skin.HasSetting(listtv)] | [Window.IsActive(24) + Skin.HasSetting(videoclips) + !Skin.HasSetting(listclips)] | [Window.IsActive(1) + Skin.HasSetting(programapps) + !Skin.HasSetting(listapps)] | [Window.IsActive(1) + Skin.HasSetting(programgames) + !Skin.HasSetting(listgames)] | [Window.IsActive(2) + !Skin.HasSetting(listpictures)] | [Window.IsActive(20) + !Skin.HasSetting(listscripts)] | [Window.IsActive(1) + Skin.HasSetting(programarcade) + !Skin.HasSetting(listarcade)] | [Window.IsActive(24) + Skin.HasSetting(videoadult) + !Skin.HasSetting(listadult)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(listmovieslib)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(listtvlib)]</visible>
+
+		<itemlayout height="36">
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>690</width>
+				<height>39</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="image">
+				<posx>100</posx>
+				<posy>36</posy>
+				<width>845</width>
+				<height>3</height>
+				<texture>listdivider.png</texture>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+				<visible>!Container.Content(movies)</visible>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolornofocus</include>
+				<info>ListItem.Year</info>
+				<visible>Container.Content(movies)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout height="36">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>900</width>
+				<height>40</height>
+				<texture>listhighlightstub.png</texture>
+				<colordiffuse>d0FFFFFF</colordiffuse>
+				<visible>Control.IsVisible(50) | Window.IsActive(106) | Window.IsActive(129) | Window.IsActive(126) | Window.IsActive(601) | Window.IsActive(602) | Window.IsActive(111) | Window.IsActive(2003)</visible>
+				<animation effect="fade" start="0" end="100">VisibleChange</animation>
+			</control>
+			<control type="label">
+				<posx>100</posx>
+				<posy>0</posy>
+				<width>670</width>
+				<height>39</height>
+				<font>fruity21</font>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<scroll>true</scroll>
+				<scrolltime>300</scrolltime>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<label>[UPPERCASE]$INFO[ListItem.Label2][/UPPERCASE]</label>
+				<visible>!Container.Content(movies)</visible>
+			</control>
+			<control type="label">
+				<posx>880</posx>
+				<posy>0</posy>
+				<width>120</width>
+				<height>39</height>
+				<font>fruity17</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<include>listcolorfocus</include>
+				<info>ListItem.Year</info>
+				<visible>Container.Content(movies)</visible>
+			</control>
+ 		</focusedlayout>
+
+	</control>
+
+	<include>mediafocuslabel</include>
+	
+	<control type="group">
+		<posx>0</posx>
+		<posy>0</posy>
+		<visible>Control.IsVisible(50)</visible>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="slide" start="356,0" end="0,0" acceleration="-1" time="150" />
+			<effect type="fade" start="0" end="100" time="150" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="slide" start="0,0" end="356,0" acceleration="-1" time="150" />
+			<effect type="fade" start="100" end="0" time="150" />
+		</animation>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonposter2.png</texture>
+			<visible>!Window.IsActive(2) + !Skin.HasSetting(videotv) + Skin.HasSetting(iconsxbmc01remix)</visible>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonpostertv2.png</texture>
+			<visible>!Window.IsActive(2) + Skin.HasSetting(videotv) + Skin.HasSetting(iconsxbmc01remix)</visible>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonposter_xbmc012.png</texture>
+			<visible>!Window.IsActive(2) + !Skin.HasSetting(videotv) + !Skin.HasSetting(iconsxbmc01remix)</visible>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonpostertv_xbmc012.png</texture>
+			<visible>!Window.IsActive(2) + Skin.HasSetting(videotv) + !Skin.HasSetting(iconsxbmc01remix)</visible>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonpicturetall2.png</texture>
+			<visible>Window.IsActive(2) + Skin.HasSetting(iconsxbmc01remix)</visible>
+			<aspectratio aligny="center">scale</aspectratio>
+		</control>
+		<control type="image">
+			<include>List_Thumbnail</include>
+			<texture>defaulticonpicturetall_xbmc012.png</texture>
+			<visible>Window.IsActive(2) + !Skin.HasSetting(iconsxbmc01remix)</visible>
+			<aspectratio aligny="center">scale</aspectratio>
+		</control>
+		<control type="image">
+			<posx>926</posx>
+			<posy>118</posy>
+			<width>320</width>
+			<height>424</height>
+			<texture>Videos_BigFrame2.png</texture>
+		</control>
+	</control>
+</include>
+
+</includes>

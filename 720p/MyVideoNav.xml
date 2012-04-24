@@ -1,0 +1,207 @@
+<window id="25">
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+
+	<control type="multiimage">
+		<include>mediabackground</include>
+		<imagepath>Default</imagepath>
+		<info>Skin.String(CustomMovies)</info>
+		<visible>[[Skin.HasSetting(videomovies) + !Skin.HasSetting(CustomMoviesFoldOn) + !Control.IsVisible(57) + !Control.IsVisible(55)] | [Control.IsVisible(57) + [Container.Content(movies) | Container.Content(files)] + !Container.Content(tvshows) + !Container.Content(seasons) + Skin.HasSetting(disablebackdrop)] | [Control.IsVisible(55) + [Skin.HasSetting(disablebackdrop) + Container.Content(movies)]]] + !Control.IsVisible(58) + !Control.IsVisible(51)</visible>
+	</control>
+
+	<control type="multiimage">
+		<include>mediabackgroundfolder</include>
+		<info>Skin.String(CustomMoviesFolder)</info>
+		<visible>[[Skin.HasSetting(videomovies) + !Skin.HasSetting(CustomMoviesFolder) + !Control.IsVisible(57) + !Control.IsVisible(55)] | [Control.IsVisible(57) + [Container.Content(movies) | Container.Content(files)] + !Container.Content(tvshows) + !Container.Content(seasons) + Skin.HasSetting(disablebackdrop)] | [Control.IsVisible(55) + [Skin.HasSetting(disablebackdrop) + Container.Content(movies)]]] + !Control.IsVisible(58) + !Control.IsVisible(51)</visible>
+	</control>
+
+	<control type="multiimage">
+		<include>mediabackground</include>
+		<imagepath>Default</imagepath>
+		<info>Skin.String(CustomTV)</info>
+		<visible>[[Skin.HasSetting(videotv) + !Skin.HasSetting(CustomTVFoldOn) + !Control.IsVisible(53) + !Control.IsVisible(55) + !Control.IsVisible(57) + !Control.IsVisible(59)] | [Control.IsVisible(57) + [Container.Content(tvshows) | Container.Content(files)] + !Container.Content(movies) + Skin.HasSetting(disablebackdrop)] | [[[[Control.IsVisible(53) + Container.Content(episodes)]  | [[Control.IsVisible(57) | Control.IsVisible(59)] + [Container.Content(tvshows) | Container.Content(seasons)]]] + Skin.HasSetting(disablebackdrop)] | [Control.IsVisible(55) + Skin.HasSetting(disablebackdrop) + [Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons)]]]] + !Control.IsVisible(58) + !Control.IsVisible(51)</visible>
+	</control>
+
+	<control type="multiimage">
+		<include>mediabackgroundfolder</include>
+		<info>Skin.String(CustomTVFolder)</info>
+		<visible>[[Skin.HasSetting(videotv) + !Skin.HasSetting(CustomTVFolder) + !Control.IsVisible(53) + !Control.IsVisible(55) + !Control.IsVisible(57) + !Control.IsVisible(59)] | [Control.IsVisible(57) + [Container.Content(tvshows) | Container.Content(files)] + !Container.Content(movies) + Skin.HasSetting(disablebackdrop)] | [[[[Control.IsVisible(53) + Container.Content(episodes)]  | [[Control.IsVisible(57) | Control.IsVisible(59)] + [Container.Content(tvshows) | Container.Content(seasons)]]] + Skin.HasSetting(disablebackdrop)] | [Control.IsVisible(55) + Skin.HasSetting(disablebackdrop) + [Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons)]]]] + !Control.IsVisible(58) + !Control.IsVisible(51)</visible>
+	</control>
+
+    <control type="image" id="86">
+            <texture>-</texture>
+            <visible>!Control.IsVisible(84)</visible>
+            <animation effect="fade" time="200">Hidden</animation>
+    </control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<animation effect="fade" end="100" time="200">WindowOpen</animation>
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<texture>showcase.jpg</texture>
+		<visible>[[Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(59) | Control.IsVisible(55)] + !Skin.HasSetting(disablebackdrop)] | [Control.IsVisible(57) + [!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons)]]</visible>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0">VisibleChange</animation>
+		<texture>$INFO[listitem.property(fanart_image)]</texture>
+		<visible>[Container.Content(tvshows) | Container.Content(movies)] + [Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(59)] + [!Container(57).OnNext + !Container(57).OnPrevious] + [!Container(53).OnNext + !Container(53).OnPrevious] + !Skin.HasSetting(listitemfanart) + !IsEmpty(listitem.property(fanart_image)) + Control.IsVisible(84) + !Control.IsVisible(86)</visible>
+	</control>
+	
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0">VisibleChange</animation>
+		<texture>$INFO[listitem.property(fanart_image)]</texture>
+		<visible>[Container.Content(tvshows) | Container.Content(movies) | Container.Content(seasons) | Container.Content(episodes)] + Control.IsVisible(55) + [!Container(55).OnNext + !Container(55).OnPrevious] + !Skin.HasSetting(listitemfanart) + Control.IsVisible(899)</visible>
+	</control>
+	
+	<control type="image" id="345">
+		<posx>-5</posx>
+		<posy>-5</posy>
+		<width>1290</width>
+		<height>730</height>
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+		<texture>$INFO[Fanart.Image]</texture>
+		<visible>Skin.HasSetting(videotv) + !Skin.HasSetting(fanart)</visible>
+	</control>
+
+
+
+	<control type="image">
+		<include>mediabackgroundfolder</include>
+		<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+		<texture>showcasefilter2.png</texture>
+		<visible>[Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(59)]</visible>
+	</control>
+	
+		<control type="image">
+		<include>mediabackgroundfolder</include>
+		<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+		<texture>showcasefilter4.png</texture>
+		<visible>Control.IsVisible(55) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(episodes)]</visible>
+	</control>
+	
+	<include>wallglass</include>
+	<include>vignette</include>
+	<include>Viewtype_Posterwall</include>
+	<include>wallmenu</include>
+
+	<include>tutorial</include>
+	
+	<control type="group">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<include>common-fade-quick</include>
+		<include>mediaglass</include>
+		
+						<include>ScrollOffsetLabel</include>
+	<include>Window-Files2</include>
+		
+		<control type="label">
+			<include>wallmenu-slide</include>
+			<label>31006</label>
+			<visible>Skin.HasSetting(videomovies)</visible>
+			<include>medialabel4</include>
+		</control>
+
+		<control type="label">
+			<include>wallmenu-slide</include>
+			<label>31007</label>
+			<visible>Skin.HasSetting(videotv)</visible>
+			<include>medialabel4</include>
+		</control>
+
+		<control type="label">
+			<include>wallmenu-slide</include>
+			<label>31012</label>
+			<visible>Skin.HasSetting(videoadult)</visible>
+			<include>medialabel4</include>
+		</control>
+	
+		<control type="grouplist" id="40">
+			<include>wallmenu-slide</include>
+			<include>mediamenugroup3</include>
+
+			<control type="button" id="2">
+				<label>100</label>
+				<include>mediamenu</include>
+			</control>
+
+			<control type="button" id="3">
+				<label>103</label>
+				<include>mediamenu</include>
+			</control>
+
+			<control type="button" id="8">
+				<label>137</label>
+				<include>mediamenu</include>
+			</control>
+
+						<control type="radiobutton" id="14">
+				<description>Watched Toggle Button</description>
+				<label>20367</label>
+				<include>mediamenu2</include>
+			</control>
+			
+			<control type="button" id="30">
+				<label>Files</label>
+				<include>mediamenu</include>
+				<onclick>Skin.Reset(movielibrary)</onclick>
+				<onclick>Skin.Reset(tvlibrary)</onclick>
+				<onclick>XBMC.ReplaceWindow(MyVideoFiles)</onclick>
+				<visible>Skin.HasSetting(videomovies) | Skin.HasSetting(videotv)</visible>
+			</control>
+
+
+			
+						<control type="button" id="555">
+				<label>View types</label>
+				<include>mediamenu</include>
+				<onclick>XBMC.ActivateWindow(602)</onclick>
+			</control>
+
+
+
+		</control>
+	
+
+		<include>contextselected</include>
+	
+		<control type="label">
+			<include>mediafocusvideo</include>
+			<visible>[Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(56) | Control.IsVisible(55)] + !Window.IsActive(2004) + !Container.Content(episodes)</visible>
+		</control>
+
+		<include>Viewtype_List</include>
+		<include>Viewtype_Poster</include>
+	
+	</control>
+	
+	<include>Viewtype_Media2</include>
+	<include>Viewtype_Showcase</include>
+	<include>Viewtype_Episode</include>
+	<include>Viewtype_Wide</include>
+	<include>contextback</include>	
+	<include>nowplayingpopup</include>
+	<include>time</include>
+	
+</controls>	
+</window>

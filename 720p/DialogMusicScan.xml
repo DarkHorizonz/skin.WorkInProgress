@@ -1,0 +1,96 @@
+<window id="112">
+	<zorder>1</zorder>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<controls>
+
+	<control type="group">
+		<posx>12</posx>
+		<posy>669</posy>
+		<width>1255</width>
+		<height>51</height>
+		<visible>!Window.IsVisible(136) + !Window.IsVisible(113) + !Window.IsVisible(107) + !Window.IsVisible(101) + !Window.IsVisible(133) + !Control.IsVisible(84) + !Window.IsVisible(114) + !Window.IsVisible(104) + !Window.IsVisible(100)</visible>
+			<animation effect="slide" start="-410,0" end="0,0" time="300" condition="true">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="true">WindowClose</animation>
+					<animation effect="slide" start="-410,0" end="0,0" time="300" condition="true">Visible</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="true">Hidden</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="[Container(51).Column(0) + Container(51).Row(3)] | [Container(51).Column(1) + Container(51).Row(3)] | [Container(58).Column(0) + Container(58).Row(2)] | [Container(58).Column(1) + Container(58).Row(2)]">Conditional</animation>
+		
+				<control type="image">
+		<posx>2</posx>
+		<posy>1</posy>
+		<width>410</width>
+		<height>52</height>
+		<texture>navpanel2.png</texture>
+		</control>	
+		
+	<control type="image">
+		<posx>-30</posx>
+		<posy>9</posy>
+		<width>326</width>
+		<height>42</height>
+		<texture>navpanel1.png</texture>
+	</control>
+	
+	
+		<control type="label" id="402">		
+		<posx>260</posx>
+		<posy>6</posy>
+		<width>142</width>
+		<height>60</height>
+		<haspath>yes</haspath>
+		<align>center</align>
+		<aligny>center</aligny>
+			<font>fruity19</font>
+			<textcolor>FF101010</textcolor>
+			<scroll>true</scroll>
+			<visible>false</visible>
+		</control>
+		
+				<control type="label">		
+		<posx>260</posx>
+		<posy>6</posy>
+		<width>142</width>
+		<height>60</height>
+		<haspath>yes</haspath>
+		<align>center</align>
+		<aligny>center</aligny>
+			<font>fruity19</font>
+			<textcolor>FF101010</textcolor>
+			<label>Music</label>
+			<scroll>true</scroll>
+		</control>
+
+		
+		<control type="label" id="401">
+		<posx>13</posx>
+		<posy>26</posy>
+		<width>235</width>
+		<height>60</height>
+		<aligny>centre</aligny>
+	<font>fruity19</font>
+		<textcolor>FFcbcbcb</textcolor>
+			<scroll>true</scroll>
+		</control>
+
+			<control type="progress" id="403">
+		<description>Progressbar</description>
+		<posx>13</posx>
+		<posy>13</posy>
+		<width>230</width>
+		<height>5</height>
+			<texturebg>progress-back2.png</texturebg>
+				<lefttexture>progress-left.png</lefttexture>
+				<midtexture>progress-mid.png</midtexture>
+				<righttexture>progress-right.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+	</control>
+		
+		
+	</control>
+	
+	</controls>
+</window>

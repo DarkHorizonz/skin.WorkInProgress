@@ -1,0 +1,225 @@
+<includes>
+
+<include name="Posterwall_Unfocused">
+	<posx>82</posx>
+	<posy>95</posy>
+	<width>164</width>
+	<height>235</height>
+	<info>ListItem.Thumb</info>
+	<colordiffuse>8eFFFFFF</colordiffuse>
+	<aspectratio aligny="center">stretch</aspectratio>
+</include>
+
+<include name="Posterwall_Focused">
+    <posx>50</posx>
+    <posy>52</posy>
+    <width>223</width>
+    <height>320</height>
+    <info>ListItem.Thumb</info>
+	<aspectratio aligny="center">stretch</aspectratio>
+	<animation effect="zoom" start="82,95,164,235" end="50,52,223,320" reversible="false" time="200">Focus</animation>
+</include>
+
+<include name="Photowall_Unfocused">
+	<posx>75</posx>
+	<posy>70</posy>
+	<width>180</width>
+	<height>179</height>
+	<info>ListItem.Thumb</info>
+	<colordiffuse>8eFFFFFF</colordiffuse>
+	<aspectratio aligny="center">scale</aspectratio>
+</include>
+
+<include name="Photowall_Focused">
+	<posx>75</posx>
+	<posy>70</posy>
+	<width>180</width>
+	<height>179</height>
+	<info>ListItem.Thumb</info>
+	<aspectratio aligny="center">scale</aspectratio>
+	<animation effect="zoom" end="35,33,256,255" reversible="false" time="200">Focus</animation>
+</include>
+
+<include name="Showcase_Unfocused">
+	<posx>84</posx>
+	<posy>129</posy>
+	<width>124</width>
+	<height>187</height>
+	<info>ListItem.Thumb</info>
+	<colordiffuse>baFFFFFF</colordiffuse>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation effect="fade" start="100" end="0" time="150" condition="Control.IsVisible(84)">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+</include>
+
+<include name="Showcase_Unfocused5">
+	<posx>65</posx>
+	<posy>211</posy>
+	<width>166</width>
+	<height>44</height>
+	<info>ListItem.Thumb</info>
+	<colordiffuse>baFFFFFF</colordiffuse>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+	<animation effect="fade" start="100" end="0" time="150" condition="Control.IsVisible(84)">Hidden</animation>
+	<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+</include>
+
+<include name="Showcase_Focused">
+	<posx>61</posx>
+	<posy>80</posy>
+	<width>170</width>
+	<height>260</height>
+	<info>ListItem.Thumb</info>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24) + !IsEmpty(ListItem.Year)" reversible="false">
+		<effect type="zoom" start="84,133,124,181" end="61,80,170,260" time="100" />
+		<effect type="zoom" start="61,80,170,260" end="-427,44,204,306" acceleration="-1" delay="3000" time="150" />
+	</animation>
+	<animation type="Focus" condition="Container.Content(seasons) | Window.IsActive(24) | IsEmpty(ListItem.Year)" reversible="false">
+		<effect type="zoom" start="84,133,124,181" end="61,82,170,258" time="100" />
+    </animation>
+</include>
+
+<include name="Showcase_Focused5">
+	<posx>30</posx>
+	<posy>197</posy>
+	<width>234</width>
+	<height>65</height>
+	<info>ListItem.Thumb</info>
+		<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation type="Focus" condition="!Container.Content(seasons) + !Window.IsActive(24) + !IsEmpty(ListItem.Year)" reversible="false">
+		<effect type="zoom" start="65,211,166,44" end="40,197,234,65" time="100" />
+	<effect type="slide" start="0,0" end="-230,-400" acceleration="-1" delay="3000" time="150" />
+	</animation>
+	<animation type="Focus" condition="Container.Content(seasons) | Window.IsActive(24) | IsEmpty(ListItem.Year)" reversible="false">
+		<effect type="zoom" start="65,211,166,44" end="61,82,170,258" time="100" />
+    </animation>
+</include>
+
+<include name="Episode_Unfocused">
+    <posx>82</posx>
+	<posy>251</posy>
+	<width>217</width>
+	<height>144</height>
+	<info>ListItem.Thumb</info>
+	<colordiffuse>baFFFFFF</colordiffuse>
+	<aspectratio aligny="bottom">scale</aspectratio>
+	<animation effect="fade" start="100" end="0" time="150" condition="Control.IsVisible(84)">Hidden</animation>
+ 	<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+</include>
+
+<include name="Episode_Focused">
+	<posx>36</posx>
+	<posy>198</posy>
+	<width>318</width>
+	<height>203</height>
+	<info>ListItem.Thumb</info>
+	<aspectratio aligny="bottom">scale</aspectratio>
+	<animation type="Focus" reversible="false">
+	    <effect type="zoom" start="82,224,217,144" end="36,198,318,205" time="100" />
+		<effect type="slide" start="0,0" end="-410,0" time="150" delay="3000" reversible="false" acceleration="-1" />
+	</animation>
+</include>
+
+<include name="List_Thumbnail">
+	<posx>965</posx>
+	<posy>154</posy>
+	<width>242</width>
+	<height>354</height>
+	<info>ListItem.Thumb</info>
+</include>
+
+<include name="List_Thumbnail5">
+	<posx>878</posx>
+	<posy>298</posy>
+	<width>333</width>
+	<height>87</height>
+	<info>ListItem.Thumb</info>
+	<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+</include>
+
+<include name="List_Thumbnail2">
+	<posx>935</posx>
+	<posy>222</posy>
+	<width>285</width>
+	<height>220</height>
+	<info>ListItem.Thumb</info>
+</include>
+
+<include name="List_Thumbnail3">
+	<posx>935</posx>
+	<posy>200</posy>
+	<width>285</width>
+	<height>200</height>
+	<info>ListItem.Thumb</info>
+</include>
+
+<include name="Poster_Unfocused">
+	<posx>84</posx>
+	<posy>132</posy>
+	<width>124</width>
+	<height>184</height>
+	<info>ListItem.Thumb</info>
+    <colordiffuse>baFFFFFF</colordiffuse>
+    <aspectratio aligny="bottom">stretch</aspectratio>
+ 	<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+</include>
+
+<include name="Poster_Unfocused5">
+	<posx>62</posx>
+	<posy>206</posy>
+	<width>171</width>
+	<height>48</height>
+	<info>ListItem.Thumb</info>
+    <colordiffuse>baFFFFFF</colordiffuse>
+    <aspectratio aligny="bottom">stretch</aspectratio>
+	<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+ 	<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+</include>
+
+<include name="Poster_Unfocused2">
+	<posx>84</posx>
+	<posy>154</posy>
+	<width>124</width>
+	<height>160</height>
+	<info>ListItem.Thumb</info>
+    <colordiffuse>baFFFFFF</colordiffuse>
+    <aspectratio aligny="bottom">stretch</aspectratio>
+ 	<animation effect="fade" start="100" end="0" time="50" >WindowClose</animation>
+</include>
+
+<include name="Poster_Focused">
+	<posx>36</posx>
+	<posy>34</posy>
+	<width>226</width>
+	<height>339</height>
+	<info>ListItem.Thumb</info>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation effect="zoom" start="84,133,124,181" end="36,34,226,335" reversible="false" time="250">Focus</animation>	
+</include>
+
+
+<include name="Poster_Focused5">
+	<posx>-3</posx>
+	<posy>180</posy>
+	<width>315</width>
+	<height>85</height>
+	<info>ListItem.Thumb</info>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation effect="rotate" center="auto" end="60" time="0" condition="true">Conditional</animation>
+<animation effect="zoom" start="62,206,171,48" end="-3,180,315,85" reversible="false" time="250">Focus</animation>
+</include>
+
+<include name="Poster_Focused2">
+	<posx>35</posx>
+	<posy>70</posy>
+	<width>230</width>
+	<height>305</height>
+	<info>ListItem.Thumb</info>
+	<aspectratio aligny="bottom">stretch</aspectratio>
+	<animation effect="zoom" start="84,133,124,181" end="34,70,230,305" reversible="false" time="250">Focus</animation>	
+</include>
+	
+</includes>

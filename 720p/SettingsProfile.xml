@@ -1,0 +1,230 @@
+<window id="34">
+	<defaultcontrol>2</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+	<include>Background</include>
+	<include>Black-Panel</include>
+	<include>Menu-Time</include>
+	<include>common-fade</include>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture>showcase.jpg</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<include>vignette</include>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>36</posx>
+		<posy>50</posy>
+		<width>1209</width>
+		<height>621</height>
+		<texture>filemanback2.png</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>36</posx>
+		<posy>50</posy>
+		<width>1209</width>
+		<height>621</height>
+		<texture>filemanbackpolish.png</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<control type="label">
+		<description>Title Label</description>
+		<posx>90</posx>
+			<posy>105</posy>
+			<font>fruity21</font>	
+			<label>Profile Settings</label>
+			<include>common-fade</include>
+	</control>
+	
+	<control type="group">
+	<posx>40</posx>
+		<posy>70</posy>
+		<include>common-fade</include>
+		
+	<control>
+		<description>Title Label</description>
+		<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>	
+			<label>13200</label>
+		<visible>!Window.IsActive(130)</visible>
+	</control>
+	
+
+
+	<control type="radiobutton" id="4">
+		<description>Enable Login Screen</description>
+		<posx>58</posx>
+		<posy>75</posy>
+		<height>30</height>
+		<width>500</width>
+		<label>Login Screen</label>
+		<textcolor>FF8f8f8f</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textureradiofocus>contextbuttons2.png</textureradiofocus>
+		<textureradionofocus>contextbuttonns2.png</textureradionofocus>
+		<font>fruity17s</font>
+		<onup>2</onup>
+		<ondown>2</ondown>
+	</control>
+
+		<control type="label">
+		<description>Title Label</description>
+		<posx>50</posx>
+			<posy>125</posy>
+			<font>fruity21</font>	
+			<label>Profiles</label>
+			<include>common-fade</include>
+	</control>
+	
+	<control type="fadelabel" id="3">
+		<description>Last Loaded</description>
+		<type>fadelabel</type>
+		<id>3</id>
+		<posx>210</posx>
+		<posy>525</posy>
+		<width>656</width>
+		<label>-</label>
+		<font>fruity17s</font>
+		<textcolor>d0ffffff</textcolor>
+		<include>common-fade</include>
+	</control>
+	
+	<control type="image">
+		<posx>710</posx>
+		<posy>85</posy>
+		<width>400</width>
+		<height>400</height>
+		<texture>globe.png</texture>
+	</control>
+
+	<control type="list" id="2">
+		<posx>58</posx>
+		<posy>170</posy>
+		<width>570</width>
+		<height>340</height>
+		<onright>90</onright>
+		<onup>4</onup>
+		<ondown>4</ondown>
+		<pagecontrol>90</pagecontrol>
+		<include>common-fade</include>
+		<visible>!Window.IsActive(126)</visible>
+		<itemlayout height="75">
+			<control type="image">
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>70</width>
+				<height>70</height>
+				<info>ListItem.Icon</info>
+				<texture>profile.png</texture>
+			</control>
+			<control type="label">
+				<posx>80</posx>
+				<posy>30</posy>
+				<width>400</width>
+				<height>70</height>
+				<font>fruity17s</font>
+				<textcolor>FFcbcbcb</textcolor>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<posx>560</posx>
+				<posy>30</posy>
+				<width>250</width>
+				<height>70</height>
+				<font>fruity17s</font>
+				<align>right</align>
+				<textcolor>90cbcbcb</textcolor>
+				<include>selectedcolor</include>
+				<info>ListItem.Label2</info>
+			</control>
+		</itemlayout>
+		<focusedlayout height="110">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>569</width>
+				<height>110</height>
+				<texture>Button-List.png</texture>
+				<visible>Control.HasFocus(2)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>569</width>
+				<height>110</height>
+				<texture>Button-List-NoFocus.png</texture>
+				<visible>!Control.HasFocus(2)</visible>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>3</posy>
+				<width>100</width>
+				<height>100</height>
+				<info>ListItem.Icon</info>
+				<texture>profile2.png</texture>
+			</control>
+			<control type="label">
+				<posx>110</posx>
+				<posy>40</posy>
+				<width>370</width>
+				<height>110</height>
+				<font>fruity21</font>
+				<textcolor>ffffffff</textcolor>
+				<scroll>true</scroll>
+				<info>ListItem.Label</info>
+			</control>
+			<control type="label">
+				<posx>560</posx>
+				<posy>40</posy>
+				<width>250</width>
+				<height>110</height>
+				<font>fruity21</font>
+				<align>right</align>
+				<textcolor>90cbcbcb</textcolor>
+				<include>selectedcolor</include>
+				<info>ListItem.Label2</info>
+			</control>
+		</focusedlayout>
+	</control>
+
+	<control type="scrollbar" id="90">
+		<posx>638</posx>
+		<posy>170</posy>
+		<width>20</width>
+		<height>372</height>
+		<texturesliderbackground>scrollbar_background.png</texturesliderbackground>
+		<texturesliderbar border="3">scrollbar_bar.png</texturesliderbar>
+		<texturesliderbarfocus border="3">scrollbar_bar_focus.png</texturesliderbarfocus>
+		<textureslidernib>scrollbar_nib.png</textureslidernib>
+		<textureslidernibfocus>scrollbar_nib_focus.png</textureslidernibfocus>
+		<onleft>2</onleft>
+		<onright>9000</onright>
+		<onup>2</onup>
+		<ondown>2</ondown>
+		<orientation>vertical</orientation>
+		<include>Zoom-Button</include>
+		<visible>!Window.IsActive(126)</visible>
+	</control>
+	<include>Black-Overlay</include>
+	<include>Lines</include>
+	</control>
+
+	<include>time</include>
+	<include>contextback</include>
+	
+	</controls>
+</window>

@@ -1,0 +1,341 @@
+<window type="dialog" id="142">
+	<defaultcontrol>901</defaultcontrol>
+<controls>
+	
+
+		<control type="group" id="213">
+		<posx>280</posx>
+		<posy>170</posy>
+			<animation effect="fade" start="0" end="100" time="500" acceleration="-1">Visible</animation>
+		<visible>VideoPlayer.IsFullscreen</visible>
+		
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<height>400</height>
+			<width>720</width>
+			<texture>vispanel.png</texture>
+		</control>	
+		
+		
+		<control type="image">
+			<posx>73</posx>
+			<posy>45</posy>
+			<height>250</height>
+			<width>181</width>
+			<info>VideoPlayer.Cover</info>
+			<visible>VideoPlayer.Content(movies)</visible>
+		</control>
+		
+		<control type="image">
+			<posx>73</posx>
+			<posy>45</posy>
+			<height>250</height>
+			<width>181</width>
+			<info>VideoPlayer.Cover</info>
+			<visible>!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes)</visible>
+		</control>
+		
+		<control type="image">
+			<posx>62</posx>
+			<posy>60</posy>
+			<height>192</height>
+			<width>287</width>
+			<info>VideoPlayer.Cover</info>
+			<visible>VideoPlayer.Content(episodes)</visible>
+		</control>
+		
+		<control type="image">
+			<posx>43</posx>
+			<posy>21</posy>
+			<height>300</height>
+			<width>240</width>
+			<texture>Videos_BigFrame2.png</texture>
+			<visible>VideoPlayer.Content(movies)</visible>
+		</control>
+		
+		<control type="image">
+			<posx>43</posx>
+			<posy>21</posy>
+			<height>300</height>
+			<width>240</width>
+			<texture>Videos_BigFrame2.png</texture>
+			<visible>!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes)</visible>
+		</control>
+		
+				<control type="image">
+			<posx>28</posx>
+			<posy>35</posy>
+			<height>246</height>
+			<width>341</width>
+			<texture>fsepisodeframe2.png</texture>
+			<visible>VideoPlayer.Content(episodes)</visible>
+		</control>
+		
+		
+		<control type="group">
+			<visible>!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes)</visible>
+		
+		<control type="label">
+			<posx>380</posx>
+			<posy>50</posy>
+			<width>300</width>
+			<label>Filename:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Title]</label>
+			<scroll>true</scroll>
+		</control>
+		
+				<control type="label">
+			<posx>380</posx>
+			<posy>100</posy>
+			<width>300</width>
+			<label>Runtime:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>125</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Duration]</label>
+			<scroll>true</scroll>
+		</control>
+		
+		</control>
+		
+				<control type="group">
+			<visible>VideoPlayer.Content(movies)</visible>
+		
+		<control type="label">
+			<posx>380</posx>
+			<posy>50</posy>
+			<width>300</width>
+			<label>Movie:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Title]</label>
+			<scroll>true</scroll>
+		</control>
+		
+				<control type="label">
+			<posx>380</posx>
+			<posy>100</posy>
+			<width>300</width>
+			<label>Director:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>125</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Director]</label>
+			<scroll>true</scroll>
+		</control>
+		
+						<control type="label">
+			<posx>380</posx>
+			<posy>150</posy>
+			<width>300</width>
+			<label>Genre:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>175</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Genre]</label>
+			<scroll>true</scroll>
+		</control>
+		
+		
+										<control type="label">
+			<posx>380</posx>
+			<posy>200</posy>
+			<width>300</width>
+			<label>Rating:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+        <control type="image">
+          <height>20</height>
+          <width>80</width>
+          <posx>400</posx>
+          <posy>225</posy>
+          <info>Player.StarRating</info>
+        </control>
+		
+												<control type="label">
+			<posx>380</posx>
+			<posy>250</posy>
+			<width>300</width>
+			<label>Runtime:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>275</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Duration]</label>
+		</control>
+		
+		
+		
+		</control>
+		
+		
+		<control type="group">
+			<visible>VideoPlayer.Content(episodes)</visible>
+		
+		<control type="label">
+			<posx>380</posx>
+			<posy>50</posy>
+			<width>300</width>
+			<label>Episode:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>75</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Title]</label>
+			<scroll>true</scroll>
+		</control>
+		
+				<control type="label">
+			<posx>380</posx>
+			<posy>100</posy>
+			<width>300</width>
+			<label>Director:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>125</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Director]</label>
+			<scroll>true</scroll>
+		</control>
+		
+						<control type="label">
+			<posx>380</posx>
+			<posy>150</posy>
+			<width>300</width>
+			<label>Writer:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>175</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Writer]</label>
+			<scroll>true</scroll>
+		</control>
+		
+						<control type="label">
+			<posx>380</posx>
+			<posy>200</posy>
+			<width>300</width>
+			<label>Rating:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="image">
+			<posx>400</posx>
+			<posy>225</posy>
+			          <height>20</height>
+			<width>80</width>
+			<info>Player.StarRating</info>
+		</control>
+
+		
+										<control type="label">
+			<posx>380</posx>
+			<posy>250</posy>
+			<width>300</width>
+			<label>Runtime:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>400</posx>
+			<posy>275</posy>
+			<width>280</width>
+			<include>scraperimdb</include>
+			<label>$INFO[VideoPlayer.Duration]</label>
+		</control>
+		
+
+		
+		</control>
+		
+				<control type="label">
+					<posx>48</posx>
+			<posy>325</posy>
+			<width>300</width>
+			<label>Progress:</label>
+			<include>scraperimdbtitle</include>
+		</control>
+		
+		<control type="label">
+			<posx>680</posx>
+			<posy>325</posy>
+			<align>right</align>
+			<label>$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</label>
+			<include>scraperimdb</include>
+			<visible>!Player.Paused</visible>
+		</control>
+		
+		<control type="label">
+			<posx>680</posx>
+			<posy>325</posy>
+			<align>right</align>
+			<label>$INFO[MusicPlayer.Time] (Paused)</label>
+			<include>scraperimdb</include>
+			<visible>Player.Paused</visible>
+		</control>
+		
+		<control type="progress">
+				<description>Progressbar</description>
+				<posx>78</posx>
+				<posy>357</posy>
+				<width>575</width>
+				<height>8</height>
+				<info>Player.Progress</info>
+				<texturebg>progress-back.png</texturebg>
+				<lefttexture>progress-left.png</lefttexture>
+				<midtexture>progress-mid.png</midtexture>
+				<righttexture>progress-right.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+				<visible>true</visible>
+			</control>
+		
+	</control>
+	</controls>
+</window>

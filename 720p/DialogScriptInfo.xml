@@ -1,0 +1,69 @@
+<window type="dialog" id="2004">
+	<defaultcontrol>90</defaultcontrol>
+	<zorder>1</zorder>
+	<include>common-fade</include>
+	<controls>
+
+
+	
+	<control type="image">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanback2.png</texture>
+	</control>
+	
+	<control type="image">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanbackpolish.png</texture>
+	</control>
+
+	<control type="scrollbar" id="90">
+		<posx>965</posx>
+		<posy>192</posy>
+		<width>15</width>
+		<height>361</height>
+		<texturesliderbackground>scrollbar_background.png</texturesliderbackground>
+		<texturesliderbar border="3">scrollbar_bar.png</texturesliderbar>
+		<texturesliderbarfocus border="3">scrollbar_bar_focus.png</texturesliderbarfocus>
+		<textureslidernib>scrollbar_nib.png</textureslidernib>
+		<textureslidernibfocus>scrollbar_nib_focus.png</textureslidernibfocus>
+		<onleft>50</onleft>
+		<onright>9000</onright>
+		<onup>50</onup>
+		<ondown>50</ondown>
+		<orientation>vertical</orientation>
+	</control>
+
+	<control type="textbox" id="5">
+		<description>textarea</description>
+		<posx>320</posx>
+		<posy>240</posy>
+		<width>630</width>
+		<height>290</height>
+		<font>fruity17s</font>
+		<textcolor>FFB2D4F5</textcolor>
+		<spinposx>600</spinposx>
+		<spinposy>445</spinposy>
+		<pagecontrol>90</pagecontrol>
+	</control>
+
+	<control type="label" id="10">
+		<description>Scripts Output</description>
+		<posx>320</posx>
+		<posy>205</posy>
+		<font>fruity20</font>
+		<label>Scripts Output</label>
+		<textcolor>FFFFFFFF</textcolor>
+	</control>
+
+	
+
+	</controls>
+</window>

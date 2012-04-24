@@ -1,0 +1,54 @@
+<window id="4">
+	<defaultcontrol always="true">22</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<animation effect="fade" end="100" time="200">WindowOpen</animation>
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<texture>showcase.jpg</texture>
+		<visible></visible>
+	</control>
+	
+	<control type="group">
+		<posx>280</posx>
+		<posy>150</posy>
+		<animation effect="slide" start="0,500" end="0,0" time="200">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,500" time="200">WindowClose</animation>
+	
+	<control type="label">
+		<posx>20</posx>
+		<posy>360</posy>
+		<width>650</width>
+		<height>300</height>
+		<align>center</align>
+		<font>acens30</font>
+		<label>WELCOME TO HORIZONZ: VOLUME IV</label>
+	</control>
+	
+	<control type="label">
+		<posx>20</posx>
+		<posy>320</posy>
+		<width>650</width>
+		<height>300</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>fruity21</font>
+		<label>Your XBMC Build is Dated $INFO[System.BuildDate]&#10;This Mod is Dated Nov 30 2008&#10;&#10;- Press "BACK" to Continue (All Settings are KEPT)&#10;- Press "SELECT" to Reset (Settings LOST - Backdrops REMAIN)</label>
+
+	</control>
+		
+	</control>
+	
+	<control type="button" id="22">
+		<posx>0</posx>
+		<posy>-75</posy>
+		<include>keepusersettings</include>
+		<onclick>XBMC.ActivateWindow(Home)</onclick>
+	</control>
+	</controls>
+</window>

@@ -1,0 +1,54 @@
+<window id="0">
+	<defaultcontrol>300</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+
+	
+        <control type="image" id="87">
+                <texture>-</texture>
+                <visible>Container(300).OnNext | Container(300).OnPrevious</visible>
+                <animation effect="fade" time="200">Hidden</animation>
+        </control>
+
+	<include>wallpaper</include>
+	<include>vignette</include>
+	<include>mediapanel</include>
+	<include>tutorial</include>
+	
+
+
+	<control type="group">
+	<posx>0</posx>
+	<posy>150</posy>
+	<width>474</width>
+	<height>768</height>
+	<defaultcontrol>300</defaultcontrol>
+		<include>scrollerjunk</include>
+		<include>timehome</include>
+				<include>disc</include>
+		<animation effect="slide" start="0,267" end="0,267" condition="Skin.HasSetting(drophome)">WindowOpen</animation>
+		<animation effect="slide" start="0,267" end="0,267" condition="Skin.HasSetting(drophome) + !Window.Next(56) + !Window.Next(12) + !Window.Next(13) + !Window.Next(14) + !Window.Next(15) + !Window.Next(16) + !Window.Next(17) + !Window.Next(18) + !Window.Next(19)">WindowClose</animation>
+		<animation effect="slide" start="0,0" end="0,267" time="150" acceleration="1" condition="Skin.HasSetting(drophome) + [Window.Previous(56) | Window.Previous(12) | Window.Previous(13) | Window.Previous(14) | Window.Previous(15) | Window.Previous(16) | Window.Previous(17) | Window.Previous(18) | Window.Previous(19)]">Conditional</animation>
+		<animation effect="slide" start="0,267" end="0,0" time="150" acceleration="-1" condition="Skin.HasSetting(drophome) + [Window.Next(56) | Window.Next(12) | Window.Next(13) | Window.Next(14) | Window.Next(15) | Window.Next(16) | Window.Next(17) | Window.Next(18) | Window.Next(19)]">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-267" time="150" acceleration="1">Hidden</animation>		
+	</control>
+	
+
+	<include>contextback</include>
+	
+	<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<visible>Window.Next(2006) | Window.Next(2) | Window.Next(20) | Window.Next(1) | Window.Next(24) | Window.Next(25) | Window.Next(501) | Window.Next(502) | Window.Next(2600)</visible>
+			<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+	</control>
+	
+	
+	<include>timeother</include>
+	<include>timeold</include>
+	</controls>
+
+</window>

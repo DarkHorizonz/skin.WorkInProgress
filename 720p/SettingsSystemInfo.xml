@@ -1,0 +1,863 @@
+<window id="7">
+	<defaultcontrol>95</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+	<include>Background</include>
+	<include>Black-Panel</include>
+	<include>Menu-Time</include>
+	<include>common-fade</include>
+
+		<control type="multiimage">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<imagepath>Default</imagepath>
+		<info>Skin.String(CustomSettings)</info>
+		<visible>!Skin.HasSetting(CustomSettings) + !Skin.HasSetting(CustomSettingsFoldOn)</visible>
+	</control>
+
+	<control type="multiimage">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<imagepath>-</imagepath>
+		<timeperimage>20000</timeperimage>
+		<fadetime>2000</fadetime>
+		<randomize>true</randomize>
+		<info>Skin.String(CustomSettingsFolder)</info>
+		<visible>!Skin.HasSetting(CustomSettingsFolder)</visible>
+	</control>
+
+	<include>vignette</include>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>36</posx>
+		<posy>50</posy>
+		<width>1209</width>
+		<height>621</height>
+		<texture>filemanback2.png</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<control>
+		<description>Title Label</description>
+		<label>130</label>
+		<include>Window-Title</include>
+	</control>
+
+	<control type="grouplist">
+		<buttongap>0</buttongap>
+		<posx>68</posx>
+		<posy>82</posy>
+		<width>1146</width>
+		<height>40</height>
+		<scrollspeed>2</scrollspeed>
+		<orientation>horizontal</orientation>
+		<include>Zoom-Button</include>
+
+		<control type="button" id="95">
+			<description>Button Default Values</description>
+			<label>13278</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+		<control type="button" id="94">
+			<description>Button Storage</description>
+			<label>13277</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+		<control type="button" id="92">
+			<description>Button HDD</description>
+			<label>13275</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+		<control type="button" id="93">
+			<description>Button DVD</description>
+			<label>13276</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+		<control type="button" id="96">
+			<description>Button Network</description>
+			<label>13279</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+		<control type="button" id="97">
+			<description>Button VIDEO</description>
+			<label>13280</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+		<control type="button" id="98">
+			<description>Button XBOX Hardware</description>
+			<label>13281</label>
+			<include>contextformatbrowser2</include>
+			<include>common-fade</include>
+		</control>
+	</control>
+
+	<control type="image" id="11">
+		<description>separator image</description>
+		<posx>70</posx>
+		<posy>140</posy>
+		<width>580</width>
+		<height>2</height>
+		<texture border="10,0,10,0">Settings-Divider.png</texture>
+		<colordiffuse>80ffffff</colordiffuse>
+		<include>common-fade-quick</include>
+	</control>
+
+	<control type="group">
+		<description>Default Contents</description>
+		<include>common-fade-quick</include>
+		<posx>30</posx>
+		<posy>20</posy>
+		<visible>Control.HasFocus(95)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20154</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[system.cpuusage]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="progress">
+			<description>bar diagram cpu usage</description>
+			<info>bar.cpuusage</info>
+			<visible>true</visible>
+			<posx>70</posx>
+			<posy>173</posy>
+			<width>490</width>
+			<height>9</height>
+			<lefttexture>-</lefttexture>
+			<midtexture>Progress-Mid.png</midtexture>
+			<righttexture>-</righttexture>
+			<overlaytexture>-</overlaytexture>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>188</posy>
+			<label>$LOCALIZE[139] $INFO[system.cputemperature]  -  $INFO[system.gputemperature]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>216</posy>
+			<label>$INFO[system.fanspeed]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>70</posx>
+			<posy>248</posy>
+			<label>$LOCALIZE[158] : $INFO[system.freememory]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>560</posx>
+			<posy>248</posy>
+			<align>right</align>
+			<label>$LOCALIZE[20161] : $INFO[system.memory(total)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="progress">
+			<description>bar diagram free memory</description>
+			<info>bar.freememory</info>
+			<visible>true</visible>
+			<posx>70</posx>
+			<posy>272</posy>
+			<width>490</width>
+			<height>9</height>
+			<lefttexture>-</lefttexture>
+			<midtexture>Progress-Mid.png</midtexture>
+			<righttexture>-</righttexture>
+			<overlaytexture>-</overlaytexture>
+		</control>
+		<control type="label">
+			<description>Label 6</description>
+			<posx>70</posx>
+			<posy>282</posy>
+			<label>$INFO[Network.IPAddress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 7</description>
+			<posx>70</posx>
+			<posy>315</posy>
+			<label>$INFO[system.screenresolution]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 8</description>
+			<posx>70</posx>
+			<posy>343</posy>
+			<label>$INFO[system.kernelversion]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 9</description>
+			<posx>70</posx>
+			<posy>371</posy>
+			<label>$INFO[system.uptime]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 10</description>
+			<posx>70</posx>
+			<posy>399</posy>
+			<label>$INFO[system.totaluptime]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+
+	<control type="group">
+		<description>Storage Contents</description>
+		<include>common-fade-quick</include>
+		<posx>30</posx>
+		<posy>20</posy>
+		<visible>Control.HasFocus(94)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20155</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[system.dvdtraystate]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>173</posy>
+			<label>$INFO[system.freespace(c)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>560</posx>
+			<posy>173</posy>
+			<align>right</align>
+			<label>$INFO[system.totalspace(c)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="progress">
+			<description>bar Free Space c:</description>
+			<info>bar.freespace(c)</info>
+			<visible>true</visible>
+			<posx>70</posx>
+			<posy>199</posy>
+			<width>490</width>
+			<height>9</height>
+			<lefttexture>-</lefttexture>
+			<midtexture>Progress-Mid.png</midtexture>
+			<righttexture>-</righttexture>
+			<overlaytexture>-</overlaytexture>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>211</posy>
+			<label>$INFO[system.freespace(e)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>560</posx>
+			<posy>211</posy>
+			<align>right</align>
+			<label>$INFO[system.totalspace(e)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="progress">
+			<description>bar Free Space e:</description>
+			<info>bar.freespace(e)</info>
+			<visible>true</visible>
+			<posx>70</posx>
+			<posy>237</posy>
+			<width>490</width>
+			<height>9</height>
+			<lefttexture>-</lefttexture>
+			<midtexture>Progress-Mid.png</midtexture>
+			<righttexture>-</righttexture>
+			<overlaytexture>-</overlaytexture>
+		</control>
+		<control type="group">
+			<visible>System.HasDriveF</visible>
+			<control type="label">
+				<description>Label 5</description>
+				<posx>70</posx>
+				<posy>249</posy>
+				<label>$INFO[system.freespace(f)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="label">
+				<description>Label 5</description>
+				<posx>560</posx>
+				<posy>249</posy>
+				<align>right</align>
+				<label>$INFO[system.totalspace(f)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="progress">
+				<description>bar Free Space f:</description>
+				<info>bar.freespace(f)</info>
+				<visible>true</visible>
+				<posx>70</posx>
+				<posy>275</posy>
+				<width>490</width>
+				<height>9</height>
+				<lefttexture>-</lefttexture>
+				<midtexture>Progress-Mid.png</midtexture>
+				<righttexture>-</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>System.HasDriveG</visible>
+			<control type="label">
+				<description>Label 6</description>
+				<posx>70</posx>
+				<posy>287</posy>
+				<label>$INFO[system.freespace(g)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="label">
+				<description>Label 10</description>
+				<posx>560</posx>
+				<posy>287</posy>
+				<align>right</align>
+				<label>$INFO[system.totalspace(g)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="progress">
+				<description>bar Free Space g:</description>
+				<info>bar.freespace(g)</info>
+				<visible>true</visible>
+				<posx>70</posx>
+				<posy>313</posy>
+				<width>490</width>
+				<height>9</height>
+				<lefttexture>-</lefttexture>
+				<midtexture>Progress-Mid.png</midtexture>
+				<righttexture>-</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="slide" time="0" end="0,-38" condition="!System.HasDriveF">conditional</animation>
+			<animation effect="slide" time="0" end="0,-38" condition="!System.HasDriveG">conditional</animation>
+			<control type="label">
+				<description>Label 7</description>
+				<posx>70</posx>
+				<posy>325</posy>
+				<label>$INFO[system.freespace(x)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="label">
+				<description>Label 8</description>
+				<posx>70</posx>
+				<posy>353</posy>
+				<label>$INFO[system.freespace(y)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="label">
+				<description>Label 9</description>
+				<posx>70</posx>
+				<posy>381</posy>
+				<label>$INFO[system.freespace(z)]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="label">
+				<description>Label 10</description>
+				<posx>70</posx>
+				<posy>409</posy>
+				<label>$INFO[system.freespace]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="label">
+				<description>Label 10</description>
+				<posx>560</posx>
+				<posy>409</posy>
+				<align>right</align>
+				<label>$INFO[system.totalspace]</label>
+				<font>fruity21</font>
+				<include>textcolorwhite-60</include>
+			</control>
+			<control type="progress">
+				<description>bar Free Space Total</description>
+				<info>bar.freespace</info>
+				<visible>true</visible>
+				<posx>70</posx>
+				<posy>435</posy>
+				<width>490</width>
+				<height>9</height>
+				<lefttexture>-</lefttexture>
+				<midtexture>Progress-Mid.png</midtexture>
+				<righttexture>-</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+		</control>
+	</control>
+
+	<control type="group">
+		<description>HardDisk Contents</description>
+		<include>common-fade-quick</include>
+				<posx>30</posx>
+		<posy>20</posy>
+		<visible>Control.HasFocus(92)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20156</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[system.hddinfomodel]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>173</posy>
+			<label>$INFO[system.hddinfoserial]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>201</posy>
+			<label>$INFO[system.hddinfofirmware]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>70</posx>
+			<posy>229</posy>
+			<label>$INFO[system.hddinfopw]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 6</description>
+			<posx>70</posx>
+			<posy>257</posy>
+			<label>$INFO[system.hddinfolockstate]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 7</description>
+			<posx>70</posx>
+			<posy>285</posy>
+			<label>$INFO[system.hddlockkey]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 8</description>
+			<posx>70</posx>
+			<posy>313</posy>
+			<label>$INFO[system.hddbootdate]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 9</description>
+			<posx>70</posx>
+			<posy>341</posy>
+			<label>$INFO[system.hddcyclecount]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 10</description>
+			<posx>70</posx>
+			<posy>369</posy>
+			<label>$INFO[system.hddtemperature]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+
+	<control type="group">
+		<description>DVD-ROM Contents</description>
+				<posx>30</posx>
+		<posy>20</posy>
+		<include>common-fade-quick</include>
+		<visible>Control.HasFocus(93)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20157</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[system.dvdinfomodel]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>173</posy>
+			<label>$INFO[system.dvdinfofirmware]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>201</posy>
+			<label>$INFO[system.dvdzone]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>70</posx>
+			<posy>229</posy>
+			<label>$INFO[system.dvdtraystate]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+
+	<control type="group">
+		<description>Network Contents</description>
+		<include>common-fade-quick</include>
+				<posx>30</posx>
+		<posy>20</posy>
+		<visible>Control.HasFocus(96)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20158</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[network.isdhcp]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>173</posy>
+			<label>$INFO[network.linkstate]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>201</posy>
+			<label>$INFO[network.macadress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>70</posx>
+			<posy>229</posy>
+			<label>$INFO[network.ipaddress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 6</description>
+			<posx>70</posx>
+			<posy>257</posy>
+			<label>$INFO[network.subetadress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 7</description>
+			<posx>70</posx>
+			<posy>285</posy>
+			<label>$INFO[network.gatewayadress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 8</description>
+			<posx>70</posx>
+			<posy>313</posy>
+			<label>$INFO[network.dns1adress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 9</description>
+			<posx>70</posx>
+			<posy>341</posy>
+			<label>$INFO[network.dns2adress]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 10</description>
+			<posx>70</posx>
+			<posy>368</posy>
+			<label>$INFO[system.internetstate]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+
+	<control type="group">
+		<description>Video Contents</description>
+				<posx>30</posx>
+		<posy>20</posy>
+		<include>common-fade-quick</include>
+		<visible>Control.HasFocus(97)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20159</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[system.videoencoderinfo]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>173</posy>
+			<label>$INFO[system.screenresolution]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>201</posy>
+			<label>$INFO[system.avpackinfo]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>70</posx>
+			<posy>229</posy>
+			<label>$INFO[system.xberegion]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+
+	<control type="group">
+		<description>Hardware Contents</description>
+				<posx>30</posx>
+		<posy>20</posy>
+		<include>common-fade-quick</include>
+		<visible>Control.HasFocus(98)</visible>
+		<control type="label">
+			<description>Section Label</description>
+			<posx>70</posx>
+			<posy>115</posy>
+			<font>fruity21</font>
+			<label>20160</label>
+		</control>
+		<control type="label">
+			<description>Label 2</description>
+			<posx>70</posx>
+			<posy>145</posy>
+			<label>$INFO[system.xboxversion]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 3</description>
+			<posx>70</posx>
+			<posy>173</posy>
+			<label>$INFO[system.xboxserial]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 4</description>
+			<posx>70</posx>
+			<posy>201</posy>
+			<label>$INFO[system.cpufrequency]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 5</description>
+			<posx>70</posx>
+			<posy>229</posy>
+			<label>$INFO[system.modchip]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 6</description>
+			<posx>70</posx>
+			<posy>257</posy>
+			<label>$INFO[system.bios]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 7</description>
+			<posx>70</posx>
+			<posy>285</posy>
+			<label>$INFO[system.xboxproduceinfo]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 8</description>
+			<posx>70</posx>
+			<posy>313</posy>
+			<label>$INFO[system.controllerport(1)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 9</description>
+			<posx>70</posx>
+			<posy>341</posy>
+			<label>$INFO[system.controllerport(2)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 10</description>
+			<posx>70</posx>
+			<posy>369</posy>
+			<label>$INFO[system.controllerport(3)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label">
+			<description>Label 11</description>
+			<posx>70</posx>
+			<posy>397</posy>
+			<label>$INFO[system.controllerport(4)]</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+
+	<control type="image" id="11">
+		<description>separator image</description>
+		<posx>70</posx>
+		<posy>435</posy>
+		<width>580</width>
+		<height>2</height>
+		<texture border="10,0,10,0">Settings-Divider.png</texture>
+		<colordiffuse>80ffffff</colordiffuse>
+		<include>common-fade-quick</include>
+	</control>
+
+	<control type="group">
+		<description>Misc Values</description>
+		<include>common-fade-quick</include>
+		<posx>30</posx>
+		<posy>80</posy>
+		<control type="label" id="50">
+			<description>Current Time</description>
+			<posx>70</posx>
+			<posy>440</posy>
+			<label>143</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label" id="52">
+			<description>XBMC XBE BUILD Version</description>
+			<posx>70</posx>
+			<posy>465</posy>
+			<label>144</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+		<control type="label" id="53">
+			<description>Mplayer DLL Version</description>
+			<posx>70</posx>
+			<posy>490</posy>
+			<label>144</label>
+			<font>fruity21</font>
+			<include>textcolorwhite-60</include>
+		</control>
+	</control>
+	<include>Black-Overlay</include>
+	<include>Lines</include>
+	
+	<control type="image">
+		<description>background image</description>
+		<posx>36</posx>
+		<posy>50</posy>
+		<width>1209</width>
+		<height>621</height>
+		<texture>filemanbackpolish.png</texture>
+		<include>common-fade</include>
+	</control>
+
+	</controls>
+</window>

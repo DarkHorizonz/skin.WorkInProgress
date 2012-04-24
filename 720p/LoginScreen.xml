@@ -1,0 +1,181 @@
+<window type="dialog" id="29">
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+	<system>1</system>
+	<posx>0</posx>
+	<posy>0</posy>
+	</coordinates>
+	<controls>
+	<include>Background</include>
+	<include>Black-Panel</include>
+	<include>Menu-Time</include>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture>showcase.jpg</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<control type="image" id="0">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanback2.png</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<control type="image">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanbackpolish.png</texture>
+		<include>common-fade</include>
+	</control>
+	
+	<control>
+		<description>Title Label</description>
+		<label>20096</label>
+		<include>Window-Title</include>
+		<include>common-fade</include>
+		<visible>!Window.IsActive(130) + !Window.IsActive(131)</visible>
+	</control>
+	
+	
+
+	<control type="wraplist" id="52">
+		<posx>300</posx>
+		<posy>230</posy>
+		<width>680</width>
+		<height>363</height>
+		<scrolltime>250</scrolltime>
+		<focusposition>1</focusposition>
+		<orientation>horizontal</orientation>
+		<onleft>90</onleft>
+		<onright>90</onright>
+		<onup>52</onup>
+		<ondown>98</ondown>
+		<include>common-fade</include>
+		<itemlayout height="155" width="240">
+			<control type="image">
+				<posx>25</posx>
+				<posy>17</posy>
+				<width>155</width>
+				<height>155</height>
+				<texture>profile.png</texture>
+				<info>ListItem.Icon</info>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<posy>143</posy>
+				<width>155</width>
+				<height>155</height>
+				<texture flipy="true" diffuse="Thumb_Mask.png">profile.png</texture>
+				<info>ListItem.Icon</info>
+			</control>
+		</itemlayout>
+		<focusedlayout height="195" width="240">
+			<control type="image">
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>195</width>
+				<height>195</height>
+				<texture>profile2.png</texture>
+				<info>ListItem.Icon</info>
+				<animation effect="zoom" end="5,5,195,195" time="500">Focus</animation>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>163</posy>
+				<width>195</width>
+				<height>195</height>
+				<info>ListItem.Icon</info>
+				<texture flipy="true" diffuse="Thumb_Mask.png">profile2.png</texture>
+			</control>
+ 		</focusedlayout>
+	</control>
+	<control type="label">
+		<posx>375</posx>
+		<posy>440</posy>
+		<width>520</width>
+		<height>16</height>
+		<font>fruity21</font>
+		<align>center</align>
+		<textcolor>FFffffff</textcolor>
+		<scroll>true</scroll>
+		<info>ListItem.Label</info>
+		<include>selectedcolor</include>
+		<include>common-fade</include>
+		<visible>Control.IsVisible(52)</visible>
+	</control>
+	<control type="label">
+		<posx>375</posx>
+		<posy>470</posy>
+		<width>520</width>
+		<height>16</height>
+		<font>fruity21</font>
+		<align>center</align>
+		<textcolor>90cbcbcb</textcolor>
+		<info>ListItem.Label2</info>
+		<include>selectedcolor</include>
+		<include>common-fade</include>
+		<visible>Control.IsVisible(52)</visible>
+	</control>
+
+	<control type="label" id="2">
+		<description>Heading Label</description>
+		<posx>320</posx>
+		<posy>205</posy>
+		<width>420</width>
+		<align>left</align>
+		<label>Select Profile</label>
+		<font>fruity21</font>
+		<textcolor>90cbcbcb</textcolor>
+		<include>common-fade</include>
+		<visible>!Window.IsActive(130) + !Window.IsActive(131)</visible>
+	</control>
+
+	<control type="label" id="3">
+		<description>Profile Count Label</description>
+		<posx>960</posx>
+		<posy>205</posy>
+		<width>420</width>
+		<align>right</align>
+		<font>fruity21</font>
+		<textcolor>90cbcbcb</textcolor>
+		<include>common-fade</include>
+		<visible>!Window.IsActive(130) + !Window.IsActive(131)</visible>
+	</control>
+	
+	<control type="button" id="98">
+		<description>ShutDown Button</description>
+		<posx>570</posx>
+		<posy>510</posy>
+		<width>140</width>
+		<height>40</height>
+		<label>Shutdown</label>
+		<font>fruity17s</font>
+		<align>center</align>
+		<textcolor>60ffffff</textcolor>
+		<onclick>ActivateWindow(ShutdownMenu)</onclick>
+		<texturenofocus>contextbutton.png</texturenofocus>
+		<texturefocus>contextbuttonpressed.png</texturefocus>
+		<align>center</align>
+		<onleft>52</onleft>
+		<onright>52</onright>
+		<onup>52</onup>
+		<ondown>52</ondown>
+		<include>common-fade</include>
+		<visible>!Window.IsActive(130) + !Window.IsActive(131)</visible>
+	</control>
+	<include>time</include>
+
+	</controls>
+</window>

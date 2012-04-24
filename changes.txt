@@ -1,0 +1,141 @@
+Horizonz: VOLUME IV
+-------------------
+
+- Updated Frame System across the skin providing much needed uniformity
+- Updated Light Crest Effect inefficiencies across the skin
+- Updated Home Scrollers so they are less transparent and more visually catchy
+- Updated Poster view by correcting certain defects
+- Updated Scroller Offset Panel to accompany the new Object Count Panel 
+- Updated Shutdown Menu Time Panel visibilty and eliminated certain inefficiencies
+- Updated Info view Frame Animation in Episodes section
+- Updated Time Panel Width so longer date displays aren't cut off
+- Updated Thumb-Frame Allignment across the skin
+- Updated Now Playing Frame with progress bar to fit in better with the Universal Frame System
+- Updated Info View Panel in Movies and TV Shows sections so it suits new Universal Frame
+- Updated Media Focus Label to exclude all unneccessary information
+- Updated Music and Video Scan Dialogs so that they fit in better and contain progress bars
+- Updated Player Control position and size to suit new Dialog Panel system
+- Updated Muted and Volume Dialog Panels so it performs better with each other and other panels
+- Updated Non-Home Now Playing Panel so it doesn't obscure certain Views
+- Updated Yes/No, OK and Busy Dialogs so it fits in better with the rest of the Skin
+- Updated OSD Frames to replicate their Universal Media Orientated Frame
+- Updated Showcase view for Pictures so backdrop thumbs' aspect ratio are maintained
+- Updated Shutdown Timer Dialog so it matches other dialogs
+- Updated Now Playing Lower Home Scroller Shadow Underlay
+- Updated Setup Menu by changing the Aeon shortcut to Horizonz
+- Updated Horizonz Setup Menu item wise by editing individual item tags
+- Updated Showcase and Info views for smoother backdrop changing on certain systems
+- Updated Default Grey Image so it looks more presentable on brighter displays
+- Updated Media Glass Wide and Short Panels so they are less blurry in places
+- Updated Core System Section to include Creators Zone with a Special Thanks Tab
+- Updated Use Wide Icons Option to disable use of Wall view in TV Shows Section
+- Updated Video Info window to accomodate the use of Wide Icons in TV Shows Section
+- Updated Progress Bars on fullscreen media information OSDs
+- Updated Music Info Panel in Picture Slideshows so it fits in better with Dialog system
+- Added New Universal Frame to All media-orientated sections
+- Added New Use Wide Icons Option for use of Diagonally modifed Banners in Tv Shows section
+- Added New Diagonal Wide Frame to List, Poster, Info and Showcase Views in the Tv Shows section
+- Added New Dialog System across the skin to accompany the new Object Count Panel  
+- Added New Object Count panel to All media-orientated sections including Showcase views
+- Added New Nav Panel to Music and Video OSDs for better control over media navigation
+- Added Media Scan navigation to Nav panel for smooth navigation and progress information
+- Added Watched/Unwatched Episode Count to all views in TV Shows section
+- Added Startup M3U Playlist Support to Horizonz Startup
+- Added Lower Home Shader RSS Support as well as an accompanying Disc Inserted Panel for each Shade
+- Added New Vis Panel to Music OSD to display visualisation information
+- Added New Optional Watched/Unwatched Overlays to Movies and TV Shows sections
+- Added New Wall Info panel which is less animated and central to the Wall itself
+- Added Picture Info support to Pictures section as well as Info in Slideshow
+- Added Use Poster Icons option for use of Normal Posters in TV Shows section
+- Added Progress Bar to Now Playing Panel for all media types
+- Added Use Original Time Panel option to display the original time panel on the home screen
+- Added Trainer Settings support for XBOX users
+- Added Smart Playlist and Smart Playlist Rule Support for playlist creation 
+- Added Dialog Line to Showcase view's label display
+- Added New Readme.txt to skin for better correspondence and support
+- Added changes.txt to include changes made from build to build 
+- And more...
+
+Horizonz: VOLUME III
+--------------------
+
+- Updated Home screen scroller, Home screen Time panel and RSS Feed panel appearance and position
+- Updated Now Playing panel to better suit the new look Home scroller
+- Updated Info view to be a slightly quicker version of the Showcase view with a different info panel
+- Updated Video OSD so for Navigation and Information purposes
+- Updated Movie  and TV Shows File Mode Showcase view for Smoother Navigation
+- Updated Shutdown Menu and sorted certain Time Panel inconsistencies out
+- Updated Disc Inserted panel to fit in better with the new look scroller and RSS Feed panels
+- Updated various Visibility issues across the board and corrected a few Panel issues
+- Added New Look and Animation effects to RSS Feed panel
+- Added New Now Playing frame to highlight the new panel
+- Added Now Playing panel to lower position Home Scroller
+- Added New Info panel to the Info view 
+- Added Option to have backdrop cycling in Info view and File Mode Showcase view
+- Added New Info panel to the Movies and TV Shows Wall view
+- Added New Dynamic Info panel to the Movies and TV Shows List and Poster Views
+- Added Thumbnail to Cast list on Video Info screen and fixed Actor Search dialog visibility issue 
+- Added Full screen Video OSD Info button support
+- Added Wider Full screen Settings Panel for better distribution of Dialogs
+- Added Scrolling Letter Offset for better Navigation through Scrolling views
+- Added New Shutdown Timer Menu with three pre-defined times (30, 60, 120 minutes)
+- Added Cancel Shutdown Time Function to Shutdown Timer Menu
+- Added Strings.xml label support for the Home Scroller and Section Heading labels
+- Added Stop Button to both Music and Video OSD panels
+- Added Rewind and Forward Buttons to Video OSD panel
+- Added New Default XB2IRIS Backdrop and Grey Showcase Backdrop
+- Added New MOD System tab to Core section
+- And more...
+
+Horizonz: VOLUME II
+-------------------
+
+- Updated certain Graphics which appeared fuzzy at higher resolutions
+- Updated Visualisation and Full Screen Video displays and OSD's
+- Updated certain Views which appeared un-aligned or inconsistent
+- Updated Player Controls panel position and size
+- Updated Info view Fanart transition for faster navigation
+- Added New Widecase view to TV Show section 
+- Added New Frames for Pictures, Artists, TV Show Episodes and TV Show Widecase
+- Added New Rss Panel for Home Scroller dark shade  
+- Added Showcase view to Movies and TV Shows File Mode
+- Added Showcase and Icon views to Music File Mode
+- Added Option to have backdrop cycling in Showcase view
+- Added Set Content Options menu and corrected a File Browser visibility issue
+- Added Hide Watched button in Movies and TV Shows sections
+- Added Visualisation selection button to Music OSD
+- Added Audio settings button to Video OSD
+- Added Debug Info window to Full screen Video display 
+- And more...
+
+Horizonz: VOLUME I
+------------------
+
+- Updated All Textures so they were more XBOX friendly and less memory reliant
+- Updated All Views so they fitted in better with the new polished look
+- Updated Certain Views to increase functionality and stability
+- Updated All Black Panels so they had a more polished finish
+- Updated Backdrop Rotation times across the skin
+- Updated Home screen Media Backdrop support so it replaced default backdrops
+- Updated Dejah's Iconset to include system icons and more media types
+- Updated Scripts section to include a fully functional Script Info panel
+- Updated Music Roller to fit into Games section as a Game Roller
+- Updated Icon view to make better use of panel space
+- Updated Wall view so icons are borderless and navigation is vertical
+- Added New Polished Glass Look to entire skin
+- Added New Optional Home Scroller Shade
+- Added New Showcase view to Music, Games and Pictures sections
+- Added New Info view to Music section
+- Added New Info view to Movies and TV Shows sections
+- Added Additional Lighcrest Special Effects to certain areas of the skin
+- Added New full functional Weather Screen
+- Added New Visualisation and Video Playback OSDs and Info panels
+- Added New frame system to all media sections which is media dependent
+- Added Profiles section with accompanying Profile Settings section
+- Added New Master Lock Settings panel
+- Added New Soundpack to improve user experience
+- Added New System Information screen which fits in with the rest of the skin
+- Added New Numeric Keypad dialog for Shutdown Timer and Master Lock Password
+- Added New Error message panel system across the skin
+- Added Song Info Panel which matches Album and Artist Info Panels
+- And more...

@@ -1,0 +1,209 @@
+<window id="130">
+	<defaultcontrol>1</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+<include>common-fade</include>
+	<controls>
+	
+		<control type="image" id="0">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanback2.png</texture>
+	</control>
+	
+	<control type="image">
+		<description>Black Panel</description>
+		<posx>280</posx>
+		<posy>170</posy>
+		<width>720</width>
+		<height>400</height>
+		<texture>filemanbackpolish.png</texture>
+	</control>
+	
+		<control type="image" id="2">
+			<description>profile image</description>
+			<posx>310</posx>
+			<posy>200</posy>
+			<width>150</width>
+			<height>150</height>
+			<align>left</align>
+			<aspectratio>keep</aspectratio>
+			<texture>profile2.png</texture>
+		</control>
+	
+		<control type="label" id="0">
+			<description>profile name label</description>
+			<posx>530</posx>
+			<posy>210</posy>
+			<width>280</width>
+			<align>left</align>
+			<font>fruity17s</font>
+			<textcolor>FF7d7d7d</textcolor>
+			<label>Profile Name</label>
+		</control>
+		
+		<control type="label" id="1000">
+			<description>profile name label</description>
+			<posx>580</posx>
+			<posy>240</posy>
+			<width>280</width>
+			<align>left</align>
+			<font>fruity21</font>
+			<textcolor>FFFFFFFF</textcolor>
+		</control>
+		
+		<control type="label" id="0">
+			<description>profile name label</description>
+			<posx>530</posx>
+			<posy>280</posy>
+			<width>280</width>
+			<align>left</align>
+			<font>fruity17s</font>
+			<textcolor>FF7d7d7d</textcolor>
+			<label>Profile Directory</label>
+		</control>
+		
+		<control type="label" id="1001">
+			<description>profile directory label</description>
+			<posx>580</posx>
+			<posy>310</posy>
+			<width>280</width>
+			<align>left</align>
+			<font>fruity21</font>
+			<textcolor>FFFFFFFF</textcolor>
+		</control>
+		
+		
+		<control type="spincontrol" id="60">
+			<description>Next page button</description>
+			<posx>930</posx>
+			<posy>520</posy>
+			<subtype>page</subtype>
+			<font>fruity21</font>
+			<onleft>5</onleft>
+			<onright>28</onright>
+			<ondown>5</ondown>
+			<onup>28</onup>
+			<showonepage>false</showonepage>
+		</control>
+		<control type="grouplist" id="5">
+			<description>control area</description>
+			<posx>365</posx>
+			<posy>350</posy>
+			<width>550</width>
+			<height>140</height>
+			<itemgap>0</itemgap>
+			<pagecontrol>60</pagecontrol>
+			<onleft>28</onleft>
+			<onright>60</onright>
+			<onup>28</onup>
+			<ondown>28</ondown>
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<posx>530</posx>
+			<posy>150</posy>
+			<height>35</height>
+			<font>fruity21</font>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>input-focus.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default RadioButton</description>
+			<posx>530</posx>
+			<posy>150</posy>
+			<height>29</height>
+			<font>fruity21</font>
+			<texturefocus>input-focus.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<textureradiofocus>settings-check-box.png</textureradiofocus>
+			<textureradionofocus>settings-check-boxNF.png</textureradionofocus>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default SpinControlex</description>
+			<posx>530</posx>
+			<posy>150</posy>
+			<height>29</height>
+			<width>408</width>
+			<texturefocus>input-focus.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<textureup>scroll-up.png</textureup>
+			<texturedown>scroll-down.png</texturedown>
+			<textureupfocus>scroll-up-focus.png</textureupfocus>
+			<texturedownfocus>scroll-down-focus.png</texturedownfocus>
+			<font>fruity21</font>
+			<textcolor>FFFFFFFF</textcolor>
+			<disabledcolor>disabled</disabledcolor>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<reverse>yes</reverse>
+		</control>
+		<control type="sliderex" id="10">
+			<description>Default Slider</description>
+			<posx>1530</posx>
+			<posy>150</posy>
+			<height>29</height>
+			<width>300</width>
+			<texturefocus>input-focus.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<sliderwidth>100</sliderwidth>
+			<sliderheight>20</sliderheight>
+			<texturesliderbar>osd_slider_bg.png</texturesliderbar>
+			<textureslidernib>osd_slider_nibNF.png</textureslidernib>
+			<textureslidernibfocus>osd_slider_nibFO.png</textureslidernibfocus>
+			<font>fruity21</font>
+			<textcolor>white</textcolor>
+			<disabledcolor>disabled</disabledcolor>
+			<textoffsetx>12</textoffsetx>
+		</control>
+		<control type="image" id="11">
+			<description>separator image</description>
+			<width>350</width>
+			<height>5</height>
+			<texture>separatorOSD.png</texture>
+		</control>
+			<control type="button" id="28">
+		<description>OK button</description>
+		<posx>500</posx>
+		<posy>510</posy>
+		<width>140</width>
+		<height>40</height>
+		<label>186</label>
+		<font>fruity17s</font>
+		<texturenofocus>contextbutton2.png</texturenofocus>
+		<texturefocus>contextbuttonpressed2.png</texturefocus>
+		<align>center</align>
+		<onleft>29</onleft>
+		<onright>29</onright>
+		<onup>5</onup>
+		<ondown>5</ondown>
+	</control>
+		
+			<control type="button" id="29">
+		<description>Cancel button</description>
+		<posx>642</posx>
+		<posy>510</posy>
+		<width>140</width>
+		<label>222</label>
+				<font>fruity17s</font>
+					<height>40</height>
+		<texturenofocus>contextbutton2.png</texturenofocus>
+		<texturefocus>contextbuttonpressed2.png</texturefocus>
+		<align>center</align>
+		<onleft>28</onleft>
+		<onright>28</onright>
+		<onup>5</onup>
+		<ondown>5</ondown>
+	</control>
+	</controls>
+</window>

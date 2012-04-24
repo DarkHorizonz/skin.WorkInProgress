@@ -1,0 +1,91 @@
+<window id="100">
+	<defaultcontrol always="true">11</defaultcontrol>
+	<zorder>1</zorder>
+			<animation effect="slide" start="-410,0" end="0,0" time="300" condition="true">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="-410,0" time="150" condition="true">WindowClose</animation>
+	<controls>
+	
+			<control type="image">
+		<posx>-10</posx>
+		<posy>668</posy>
+		<width>410</width>
+		<height>52</height>
+		<texture>navpanel2.png</texture>
+		</control>
+		
+						<control type="image">
+		<posx>-30</posx>
+		<posy>678</posy>
+		<width>328</width>
+		<height>42</height>
+		<texture>navpanel1.png</texture>
+	</control>
+
+
+		
+	
+		<control type="button" id="11">
+			<posx>317</posx>
+			<posy>695</posy>
+			<width>60</width>
+			<height>60</height>
+			<align>center</align>
+			<onleft>10</onleft>
+			<aligny>centre</aligny>
+			<pulseonselect>false</pulseonselect>
+			<texturefocus>-</texturefocus>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+							<textcolor>FF101010</textcolor>
+				<font>fruity19</font>
+			<label>107</label>
+			<scroll>true</scroll>
+		</control>
+
+		<control type="button" id="10">
+			<posx>297</posx>
+			<posy>695</posy>
+			<width>60</width>
+			<height>60</height>
+			<textoffsetx>center</textoffsetx>
+			<aligny>top</aligny>
+			<onright>11</onright>	
+			<align>centre</align>
+			<pulseonselect>false</pulseonselect>
+			<texturefocus>-</texturefocus>
+			<focusedcolor>FFFFFFFF</focusedcolor>
+							<textcolor>FF101010</textcolor>
+				<font>fruity19</font>
+			<label>106</label>
+			<scroll>true</scroll>
+		</control>
+
+		<control type="label" id="1">
+			<posx>53</posx>
+			<posy>681</posy>
+			<width>711</width>
+			<height>39</height>
+			<align>left</align>
+			<font>font13s</font>
+			<textcolor>d0ffffff</textcolor>
+			<animation effect="slide" start="0,41" end="0,0" time="150">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,41" time="150">WindowClose</animation>
+			<label>-</label>
+			<visible>false</visible>
+			<scroll>true</scroll>
+		</control>
+
+	<control type="label" id="2">
+		<description>dialog line 1</description>
+		<posx>25</posx>
+		<posy>695</posy>
+		<width>235</width>
+		<height>60</height>
+		<label>0</label>
+		<font>fruity19</font>
+		<aligny>centre</aligny>
+		<textcolor>FFcbcbcb</textcolor>
+		<scroll>true</scroll>
+	</control>
+	
+	</controls>
+</window>

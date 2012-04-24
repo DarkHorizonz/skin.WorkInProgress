@@ -1,0 +1,543 @@
+<includes>
+
+<include name="wallglass">
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>720</height>
+		<width>1280</width>
+		<visible>Control.IsVisible(58) | Control.IsVisible(51)</visible>
+		<include>common-fade</include>
+		<texture>white.png</texture>
+	</control>
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>720</height>
+		<width>1280</width>
+		<visible>[Control.IsVisible(58) | Control.IsVisible(51)]</visible>
+		<include>common-fade</include>
+		<texture>wallfilter.png</texture>
+	</control>
+
+	<control type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>720</height>
+		<width>1280</width>
+		<visible>Window.IsVisible(2) + Control.IsVisible(59) | Control.IsVisible(51) | Control.IsVisible(58)</visible>
+		<include>common-fade</include>
+		<texture>photowallpaper.png</texture>
+	</control>
+
+	<control type="image" id="987">
+		<description>background top image</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		<texture></texture>
+		<visible>[[Control.HasFocus(58) + Skin.HasSetting(wallinfopanelvids) + Window.IsActive(25)] | [Control.HasFocus(51) + Skin.HasSetting(wallinfopanelpics) + [Window.IsActive(501) | Window.IsActive(502)]]] + !Container(58).OnNext + !Container(58).OnPrevious + !Container(51).OnNext + !Container(51).OnPrevious</visible>
+		<animation effect="fade" start="0" end="100" time="100" reversible="false" delay="3000">Visible</animation>
+	</control>
+</include>
+
+
+<include name="wallposterformat">
+	<width>181</width>
+	<height>261</height>
+</include>
+
+<include name="wallposterlabel">
+	<include>wallposterformat</include>
+	<colordiffuse>8eFFFFFF</colordiffuse>
+	<wrapmultiline>true</wrapmultiline>
+	<font>font13c</font>
+	<aligny>center</aligny>
+	<include>openclose</include>
+</include>
+
+<include name="Viewtype_Photowall">
+
+	<control type="group">
+	<posx>0</posx>
+	<posy>0</posy>
+
+	<control type="panel" id="51">
+	     <viewtype label="Wall">icon</viewtype>
+	     <posx>-76</posx>
+	     <posy>-70</posy>
+	     <width>1420</width>
+	     <height>900</height>
+	     <onleft>2</onleft>
+	     <onright>2</onright>
+	     <onup>51</onup>
+	     <ondown>51</ondown>
+	     <orientation>vertical</orientation>
+	     <include>common-fade</include>
+		<visible>[Window.IsActive(501) + !Skin.HasSetting(wallmusic)] | [Window.IsActive(502) + !Skin.HasSetting(wallmusiclib)] | [Window.IsActive(2) + !Skin.HasSetting(wallpictures)] | [Window.IsActive(1) + !Skin.HasSetting(wallgames)]</visible>
+	     <itemlayout height="182" width="183">
+		    <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <texture>defaulticonmusic.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+                        <visible>Window.IsVisible(500) | Window.IsVisible(502)</visible>
+		      </control>
+			  
+                  <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <texture>defaulticonpictures.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+                        <visible>Window.IsVisible(2)</visible>
+                        </control>
+			   <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <texture>defaulticongames.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+                        <visible>Window.IsVisible(1)</visible>
+                        </control>
+			   <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <texture>defaulticonfolder.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+                        <visible>Window.IsVisible(501) | Container.Content(files)</visible>
+                        </control>						
+						
+
+		      <control type="label">
+			      <posx>165</posx>
+			      <posy>80</posy>
+			      <width>155</width>
+			      <height>182</height>
+			      <font>fruity21</font>
+			      <info>ListItem.Label</info>
+				  <align>center</align>
+				  <wrapmultiline>true</wrapmultiline>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <visible>[[Window.IsVisible(502) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)] + [isEmpty(listitem.album)]] | [Window.IsVisible(2) + isEmpty(listitem.pictureresolution)] | [Window.IsVisible(1) + isEmpty(listitem.thumb)] | [Container.Content(files) + isEmpty(listitem.thumb)] | isEmpty(listitem.thumb)</visible>
+		      </control>
+	     </itemlayout>
+	     <focusedlayout height="182" width="183">
+		      <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonmusic.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+			      <animation effect="zoom" end="35,33,256,255" reversible="false" time="200">Focus</animation>       
+                         <animation effect="slide" end="44,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,40" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-39,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-44" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+                  <visible>Window.IsVisible(500) | Window.IsVisible(502)</visible>
+		      </control>
+                  <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonfolder.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+			      <animation effect="zoom" end="35,33,256,255" reversible="false" time="200">Focus</animation>       
+                         <animation effect="slide" end="44,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,40" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-39,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-44" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+                  <visible>Window.IsVisible(501) | Container.Content(files)</visible>
+		      </control>
+			  <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticongames.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+			      <animation effect="zoom" end="35,33,256,255" reversible="false" time="200">Focus</animation>       
+                         <animation effect="slide" end="44,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,40" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-39,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-44" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+                  <visible>Window.IsVisible(1)</visible>
+		      </control>
+			                    <control type="image">
+			      <posx>75</posx>
+			      <posy>70</posy>
+			      <width>183</width>
+			      <height>182</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonpictures.png</texture>
+			      <aspectratio aligny="center">scale</aspectratio>
+			      <animation effect="zoom" end="35,33,256,255" reversible="false" time="200">Focus</animation>       
+                         <animation effect="slide" end="44,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,40" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-39,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-44" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+                  <visible>Window.IsVisible(2)</visible>
+		      </control>
+
+
+		      <control type="image">
+			      <posx>57</posx>
+			      <posy>58</posy>
+			      <width>215</width>
+			      <height>204</height>
+			      <texture>photowallframe2.png</texture>
+				  <visible>Window.IsVisible(2) | [[Window.IsVisible(501) | Window.IsVisible(502)] + Container.Content(artists)]</visible>
+			      <animation type="focus" reversible="false">
+				<effect type="zoom" start="57,58,215,204" end="0,0,327,323" time="200" />
+			      </animation>
+                        <animation effect="slide" end="40,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,36" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-36,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-40" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+		      </control>
+			  
+			  <control type="image">
+			      <posx>57</posx>
+			      <posy>58</posy>
+			      <width>215</width>
+			      <height>204</height>
+			      <texture>musicwallframe2.png</texture>
+				  <visible>Window.IsVisible(1)</visible>
+			      <animation type="focus" reversible="false">
+				<effect type="zoom" start="57,58,215,204" end="0,0,327,323" time="200" />
+			      </animation>
+                        <animation effect="slide" end="40,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,36" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-36,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-40" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>57</posx>
+			      <posy>58</posy>
+			      <width>215</width>
+			      <height>204</height>
+			      <texture>musicwallframe2.png</texture>
+				  <visible>Window.IsVisible(501) | [Window.IsVisible(502) + [Container.Content(albums) | Container.Content(songs)]] | [Window.IsVisible(502) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)]</visible>
+			      <animation type="focus" reversible="false">
+				<effect type="zoom" start="57,58,215,204" end="0,0,327,323" time="200" />
+			      </animation>
+                        <animation effect="slide" end="40,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,36" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-36,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-40" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+		      </control>
+
+			   <control type="label">
+			      <posx>165</posx>
+			      <posy>80</posy>
+			      <width>240</width>
+			      <height>182</height>
+			      <font>fruity21</font>
+			      <info>ListItem.Label</info>
+				  <align>center</align>
+				  <wrapmultiline>true</wrapmultiline>
+				  <scroll>false</scroll>
+			      <colordiffuse>FFFFFFFF</colordiffuse>
+			      <visible>[[Window.IsVisible(502) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists)] + [isEmpty(listitem.album)]] | [Window.IsVisible(2) + isEmpty(listitem.pictureresolution)] | [Window.IsVisible(1) + isEmpty(listitem.thumb)] | [Container.Content(files) + isEmpty(listitem.thumb)] | isEmpty(listitem.thumb)</visible>
+
+                        <animation effect="slide" end="60,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,50" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-60,0" reversible="false" time="0" condition="Container.Column(6)">Conditional</animation>
+             <animation effect="slide" end="0,-60" reversible="false" time="0" condition="Container.Row(3)">Conditional</animation>
+		      </control>
+			  
+			  
+	     </focusedlayout>
+		 
+          </control>
+   	   </control>
+
+	   
+</include>
+
+<include name="Viewtype_Posterwall">
+
+	<control type="panel" id="58">
+	     <viewtype label="Wall">icon</viewtype>
+	     <posx>-90</posx>
+	     <posy>-100</posy>
+	     <width>1475</width>
+	     <height>930</height>
+	     <onleft>2</onleft>
+	     <onright>2</onright>
+	     <onup>58</onup>
+	     <ondown>58</ondown>
+	     <orientation>vertical</orientation>
+	     <include>common-fade</include>
+ 	     <visible>[Window.IsActive(24) + Skin.HasSetting(videomovies) + !Skin.HasSetting(wallmovies)] | [Window.IsActive(24) + Skin.HasSetting(videotv) + !Skin.HasSetting(walltv)] | [Window.IsActive(25) + Skin.HasSetting(videomovies) + !Skin.HasSetting(wallmovieslib)] | [Window.IsActive(25) + Skin.HasSetting(videotv) + !Skin.HasSetting(walltvlib)]</visible>
+		 <visible>!Container.Content(episodes)</visible>	    	     
+		 <itemlayout height="235" width="164">
+		      <control type="image">
+			      <posx>77</posx>
+			      <posy>105</posy>
+			      <width>164</width>
+			      <height>235</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+                        <texture>defaulticonpostermovies.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+                        <visible>Window.IsVisible(25) + Container.Content(movies)</visible>
+		      </control>
+                   <control type="image">
+			      <posx>77</posx>
+			      <posy>105</posy>
+			      <width>164</width>
+			      <height>235</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+                        <texture>defaulticonpostertv.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+                        <visible>Window.IsVisible(25) + Container.Content(tvshows)</visible>
+                        </control>
+					<control type="image">
+			      <posx>77</posx>
+			      <posy>105</posy>
+			      <width>164</width>
+			      <height>235</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+                        <texture>defaulticonposterfolder.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+                        <visible>Window.IsVisible(24) | Container.Content(files)</visible>
+                    </control>	
+						
+
+			  <control type="image">
+			      <posx>77</posx>
+			      <posy>105</posy>
+			      <width>164</width>
+			      <height>235</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+                        <texture>defaulticonposterfolder.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+                        <visible>Window.IsVisible(25) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+                        </control>	
+		      <control type="label">
+			      <posx>160</posx>
+			      <posy>140</posy>
+			      <width>140</width>
+			      <height>182</height>
+			      <font>fruity21</font>
+			      <info>ListItem.Label</info>
+				  <align>center</align>
+				  <wrapmultiline>true</wrapmultiline>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <visible>[[Window.IsVisible(25) + !Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)] + [isEmpty(listitem.thumb)]] | [Container.Content(files) + isEmpty(listitem.thumb)] | isEmpty(listitem.thumb)</visible>
+		      </control>
+	
+						
+			  
+	     </itemlayout>
+		 			  
+
+	     <focusedlayout height="235" width="164">
+		 
+		 
+		     <control type="image">
+			      <posx>48</posx>
+			      <posy>63</posy>
+			      <width>223</width>
+			      <height>320</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonpostermovies.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+			      <animation effect="zoom" start="160,220,164,235" end="160,220,223,320" reversible="false" time="100">Focus</animation>
+                  <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+                   <visible>Window.IsVisible(25) + Container.Content(movies) + !Control.IsVisible(899)</visible>
+		      </control>
+                   <control type="image">
+			      <posx>48</posx>
+			      <posy>63</posy>
+			      <width>223</width>
+			      <height>320</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonpostertv.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+			      <animation effect="zoom" start="160,220,164,235" end="160,220,223,320" reversible="false" time="100">Focus</animation>
+                  <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+                   <visible>Window.IsVisible(25) + Container.Content(tvshows) + !Control.IsVisible(899)</visible>
+		      </control>
+			                     <control type="image">
+			      <posx>48</posx>
+			      <posy>63</posy>
+			      <width>223</width>
+			      <height>320</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonposterfolder.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+			      <animation effect="zoom" start="160,220,164,235" end="160,220,223,320" reversible="false" time="100">Focus</animation>
+                  <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+                   <visible>Window.IsVisible(24) | Container.Content(files)</visible>
+		      </control>
+			                     <control type="image">
+			      <posx>48</posx>
+			      <posy>63</posy>
+			      <width>223</width>
+			      <height>320</height>
+			      <info>ListItem.Thumb</info>
+			      <texture>defaulticonposterfolder.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+			      <animation effect="zoom" start="160,220,164,235" end="160,220,223,320" reversible="false" time="100">Focus</animation>
+                  <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+                   <visible>Window.IsVisible(25) + !Container.Content(tvshows) + !Container.Content(movies)</visible>
+		      </control>
+		      <control type="image">
+			      <posx>12</posx>
+			      <posy>30</posy>
+			      <width>295</width>
+			      <height>388</height>
+			      <texture>posterwallframe2.png</texture>
+				                          <visible>!Control.IsVisible(899)</visible>
+    			      <animation effect="zoom" start="160,220,219,286" end="160,220,295,387" reversible="false" time="100">Focus</animation>
+                         <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+		      </control>
+			  
+			            <control type="image">
+            <description>Watched/Unwatched Overlay</description>
+             <posx>18</posx>
+            <posy>376</posy>
+            <width>32</width>
+            <height>32</height>
+            <info>ListItem.Overlay</info>
+            <visible>!Skin.HasSetting(hidewatched) + !Control.IsVisible(899)</visible>
+    			      <animation effect="zoom" start="45,330,22,22" end="18,376,32,32" reversible="false" time="100">Focus</animation>
+                         <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+          </control>
+			  
+			  		      <control type="image">
+			      <posx>77</posx>
+			      <posy>105</posy>
+			      <width>164</width>
+			      <height>235</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+                        <texture>defaulticonpostermovies.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+                        <visible>Window.IsVisible(25) + Container.Content(movies) + Control.IsVisible(899)</visible>
+		      </control>
+                   <control type="image">
+			      <posx>77</posx>
+			      <posy>105</posy>
+			      <width>164</width>
+			      <height>235</height>
+			      <info>ListItem.Thumb</info>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+                        <texture>defaulticonpostertv.png</texture>
+			      <aspectratio aligny="center">stretch</aspectratio>
+                        <visible>Window.IsVisible(25) + Container.Content(tvshows) + Control.IsVisible(899)</visible>
+                        </control>
+								      <control type="label">
+			      <posx>160</posx>
+			      <posy>140</posy>
+			      <width>140</width>
+			      <height>182</height>
+			      <font>fruity21</font>
+			      <info>ListItem.Label</info>
+				  <align>center</align>
+				  <wrapmultiline>true</wrapmultiline>
+			      <colordiffuse>8eFFFFFF</colordiffuse>
+			      <visible>isEmpty(listitem.thumb) + Control.IsVisible(899)</visible>
+		      </control>
+			  			   <control type="label">
+			      <posx>165</posx>
+			      <posy>90</posy>
+			      <width>220</width>
+			      <height>182</height>
+			      <font>fruity21</font>
+			      <info>ListItem.Label</info>
+				  <align>center</align>
+				  <wrapmultiline>true</wrapmultiline>
+				  <scroll>false</scroll>
+			      <colordiffuse>FFFFFFFF</colordiffuse>
+			      <visible>[[Window.IsVisible(25) + !Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)] + [isEmpty(listitem.thumb)]] | [Container.Content(files) + isEmpty(listitem.thumb)] | [isEmpty(listitem.thumb) + !Control.IsVisible(899)]</visible>
+
+                        <animation effect="slide" end="65,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,60" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-76,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-50" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+		      </control>
+			  
+			  		      <control type="image">
+			      <posx>-200</posx>
+			      <posy>30</posy>
+			      <width>800</width>
+			      <height>380</height>
+			      <texture>wallpanelleft.png</texture>
+				  			      <visible>[Window.IsVisible(25) + [Container.Content(movies) | Container.Content(tvshows)]] + [Container.Column(7) | Container.Column(6) | Container.Column(5) | Container.Column(4)]</visible>
+    			      <animation effect="zoom" start="160,220,219,286" end="160,220,295,387" reversible="false" time="100">Focus</animation>
+                         <animation effect="slide" end="70,0" reversible="false" time="0" condition="Container.Column(0)">Conditional</animation>
+             <animation effect="slide" end="0,62" reversible="false" time="0" condition="Container.Row(0)">Conditional</animation>
+             <animation effect="slide" end="-77,0" reversible="false" time="0" condition="Container.Column(7)">Conditional</animation>
+             <animation effect="slide" end="0,-57" reversible="false" time="0" condition="Container.Row(2)">Conditional</animation>
+		      </control>
+			  
+			  
+	     </focusedlayout>
+
+		 
+</control>
+
+
+		<control type="image">
+			<description>background top image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>c3FFFFFF</colordiffuse>
+			<include>context-fade</include>
+			<visible>[Control.IsVisible(58) + Control.IsVisible(899)]</visible>
+			</control>
+
+<include>movieinfo4</include>
+
+</include>
+
+</includes>
+

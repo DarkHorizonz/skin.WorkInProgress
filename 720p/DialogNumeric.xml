@@ -1,0 +1,282 @@
+<window id="109">
+	<defaultcontrol>11</defaultcontrol>
+	<zorder>1</zorder>
+	<include>context-fade</include>
+	<controls>
+
+	<control type="group">
+	<posx>355</posx>
+	<posy>221</posy>
+	<animation effect="fade" start="0" end="100" time="150">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+
+	<control type="image">
+		<description>Panel</description>
+		<texture>numericback2.png</texture>
+		<posx>2</posx>
+		<posy>4</posy>
+		<height>279</height>
+		<width>570</width>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+	</control>
+	
+	<control type="label" id="1">
+		<description>Heading Label</description>
+		<posx>160</posx>
+		<posy>800</posy>
+		<font>dropdownbig</font>
+		<width>400</width>
+		<height>16</height>
+		<label>12325</label>
+		<align>center</align>
+		<include>dialogheadingcolor</include>
+	</control>
+	
+	<control type="label" id="4">
+		<description>Edit Text</description>
+		<posx>25</posx>
+		<posy>231</posy>
+		<width>520</width>
+		<height>32</height>
+		<font>keyboardedit</font>
+		<align>center</align>
+		<onup>49</onup>
+		<label>12323</label>
+		<include>dialogheadingcolor</include>
+	</control>
+
+	<control type="button" id="11">
+		<description>'1' button</description>
+		<posx>221</posx>
+		<posy>25</posy>
+		<width>35</width>
+		<height>52</height>
+		<onleft>13</onleft>
+		<onright>12</onright>
+		<label>12311</label> 
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onup>23</onup>
+		<ondown>14</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+		
+	</control>
+
+	<control type="button" id="12">
+		<description>'2' button</description>
+		<posx>254</posx>
+		<posy>25</posy>
+		<width>35</width>
+		<height>52</height>
+		<onleft>11</onleft>
+		<onright>13</onright>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onup>10</onup>
+		<label>12312</label>
+		<ondown>15</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+		
+	</control>
+
+	<control type="button" id="13">
+		<description>'3' button</description>
+		<posx>287</posx>
+		<posy>25</posy>
+		<width>35</width>
+		<height>52</height>
+		<onleft>12</onleft>
+		<onright>11</onright>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onup>21</onup>
+		<ondown>16</ondown>
+		<label>12313</label>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="10">
+		<description>'0' button</description>
+		<posx>254</posx>
+		<posy>174</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>23</onleft>
+		<label>12310</label>
+		<onright>21</onright>
+		<onup>18</onup>
+		<ondown>12</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="17">
+		<description>'7' button</description>
+		<posx>221</posx>
+		<posy>124</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>19</onleft>
+		<onright>18</onright>
+		<onup>14</onup>
+				<label>12317</label> 
+		<ondown>23</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="18">
+		<description>'8' button</description>
+		<posx>254</posx>
+		<posy>124</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>17</onleft>
+		<onright>19</onright>
+		<label>12318</label> 
+		<onup>15</onup>
+		<ondown>10</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="19">
+		<description>'9' button</description>
+		<posx>287</posx>
+		<posy>124</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>18</onleft>
+		<onright>17</onright>
+		<onup>16</onup>
+		<label>12319</label> 
+		<ondown>21</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="21">
+		<description>'OK' button</description>
+		<posx>287</posx>
+		<posy>174</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>10</onleft>
+		<onright>23</onright>
+		<onup>19</onup>
+		<label>E</label>
+		<ondown>13</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="14">
+		<description>'4' button</description>
+		<posx>220</posx>
+		<posy>74</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>16</onleft>
+		<label>12314</label> 
+		<onright>15</onright>
+		<onup>11</onup>
+		<ondown>17</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>	
+	</control>
+
+	<control type="button" id="15">
+		<description>'5' button</description>
+		<posx>254</posx>
+		<posy>74</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>14</onleft>
+		<onright>16</onright>
+		<onup>12</onup>
+		<ondown>18</ondown>
+		<label>12315</label> 
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="23">
+		<description>'Cancel' button</description>
+		<posx>220</posx>
+		<posy>174</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<label>C</label>
+		<onleft>21</onleft>
+		<onright>10</onright>
+		<onup>17</onup>
+		<ondown>11</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>
+	</control>
+
+	<control type="button" id="16">
+		<description>'6' button</description>
+		<posx>287</posx>
+		<posy>74</posy>
+		<width>35</width>
+		<height>52</height>
+		<texturefocus>keypressed.png</texturefocus>
+		<focusedcolor>FF707070</focusedcolor>
+		<onleft>15</onleft>
+		<label>12316</label>
+		<onright>14</onright>
+		<onup>13</onup>
+		<ondown>19</ondown>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>keyboard</font>	
+	</control>
+
+
+
+		<control type="image">
+		<description>Panel</description>
+		<texture>numericbackpolish.png</texture>
+		<posx>2</posx>
+		<posy>4</posy>
+		<height>279</height>
+		<width>570</width>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+	</control>
+
+
+	</control>
+	
+	</controls>
+</window>
