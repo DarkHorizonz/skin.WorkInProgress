@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<!--  strings 31000 thru 31999 reserved for skins  -->
+
+<strings>
+<string id="31000">MUSIC</string>
+<string id="31001">GAMES</string>
+<string id="31002">ARCADE</string>
+<string id="31003">APPS</string>
+<string id="31004">PICTURES</string>
+<string id="31005">COMICS</string>
+<string id="31006">MOVIES</string>
+<string id="31007">TV SHOWS</string>
+<string id="31008">CLIPS</string>
+<string id="31011">WEATHER</string>
+<string id="31012">ADULT</string>
+<string id="31013">PLAY DISC</string>
+<string id="31014">POWER</string>
+<string id="31015">RESTART</string>
+<string id="31016">LOGOFF</string>
+<string id="31017">REFRESH</string>
+<string id="31018">CORE</string>
+<string id="31019">SCRIPTS</string>
+<string id="31020">PROFILES</string>
+<string id="31021">VIDEO</string>
+<string id="31022">SYSTEM</string>
+<string id="31023">NETWORK</string>
+<string id="31024">SCREEN</string>
+<string id="31025">PLAYLIST</string>
+<string id="31026">TRAILERS</string>
+<string id="31027">PLAYLIST IN PROGRESS</string>
+<string id="31028">GAME SAVES</string>
+</strings> 
