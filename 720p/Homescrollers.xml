@@ -105,8 +105,8 @@
 			</item>
 			<item id="8">
 				<description>Settings</description>
-				<label>31020</label>
-				<onclick>XBMC.ActivateWindow(34)</onclick>
+				<label>JAJAJA</label>
+				<onclick>XBMC.ActivateWindow(AddonBrowser)</onclick>
 			</item>
 		</content>
 	</control>

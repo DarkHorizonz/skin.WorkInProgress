@@ -10,6 +10,7 @@
 <include file="WallViews.xml" />
 <include file="Reset.xml" />
 <include file="Thumbtypes.xml" />
+<include file="ViewsAddonBrowser.xml" />
 
 <!-- Text colours ================================== -->
 
